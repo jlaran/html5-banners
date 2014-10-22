@@ -15,4 +15,4 @@ How to clone this repo
 
 2 - Open Terminal App (MAC) and go into a folder to clone the repo inside this.
 
-3 - Once you are into the desired folder in Terminal, type this: <pre><code>git clone https://github.com/laritatico/html5-banners.git</code></pre>
+3 - Once you are into the desired folder in Terminal, type this: <code>git clone https://github.com/laritatico/html5-banners.git</code>
