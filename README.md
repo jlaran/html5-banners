@@ -3,9 +3,11 @@ HTML5 Banner Templates
 
 Studio 10 HTML5 Banner Templates
 
-Documentation folder - 
+Documentation folder - Keep documentation files here
 
-Library folder - 
+Labs folder - Keep test files here
+
+Templates folder - Keep final templates here
 
 
 How to clone this repo
