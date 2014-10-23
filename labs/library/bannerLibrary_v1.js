@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 ///
-///  Animation Library v.1
+///  Banner Library v.1
 ///  Moxie Team
 ///  
 ///  Contact information: 
@@ -14,10 +14,12 @@
     
     'use strict';
 
+    var motionLibrary = {
 
+    };
 
+    var servicesLibrary = {
 
-
-
+    };
     
 })(window);
