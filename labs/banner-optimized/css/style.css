@@ -1,1 +1,307 @@
-body{font-family:Helvetica,Arial;background-color:#CCC;color:#fff;margin:5px}#banner{position:relative;-webkit-backface-visibility:hidden;width:298px;height:248px;background:#fff;overflow:hidden}.logoPanel{position:absolute;top:1px;width:84px;height:70px;background:url(../images/logoVerizon.png) 15px 0 no-repeat;z-index:1}.panel{position:absolute;width:296px;height:246px;overflow:hidden;border:1px solid #333}#panel1{top:0;left:310px;background:#ED1C24}#panel1 h1{position:absolute;top:70px;width:200px;left:10px;font-size:42px;font-style:italic;padding:5px 0 0 15px;letter-spacing:-1px}#panel1 h2{position:absolute;top:130px;left:10px;font-size:22px;font-weight:lighter;font-style:italic;padding:5px 0 0 13px;width:240px}#panel1 h3{position:absolute;top:3px;left:140px;font-size:14px;font-weight:700;font-style:italic;padding:5px 0 0 13px;width:240px}#panel1 h4{position:absolute;top:210px;left:10px;font-size:9px;font-weight:400;padding:5px 0 0 13px;width:240px}#panel1 .device{position:absolute;background:url(../images/device.jpg) no-repeat;width:92px;height:177px;top:50px;left:200px;-webkit-border-radius:10px;border-radius:10px}#panel2{top:0;left:615px;background:url(../images/LF.jpg)}#panel2 h1{position:absolute;top:120px;font-size:19px;font-weight:lighter;font-style:italic;padding:5px 0 0 15px;width:170px;height:24px;background:url(../images/box.png)}#panel2 h2{position:absolute;top:135px;font-size:33px;font-weight:900;padding:5px 0 0 13px;width:200px;height:73px;background:url(../images/box.png);line-height:35px}#panel1 .shadow{position:absolute;top:229px;left:195px;width:100px;height:15px;border-radius:30px;opacity:.6;background:-moz-radial-gradient(center,ellipse cover,rgba(51,51,51,1) 0,rgba(255,255,255,0) 71%);background:-webkit-gradient(radial,center center,0,center center,100%,color-stop(0%,rgba(51,51,51,1)),color-stop(71%,rgba(255,255,255,0)));background:-webkit-radial-gradient(center,ellipse cover,rgba(51,51,51,1) 0,rgba(255,255,255,0) 71%);background:-o-radial-gradient(center,ellipse cover,rgba(51,51,51,1) 0,rgba(255,255,255,0) 71%);background:-ms-radial-gradient(center,ellipse cover,rgba(51,51,51,1) 0,rgba(255,255,255,0) 71%);background:radial-gradient(ellipse at center,rgba(51,51,51,1) 0,rgba(255,255,255,0) 71%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#00ffffff', GradientType=1)}#panel3{top:0;left:920px}#panel3 h1{position:absolute;top:160px;width:230px;height:25px;font-size:17px;font-weight:lighter;font-style:italic;letter-spacing:-.5px;padding:4px 0 0 13px;background:url(../images/box.png)}#panel3 h2{position:absolute;top:180px;width:240px;padding:0 0 0 13px;height:35px;line-height:1.4;background:url(../images/box.png)}#panel4{top:0;left:1230px;border:1px solid #333}#panel4 h1{position:absolute;top:129px;width:220px;height:52px;font-size:18px;font-weight:lighter;font-style:italic;letter-spacing:-.5px;padding:4px 0 0 13px;line-height:1.4;background:url(../images/box.png)}#panel4 h2{position:absolute;top:177px;width:240px;padding:0 0 0 13px;height:35px;line-height:1.4;background:url(../images/box.png)}#panel5{top:260px}#panel5 h1{position:absolute;top:80px;font-size:20px;font-style:italic;font-weight:900;padding:5px 0 0 13px;width:180px;height:27px;background:#ED1C24}#panel5 h2{position:absolute;top:105px;font-size:20px;font-weight:900;font-style:italic;padding:5px 0 0 30px;width:190px;height:27px;background:#ED1C24}#panel5 h3{position:absolute;font-size:11px;top:146px;width:180px;height:20px;padding:0 0 0 13px;color:#333}#panel5 h4{position:absolute;top:0;left:115px;font-size:11px;font-style:italic;font-weight:400;letter-spacing:-.5px;padding:5px 0 0 13px;width:240px;color:#333}#panel5 .device{position:absolute;background:url(../images/device.jpg) no-repeat;width:92px;height:177px;top:53px;left:200px;border-radius:10px}#panel5 .shadow{position:absolute;top:231px;left:195px;width:100px;height:15px;border-radius:30px;opacity:.6;background:-moz-radial-gradient(center,ellipse cover,rgba(51,51,51,1) 0,rgba(255,255,255,0) 71%);background:-webkit-gradient(radial,center center,0,center center,100%,color-stop(0%,rgba(51,51,51,1)),color-stop(71%,rgba(255,255,255,0)));background:-webkit-radial-gradient(center,ellipse cover,rgba(51,51,51,1) 0,rgba(255,255,255,0) 71%);background:-o-radial-gradient(center,ellipse cover,rgba(51,51,51,1) 0,rgba(255,255,255,0) 71%);background:-ms-radial-gradient(center,ellipse cover,rgba(51,51,51,1) 0,rgba(255,255,255,0) 71%);background:radial-gradient(ellipse at center,rgba(51,51,51,1) 0,rgba(255,255,255,0) 71%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#00ffffff', GradientType=1)}#panel5 .cta{position:absolute;text-align:center;margin-left:15px;font-size:14px;font-weight:700;top:190px;width:80px;height:15px;padding:10px;border-radius:5px;border:1px solid #000;background:-webkit-linear-gradient(0deg,#333,#5F5F5F);background:-o-linear-gradient(0deg,#333,#5F5F5F);background:-moz-linear-gradient(0deg,#333,#5F5F5F);background:linear-gradient(0deg,#333,#5F5F5F);color:#fff}#panel5 .cta:hover{background:#333}
+body{
+	background-color:#CCC;
+  color:white;
+  margin:5px;  
+}
+
+#banner {
+  position:relative;
+  -webkit-backface-visibility:hidden;
+  width:296px;
+  height:246px;
+  background:white;
+  overflow:hidden;
+  border:1px solid #333;
+}
+
+.logoPanel{
+  position:absolute;
+  top:0px;
+  width:84px;
+  height:70px;
+  background: url(../images/logoVerizon.png) no-repeat 15px 0px;
+  z-index:1;
+}
+
+.panel {
+  font-family:Helvetica, Arial, sans-serif;
+  position:absolute;
+  width:296px;
+  height:246px;
+  overflow:hidden;
+  /*background:#fff;*/
+}
+
+#panel1 {
+  top:0px;
+  left:310px;
+  background: #ED1C24;
+}
+
+
+#panel1 h1 {
+  position: absolute;
+  top:100px;
+  font-weight: bold;
+  width:200px;
+  left:10px;
+  font-size:42px;
+  font-style: italic;
+  padding: 5px 0 0 15px;
+  letter-spacing:-1px;
+}
+
+#panel1 h2 {
+  position: absolute;
+  top:152px;
+  left:10px;
+  font-size:22px;
+  font-weight:lighter;
+  font-style: italic;
+  padding: 5px 0 0 13px;
+  width:240px;
+}
+
+#panel1 h3 {
+  position: absolute;
+  top:18px;
+  left:140px;
+  font-size:14px;
+  font-weight:bold;
+  font-style: italic;
+  padding: 5px 0 0 13px;
+  width:240px;
+}
+
+#panel1 h4 {
+  position: absolute;
+  top:224px;
+  left:10px;
+  font-size:9px;
+  font-weight:normal;
+  padding: 5px 0 0 13px;
+  width:240px;
+}
+
+#panel1 .device {
+  position:absolute;
+  background: url(../images/device.jpg) no-repeat;
+  width:92px;
+  height:177px;
+  top:50px;
+  left:200px;
+  -webkit-border-radius: 10px;
+  border-radius:10px;
+}
+
+#panel2 {
+  top:0px;
+  left:615px;
+  background: url(../images/LF.jpg);
+}
+
+#panel2 h1{
+  position: absolute;
+  top:132px;
+  font-size:19px;
+  font-weight:lighter;
+  font-style:italic;
+  padding: 5px 0 0 15px;
+  width:170px;
+  height:24px;
+  background: url(../images/box.png);
+}
+
+#panel2 h2{
+  position: absolute;
+  top:161px;
+  font-size:33px;
+  font-weight:900;
+  padding: 5px 0 0 13px;
+  width:200px;
+  height:73px;
+  background: url(../images/box.png);
+  line-height: 35px;
+}
+
+#panel1 .shadow{
+  position:absolute;
+  top:229px;
+  left:195px;
+  width:100px;
+  height:15px;
+  border-radius:30px;
+  opacity:.6;
+  background: -moz-radial-gradient(center, ellipse cover,  rgba(51,51,51,1) 0%, rgba(255,255,255,0) 71%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(51,51,51,1)), color-stop(71%,rgba(255,255,255,0)));
+  background: -webkit-radial-gradient(center, ellipse cover,  rgba(51,51,51,1) 0%,rgba(255,255,255,0) 71%);
+  background: -o-radial-gradient(center, ellipse cover,  rgba(51,51,51,1) 0%,rgba(255,255,255,0) 71%);
+  background: -ms-radial-gradient(center, ellipse cover,  rgba(51,51,51,1) 0%,rgba(255,255,255,0) 71%);
+  background: radial-gradient(ellipse at center,  rgba(51,51,51,1) 0%,rgba(255,255,255,0) 71%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#00ffffff',GradientType=1 );
+}
+
+#panel3 {
+  top:0px;
+  left:920px;
+}
+
+#panel3 h1 {
+  position:absolute;
+  top:169px;
+  width:230px;
+  height:25px;
+  font-size:17px;
+  font-weight:lighter;
+  font-style:italic;
+  letter-spacing: -.5px;
+  line-height: 22px;
+  padding:4px 0 0 13px;
+  background: url(../images/box.png);
+}
+
+#panel3 h2{
+  position:absolute;
+  top:198px;
+  font-size: 25px;
+  font-weight: bold;
+  width:240px;
+  padding:0 0 0 13px;
+  height:35px;
+  line-height:1.4;
+  letter-spacing: -0.5px;
+  background: url(../images/box.png);
+}
+
+#panel4 {
+  top:0px;
+  left:1230px;
+}
+
+#panel4 h1 {
+  position:absolute;
+  top:141px;
+  width:220px;
+  height:52px;
+  font-size:18px;
+  font-weight:lighter;
+  font-style:italic;
+  letter-spacing: -.5px;
+  padding:4px 0 0 13px;
+  line-height:1.4;
+  background: url(../images/box.png);
+}
+
+#panel4 h2 {
+  position:absolute;
+  top:197px;
+  width:240px;
+  padding:0 0 0 13px;
+  font-size: 24px;
+  height:35px;
+  line-height:1.4;
+  background: url(../images/box.png);  
+}
+
+#panel5 {
+  top:260px;
+}
+
+#panel5 h1 {
+  position: absolute;
+  top:94px;
+  font-size:20px;
+  font-style:italic;
+  font-weight:900;
+  padding: 5px 0 0 13px;
+  width:180px;
+  height:23px;
+  background: #ED1C24;
+}
+
+#panel5 h2 {
+  position: absolute;
+  top:122px;
+  font-size:20px;
+  font-weight:900;
+  font-style:italic;
+  padding: 5px 0 0 30px;
+  width:172px;
+  height:27px;
+  background: #ED1C24;
+}
+
+#panel5 h3 {
+  position:absolute;
+  font-size:11px;
+  top:158px;
+  width:180px;
+  height:20px;
+  padding: 0 0 0 13px;
+  color:#333;
+}
+
+#panel5 h4{
+  position: absolute;
+  top:16px;
+  left:115px;
+  font-size:11px;
+  font-style:italic;
+  font-weight:normal;
+  letter-spacing:-0.5px;
+  padding: 5px 0 0 13px;
+  width:240px;
+  color:#333;
+  
+}
+
+#panel5 .device{
+  position:absolute;
+  background: url(../images/device.jpg) no-repeat;
+  width:92px;
+  height:177px;
+  top:53px;
+  left:200px;
+  border-radius:10px;
+}
+
+
+#panel5 .shadow{
+  position:absolute;
+  top:231px;
+  left:195px;
+  width:100px;
+  height:15px;
+  border-radius:30px;
+  opacity:.6;
+  background: -moz-radial-gradient(center, ellipse cover,  rgba(51,51,51,1) 0%, rgba(255,255,255,0) 71%);
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(51,51,51,1)), color-stop(71%,rgba(255,255,255,0)));
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(51,51,51,1) 0%,rgba(255,255,255,0) 71%);
+background: -o-radial-gradient(center, ellipse cover,  rgba(51,51,51,1) 0%,rgba(255,255,255,0) 71%);
+background: -ms-radial-gradient(center, ellipse cover,  rgba(51,51,51,1) 0%,rgba(255,255,255,0) 71%);
+background: radial-gradient(ellipse at center,  rgba(51,51,51,1) 0%,rgba(255,255,255,0) 71%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#00ffffff',GradientType=1 );
+}
+
+#panel5 .cta {
+  position:absolute;
+  text-align:center;
+  margin-left:15px;
+  font-size:14px;
+  font-weight:bold;
+  top:190px;
+  width:80px;
+  height:15px;
+  padding: 10px;
+  border-radius:5px;
+  border: 1px solid #000;
+  background: -webkit-linear-gradient(0deg, #333, #5F5F5F); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(0deg, #333, #5F5F5F); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(0deg, #333, #5F5F5F); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(0deg, #333, #5F5F5F); /* Standard syntax */
+  color:#fff;
+}
+
+#panel5 .cta:hover{
+  background: #333;
+ }

@@ -1,5 +1,4 @@
 body{
-  font-family:Helvetica, Arial;
 	background-color:#CCC;
   color:white;
   margin:5px;  
@@ -8,16 +7,16 @@ body{
 #banner {
   position:relative;
   -webkit-backface-visibility:hidden;
-  width:298px;
-  height:248px;
+  width:296px;
+  height:246px;
   background:white;
   overflow:hidden;
-  
+  border:1px solid #333;
 }
 
 .logoPanel{
   position:absolute;
-  top:1px;
+  top:0px;
   width:84px;
   height:70px;
   background: url(../images/logoVerizon.png) no-repeat 15px 0px;
@@ -25,12 +24,12 @@ body{
 }
 
 .panel {
+  font-family:Helvetica, Arial, sans-serif;
   position:absolute;
   width:296px;
   height:246px;
   overflow:hidden;
   /*background:#fff;*/
-  border:1px solid #333;
 }
 
 #panel1 {
@@ -42,7 +41,8 @@ body{
 
 #panel1 h1 {
   position: absolute;
-  top:70px;
+  top:100px;
+  font-weight: bold;
   width:200px;
   left:10px;
   font-size:42px;
@@ -53,7 +53,7 @@ body{
 
 #panel1 h2 {
   position: absolute;
-  top:130px;
+  top:152px;
   left:10px;
   font-size:22px;
   font-weight:lighter;
@@ -64,7 +64,7 @@ body{
 
 #panel1 h3 {
   position: absolute;
-  top:3px;
+  top:18px;
   left:140px;
   font-size:14px;
   font-weight:bold;
@@ -75,7 +75,7 @@ body{
 
 #panel1 h4 {
   position: absolute;
-  top:210px;
+  top:224px;
   left:10px;
   font-size:9px;
   font-weight:normal;
@@ -102,7 +102,7 @@ body{
 
 #panel2 h1{
   position: absolute;
-  top:120px;
+  top:132px;
   font-size:19px;
   font-weight:lighter;
   font-style:italic;
@@ -114,7 +114,7 @@ body{
 
 #panel2 h2{
   position: absolute;
-  top:135px;
+  top:161px;
   font-size:33px;
   font-weight:900;
   padding: 5px 0 0 13px;
@@ -133,12 +133,12 @@ body{
   border-radius:30px;
   opacity:.6;
   background: -moz-radial-gradient(center, ellipse cover,  rgba(51,51,51,1) 0%, rgba(255,255,255,0) 71%);
-background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(51,51,51,1)), color-stop(71%,rgba(255,255,255,0)));
-background: -webkit-radial-gradient(center, ellipse cover,  rgba(51,51,51,1) 0%,rgba(255,255,255,0) 71%);
-background: -o-radial-gradient(center, ellipse cover,  rgba(51,51,51,1) 0%,rgba(255,255,255,0) 71%);
-background: -ms-radial-gradient(center, ellipse cover,  rgba(51,51,51,1) 0%,rgba(255,255,255,0) 71%);
-background: radial-gradient(ellipse at center,  rgba(51,51,51,1) 0%,rgba(255,255,255,0) 71%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#00ffffff',GradientType=1 );
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(51,51,51,1)), color-stop(71%,rgba(255,255,255,0)));
+  background: -webkit-radial-gradient(center, ellipse cover,  rgba(51,51,51,1) 0%,rgba(255,255,255,0) 71%);
+  background: -o-radial-gradient(center, ellipse cover,  rgba(51,51,51,1) 0%,rgba(255,255,255,0) 71%);
+  background: -ms-radial-gradient(center, ellipse cover,  rgba(51,51,51,1) 0%,rgba(255,255,255,0) 71%);
+  background: radial-gradient(ellipse at center,  rgba(51,51,51,1) 0%,rgba(255,255,255,0) 71%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#00ffffff',GradientType=1 );
 }
 
 #panel3 {
@@ -148,36 +148,39 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', end
 
 #panel3 h1 {
   position:absolute;
-  top:160px;
+  top:169px;
   width:230px;
   height:25px;
   font-size:17px;
   font-weight:lighter;
   font-style:italic;
   letter-spacing: -.5px;
+  line-height: 22px;
   padding:4px 0 0 13px;
   background: url(../images/box.png);
 }
 
 #panel3 h2{
   position:absolute;
-  top:180px;
+  top:198px;
+  font-size: 25px;
+  font-weight: bold;
   width:240px;
   padding:0 0 0 13px;
   height:35px;
   line-height:1.4;
+  letter-spacing: -0.5px;
   background: url(../images/box.png);
 }
 
 #panel4 {
   top:0px;
   left:1230px;
-  border:1px solid #333;
 }
 
 #panel4 h1 {
   position:absolute;
-  top:129px;
+  top:141px;
   width:220px;
   height:52px;
   font-size:18px;
@@ -191,9 +194,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', end
 
 #panel4 h2 {
   position:absolute;
-  top:177px;
+  top:197px;
   width:240px;
   padding:0 0 0 13px;
+  font-size: 24px;
   height:35px;
   line-height:1.4;
   background: url(../images/box.png);  
@@ -205,24 +209,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', end
 
 #panel5 h1 {
   position: absolute;
-  top:80px;
+  top:94px;
   font-size:20px;
   font-style:italic;
   font-weight:900;
   padding: 5px 0 0 13px;
   width:180px;
-  height:27px;
+  height:23px;
   background: #ED1C24;
 }
 
 #panel5 h2 {
   position: absolute;
-  top:105px;
+  top:122px;
   font-size:20px;
   font-weight:900;
   font-style:italic;
   padding: 5px 0 0 30px;
-  width:190px;
+  width:172px;
   height:27px;
   background: #ED1C24;
 }
@@ -230,7 +234,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', end
 #panel5 h3 {
   position:absolute;
   font-size:11px;
-  top:146px;
+  top:158px;
   width:180px;
   height:20px;
   padding: 0 0 0 13px;
@@ -239,7 +243,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', end
 
 #panel5 h4{
   position: absolute;
-  top:0;
+  top:16px;
   left:115px;
   font-size:11px;
   font-style:italic;

@@ -90,10 +90,47 @@
         setTimer : function(_time, nextFunction){
             _time = _time + 1;
             myTimer = setTimeout (function(){
-            motionLibrary.go(nextFunction)}, _time * 1000);
+                motionLibrary.go(nextFunction);
+            }, _time * 1000);
         },
         go : function(nextFunction){ 
             nextFunction =  nextFunction();
+        },
+        checkTabStatus : function(){
+            var myInt = setInterval(myFunc, 300);
+            var stateKey, eventKey, 
+                keys = {
+                    hidden: "visibilitychange",
+                    webkitHidden: "webkitvisibilitychange",
+                    mozHidden: "mozvisibilitychange",
+                    msHidden: "msvisibilitychange"
+                };
+
+            var vis = (function(){
+                for (stateKey in keys) {
+                    if (stateKey in document) {
+                        eventKey = keys[stateKey];
+                        break;
+                    }
+                }
+
+                return function(c) {
+                    if (c) document.addEventListener(eventKey, c);
+                    return !document[stateKey];
+                }
+            })();
+
+
+            function myFunc(){
+              if(vis()){    
+                    // before the tab gains focus again, very important!
+                    setTimeout(function(){           
+                   TweenLite.ticker.useRAF(true);
+                    },300);     
+                } else{
+                   TweenLite.ticker.useRAF(false);
+                }
+            };
         }
     };
 
