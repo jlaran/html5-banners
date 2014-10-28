@@ -23,7 +23,6 @@
     		motionLibrary.options.frame_dur = configOptions.frame_dur || 3;
         },
         initialAnimations : function(){
-            //motionLibrary.handleFrames();
             firstFrame();
             motionLibrary.checkTabStatus();
         },
@@ -89,18 +88,6 @@
                 default:
                     break;
             } 
-        },
-        handleFrames : function(){
-            console.log("animation frames: "+animationFrames.length);
-            for (var i = 0; i < animationFrames.length; i++) {
-                for (var k = 0; k < animationFrames[i].length; k++) {
-                    motionLibrary.animations(animationFrames[i][k].animationType, animationFrames[i][k].element, animationFrames[i][k].delay);
-
-                    if (i < animationFrames.length){
-                        //motionLibrary.setTimer(motionLibrary.options.frame_dur, secondFrame);
-                    };
-                };
-            };
         },
         setTimer : function(_time, nextFunction){
             _time = _time + 1;
