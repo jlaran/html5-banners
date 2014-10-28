@@ -16,10 +16,11 @@
     var myTimer;
 
     var motionLibrary = {
-        options : {
-            'duration' : .5,
-            'distance' : -300,
-            'frame_dur': 3
+        options : {},
+        configOptions : function(){
+    		motionLibrary.options.duration = configOptions.duration || .5;
+    		motionLibrary.options.distance = configOptions.distance || -300;
+    		motionLibrary.options.frame_dur = configOptions.frame_dur || 3;
         },
         initialAnimations : function(){
             firstFrame();
@@ -171,6 +172,7 @@
     	},
         functionsWhenInit : function(){
             servicesLibrary.addListener(elementsToRegister);
+            motionLibrary.configOptions();
         },
         functionsWhenPageLoaded : function(){
             motionLibrary.initialAnimations();
