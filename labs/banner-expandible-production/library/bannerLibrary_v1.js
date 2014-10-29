@@ -23,8 +23,8 @@
     		motionLibrary.options.frame_dur = configOptions.frame_dur || 3;
         },
         initialAnimations : function(){
-            motionLibrary.handleFrames();
-            //firstFrame();
+            //motionLibrary.handleFrames();
+            firstFrame();
             motionLibrary.checkTabStatus();
         },
         animations : function(nameEvent, _target, _delay, _easing){
@@ -43,11 +43,15 @@
                     break;
 
                 case "fadeIn":
-                    TweenLite.to(targetElement, 1, {delay:_delay, css:{alpha:1}});
+                    TweenLite.to(targetElement, .4, {delay:_delay, css:{alpha:1}});
+                    targetElement.style.display = 'block';
                     break;
 
                 case "fadeOut":
-                    TweenLite.to(targetElement, 1, {delay:_delay, css:{alpha:0}});
+                    TweenLite.to(targetElement, .4, {delay:_delay, css:{alpha:0}});
+                    setTimeout (function(){
+                        targetElement.style.display = 'none';
+                    }, (_delay*400) + 1000);
                     break;
 
                 case "fadeInOut":
@@ -159,8 +163,8 @@
         functionWhenClick : function(){
             console.log('clicked 1');
         },
-        displayMap : function(canvasID, longitud, latitud, markerTitle, zoom){
-            var studioLocation = new google.maps.LatLng(longitud, latitud);
+        displayMap : function(canvasID, longitud, latitud, zoom, markerTitle){
+            var studioLocation = new google.maps.LatLng(longitud, latitud),
             map = new google.maps.Map(document.getElementById(canvasID), {
                 center: studioLocation,
                 zoom: zoom
