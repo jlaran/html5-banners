@@ -13,14 +13,20 @@
     'use strict';
 
     //Global Vars
-    var myTimer;
+    var myTimer; 
+    var customConfigOptions = {};
+
 
     var motionLibrary = {
-        options : {},
+        defaultOptions : {
+            duration: 0,
+            distance: 0,
+            frame_dur: 0
+        },
         configOptions : function(){
-    		motionLibrary.options.duration = configOptions.duration || .5;
-    		motionLibrary.options.distance = configOptions.distance || -300;
-    		motionLibrary.options.frame_dur = configOptions.frame_dur || 3;
+    		motionLibrary.defaultOptions.duration = customConfigOptions.duration || .5;
+    		motionLibrary.defaultOptions.distance = customConfigOptions.distance || -300;
+    		motionLibrary.defaultOptions.frame_dur = customConfigOptions.frame_dur || 3;
         },
         initialAnimations : function(){
             //motionLibrary.handleFrames();
@@ -55,39 +61,39 @@
                     break;
 
                 case "fadeInOut":
-                    TweenLite.from(targetElement,motionLibrary.options.duration,{_alpha:0, delay:_delay});
-                    TweenLite.to(targetElement,motionLibrary.options.duration,{_alpha:0, delay:motionLibrary.options.duration +_delay, overwrite:0});
+                    TweenLite.from(targetElement,motionLibrary.defaultOptions.duration,{_alpha:0, delay:_delay});
+                    TweenLite.to(targetElement,motionLibrary.defaultOptions.duration,{_alpha:0, delay:motionLibrary.defaultOptions.duration +_delay, overwrite:0});
                     break;
 
                 case "inOutLeft":
-                    TweenLite.from(targetElement,motionLibrary.options.duration,{delay:_delay, autoAlpha:0, left:motionLibrary.options.distance, ease:_easing});
-                    TweenLite.to(targetElement,motionLibrary.options.duration,{delay:motionLibrary.options.frame_dur+_delay, autoAlpha:0, left:motionLibrary.options.distance, ease:_easing, overwrite:0});
+                    TweenLite.from(targetElement,motionLibrary.defaultOptions.duration,{delay:_delay, autoAlpha:0, left:motionLibrary.defaultOptions.distance, ease:_easing});
+                    TweenLite.to(targetElement,motionLibrary.defaultOptions.duration,{delay:motionLibrary.defaultOptions.frame_dur+_delay, autoAlpha:0, left:motionLibrary.defaultOptions.distance, ease:_easing, overwrite:0});
                     break;
 
                 case "inOutRight":
-                    TweenLite.from(targetElement,motionLibrary.options.duration,{delay:_delay, autoAlpha:0, left:motionLibrary.options.distance * -1, ease:_easing});
-                    TweenLite.to(targetElement,motionLibrary.options.duration,{delay:motionLibrary.options.frame_dur+_delay, autoAlpha:0, left:motionLibrary.options.distance * -1, ease:_easing, overwrite:0});
+                    TweenLite.from(targetElement,motionLibrary.defaultOptions.duration,{delay:_delay, autoAlpha:0, left:motionLibrary.defaultOptions.distance * -1, ease:_easing});
+                    TweenLite.to(targetElement,motionLibrary.defaultOptions.duration,{delay:motionLibrary.defaultOptions.frame_dur+_delay, autoAlpha:0, left:motionLibrary.defaultOptions.distance * -1, ease:_easing, overwrite:0});
                     break;
 
                 case "inLeft":
-                    TweenLite.from(targetElement,motionLibrary.options.duration,{delay:_delay, autoAlpha:0, left:motionLibrary.options.distance, ease:_easing});
+                    TweenLite.from(targetElement,motionLibrary.defaultOptions.duration,{delay:_delay, autoAlpha:0, left:motionLibrary.defaultOptions.distance, ease:_easing});
                     break;
 
                 case "inRight":
-                    TweenLite.from(targetElement,motionLibrary.options.duration,{delay:_delay, autoAlpha:0, left:motionLibrary.options.distance * -1, ease:_easing});
+                    TweenLite.from(targetElement,motionLibrary.defaultOptions.duration,{delay:_delay, autoAlpha:0, left:motionLibrary.defaultOptions.distance * -1, ease:_easing});
                     break;
 
                 case "inOutUp":
-                    TweenLite.from(targetElement,motionLibrary.options.duration,{delay:_delay, autoAlpha:0, top:motionLibrary.options.distance, ease:_easing});
-                    TweenLite.to(targetElement,motionLibrary.options.duration,{delay:motionLibrary.options.frame_dur+_delay, autoAlpha:0, top:motionLibrary.options.distance, ease:_easing, overwrite:0});
+                    TweenLite.from(targetElement,motionLibrary.defaultOptions.duration,{delay:_delay, autoAlpha:0, top:motionLibrary.defaultOptions.distance, ease:_easing});
+                    TweenLite.to(targetElement,motionLibrary.defaultOptions.duration,{delay:motionLibrary.defaultOptions.frame_dur+_delay, autoAlpha:0, top:motionLibrary.defaultOptions.distance, ease:_easing, overwrite:0});
                     break;
 
                 case "inUp":
-                    TweenLite.from(targetElement,motionLibrary.options.duration,{delay:_delay, autoAlpha:0, top:motionLibrary.options.distance, ease:_easing});
+                    TweenLite.from(targetElement,motionLibrary.defaultOptions.duration,{delay:_delay, autoAlpha:0, top:motionLibrary.defaultOptions.distance, ease:_easing});
                     break;
 
                 case "inRight":
-                    TweenLite.from(targetElement,motionLibrary.options.duration,{delay:_delay, autoAlpha:0, left:motionLibrary.options.distance * -1, ease:_easing});
+                    TweenLite.from(targetElement,motionLibrary.defaultOptions.duration,{delay:_delay, autoAlpha:0, left:motionLibrary.defaultOptions.distance * -1, ease:_easing});
                     break;
 
                 default:
@@ -187,12 +193,17 @@
 			if(!Enabler.isPageLoaded()){ 
 				Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, doubleClickEvents.functionsWhenPageLoaded);
 			}
+
+            Enabler.setExpandingPixelOffsets(0, 0,298,474);
+            Enabler.addEventListener( studio.events.StudioEvent.EXPAND_START,  function() { Enabler.finishExpand()});
+            Enabler.addEventListener( studio.events.StudioEvent.COLLAPSE_START, function() { Enabler.finishCollapse()});
+            Enabler.addEventListener( studio.events.StudioEvent.COLLAPSE_FINISH, function() { Enabler.reportManualClose()});
     	},
         functionsWhenInit : function(){
             servicesLibrary.addListener(elementsToRegister);
-            motionLibrary.configOptions();
         },
         functionsWhenPageLoaded : function(){
+            motionLibrary.configOptions();
             motionLibrary.initialAnimations();
         },
         exitEvent : function(){

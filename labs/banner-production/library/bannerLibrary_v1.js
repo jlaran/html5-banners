@@ -4,7 +4,7 @@
 ///  Moxie Team
 ///  
 ///  Contact information: 
-///  Juan Lara | skype:laritatico - Gabriel Aguilar | skype:gab.webdesign
+///  Juan Lara | skype:juanlaran - Gabriel Aguilar | skype:gab.webdesign
 ///
 //////////////////////////////////////////////////////////////////////////////////////////
 
