@@ -7,7 +7,8 @@ if (typeof(Enabler) != undefined && typeof(TweenLite) != undefined &&  typeof(CS
     for (var i = 0; i < linksArray.length; i++) {
         linksArray[i].addEventListener('click', function(e){
             var parent = e.target.id;
-            Enabler.reportCustomVariableCount1('Click tag en el '+parent+' slide');
+            Enabler.counter('Click tag en el '+parent+' slide');
+            console.log('Click tag en el '+parent+' slide')
         }, false);
     };
 
@@ -18,7 +19,8 @@ if (typeof(Enabler) != undefined && typeof(TweenLite) != undefined &&  typeof(CS
         {eventType: "click", element: "#close1", functionToCall: closeFirstExpand},
         {eventType: "click", element: "#close2", functionToCall: closeSecondExpand},
         {eventType: "click", element: "#cta-map", functionToCall: secondExpand},
-        {eventType: "click", element: "#cta-shop", functionToCall: externalWebsite}
+        {eventType: "click", element: "#cta-shop", functionToCall: externalWebsite},
+        {eventType: "click", element: "#directions", functionToCall: GetDirectionMap}
     ];
 
 
@@ -40,33 +42,36 @@ if (typeof(Enabler) != undefined && typeof(TweenLite) != undefined &&  typeof(CS
     }
 
     function secondExpand(){
-        Enabler.reportCustomVariableCount1('Open Expand second');
+        Enabler.counter('Open Second Expanded');
         servicesLibrary.displayMap('canvasMap', 9.613217002140066, -84.62669495162959, 16);
         motionLibrary.animations("set", "#map", 0);
         motionLibrary.animations("fadeIn", "#map", 0);
     }
 
     function closeSecondExpand(){
-        Enabler.reportCustomVariableCount1('Close Expand second');
+        Enabler.counter('Close Second Expanded');
         motionLibrary.animations("fadeOut", "#map", 0);
     }
 
     function externalWebsite(){
-        var url = 'http://www.verizonwireless.com'; 
+        var url = 'goes Verizon'; 
         Enabler.exit(url);
-        window.open(url);
+    }
+
+    function GetDirectionMap(){
+        Enabler.counter('goes to directions');
     }
 
 
     function firstFrame(){
         motionLibrary.animations("set", "#panel5", 0);
-        motionLibrary.animations("inLeft", "#panel5h1", 0); //- left
-        motionLibrary.animations("inUp", "#panel5h4", .1); //- top
-        motionLibrary.animations("inRight", "#panel5h2", .3); //- left
-        motionLibrary.animations("inLeft", "#panel5h3", .4); //- left
+        motionLibrary.animations("inLeft", "#panel5h1", 0); 
+        motionLibrary.animations("inUp", "#panel5h4", .1); 
+        motionLibrary.animations("inRight", "#panel5h2", .3); 
+        motionLibrary.animations("inLeft", "#panel5h3", .4); 
         motionLibrary.animations("fadeIn", "#cta", .8);
-        motionLibrary.animations("inRight", "#device2", .5); //- left
-        motionLibrary.animations("inRight", "#shadow2", .5); //- left
+        motionLibrary.animations("inRight", "#device2", .5); 
+        motionLibrary.animations("inRight", "#shadow2", .5); 
     }
 }else{
     console.log('No cargo una libreria!');
