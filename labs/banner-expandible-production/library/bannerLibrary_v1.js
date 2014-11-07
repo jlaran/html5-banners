@@ -206,10 +206,6 @@
             motionLibrary.configOptions();
             motionLibrary.initialAnimations();
         },
-        exitEvent : function(){
-            //Doubleclick Exit Event
-            console.log('')
-        }
     };
 
     //Register Objects to Window
