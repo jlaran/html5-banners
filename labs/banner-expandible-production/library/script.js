@@ -1,14 +1,24 @@
 if (typeof(Enabler) != undefined && typeof(TweenLite) != undefined &&  typeof(CSSPlugin) != undefined && typeof(Swiper) != undefined && typeof(motionLibrary) != undefined) {
     var mySwiper = new Swiper('.swiper-container',{
         grabCursor: true
-    })
+    });
+
+    document.getElementById('arrowleft').addEventListener('click', function(e){
+        e.preventDefault();
+        mySwiper.swipePrev();
+    });
+
+    document.getElementById('arrowright').addEventListener('click', function(e){
+        e.preventDefault();
+        mySwiper.swipeNext();
+    });
+
 
     var linksArray = document.querySelectorAll('.link');
     for (var i = 0; i < linksArray.length; i++) {
         linksArray[i].addEventListener('click', function(e){
             var parent = e.target.id;
-            Enabler.counter('Click tag en el '+parent+' slide');
-            console.log('Click tag en el '+parent+' slide')
+            Enabler.exit('Click tag en el '+parent+' slide');
         }, false);
     };
 
@@ -19,20 +29,15 @@ if (typeof(Enabler) != undefined && typeof(TweenLite) != undefined &&  typeof(CS
         {eventType: "click", element: "#close1", functionToCall: closeFirstExpand},
         {eventType: "click", element: "#close2", functionToCall: closeSecondExpand},
         {eventType: "click", element: "#cta-map", functionToCall: secondExpand},
-        {eventType: "click", element: "#cta-shop", functionToCall: externalWebsite},
         {eventType: "click", element: "#directions", functionToCall: GetDirectionMap}
     ];
-
-
-    // var customConfigOptions = {};
 
     function firstExpand(){
         Enabler.requestExpand();
         motionLibrary.animations("set", "#expandible", 0);
         motionLibrary.animations("fadeIn", "#expandible", 0);
-        motionLibrary.animations("inRight", "#close1", .3);
-        motionLibrary.animations("inLeft", "#cta-shop", .3);
-        motionLibrary.animations("inRight", "#cta-map", .3);
+        motionLibrary.animations("inTop", "#close1", 0);
+        motionLibrary.animations("inBottom", "#cta-map", .5);
     }
 
     function closeFirstExpand(){

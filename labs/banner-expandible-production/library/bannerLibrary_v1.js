@@ -19,12 +19,12 @@
 
     var motionLibrary = {
         defaultOptions : {
-            duration: 0,
+            duration: .5,
             distance: 0,
             frame_dur: 0
         },
         configOptions : function(){
-    		motionLibrary.defaultOptions.duration = customConfigOptions.duration || .5;
+    		motionLibrary.defaultOptions.duration = customConfigOptions.duration || 1;
     		motionLibrary.defaultOptions.distance = customConfigOptions.distance || -300;
     		motionLibrary.defaultOptions.frame_dur = customConfigOptions.frame_dur || 3;
         },
@@ -81,6 +81,14 @@
 
                 case "inRight":
                     TweenLite.from(targetElement,motionLibrary.defaultOptions.duration,{delay:_delay, autoAlpha:0, left:motionLibrary.defaultOptions.distance * -1, ease:_easing});
+                    break;
+
+                case "inTop":
+                    TweenLite.from(targetElement,motionLibrary.defaultOptions.duration,{delay:_delay, autoAlpha:0, top:motionLibrary.defaultOptions.distance, ease:_easing});
+                    break;
+
+                case "inBottom":
+                    TweenLite.from(targetElement,motionLibrary.defaultOptions.duration,{delay:_delay, autoAlpha:0, top:motionLibrary.defaultOptions.distance * -1, ease:_easing});
                     break;
 
                 case "inOutUp":
@@ -163,6 +171,7 @@
     	addListener : function(arrayElements){
     		for (var i = 0; i < arrayElements.length; i++) {
     			var elementToAdd = document.querySelector(arrayElements[i].element);
+                console.log("elementToAdd  "+ elementToAdd)
     			elementToAdd.addEventListener(arrayElements[i].eventType, arrayElements[i].functionToCall, false);
     		}
     	},
@@ -186,15 +195,15 @@
 
     var doubleClickEvents = {
     	initializer : function(){
-			if(!Enabler.isInitialized()){ 
+            if(!Enabler.isInitialized()){ 
 				Enabler.addEventListener(studio.events.StudioEvent.INIT, doubleClickEvents.functionsWhenInit);
-			}
+			} 
 
 			if(!Enabler.isPageLoaded()){ 
 				Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, doubleClickEvents.functionsWhenPageLoaded);
 			}
 
-            Enabler.setExpandingPixelOffsets(0, 0,298,474);
+            Enabler.setExpandingPixelOffsets(0, 0,298,452);
             Enabler.addEventListener( studio.events.StudioEvent.EXPAND_START,  function() { Enabler.finishExpand()});
             Enabler.addEventListener( studio.events.StudioEvent.COLLAPSE_START, function() { Enabler.finishCollapse()});
             Enabler.addEventListener( studio.events.StudioEvent.COLLAPSE_FINISH, function() { Enabler.reportManualClose()});
