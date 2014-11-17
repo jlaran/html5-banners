@@ -25,11 +25,11 @@ if (typeof(Enabler) != undefined && typeof(TweenLite) != undefined &&  typeof(CS
     doubleClickEvents.initializer();
 
     var elementsToRegister = [
-        {eventType: "click", element: "#cta", functionToCall: firstExpand},
-        {eventType: "click", element: "#close1", functionToCall: closeFirstExpand},
-        {eventType: "click", element: "#close2", functionToCall: closeSecondExpand},
-        {eventType: "click", element: "#cta-map", functionToCall: secondExpand},
-        {eventType: "click", element: "#directions", functionToCall: GetDirectionMap}
+        {eventType: "click", element: "#cta", functionToCall: "firstExpand"},
+        {eventType: "click", element: "#close1", functionToCall: "closeFirstExpand"},
+        {eventType: "click", element: "#close2", functionToCall: "closeSecondExpand"},
+        {eventType: "click", element: "#cta-map", functionToCall: "secondExpand"},
+        {eventType: "click", element: "#directions", functionToCall: "GetDirectionMap"}
     ];
 
     function firstExpand(){

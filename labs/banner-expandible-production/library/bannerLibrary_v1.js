@@ -24,7 +24,7 @@
             frame_dur: 0
         },
         configOptions : function(){
-    		motionLibrary.defaultOptions.duration = customConfigOptions.duration || 1;
+    		motionLibrary.defaultOptions.duration = customConfigOptions.duration || .1;
     		motionLibrary.defaultOptions.distance = customConfigOptions.distance || -300;
     		motionLibrary.defaultOptions.frame_dur = customConfigOptions.frame_dur || 3;
         },
@@ -170,9 +170,9 @@
     var servicesLibrary = {
     	addListener : function(arrayElements){
     		for (var i = 0; i < arrayElements.length; i++) {
-    			var elementToAdd = document.querySelector(arrayElements[i].element);
-                console.log("elementToAdd  "+ elementToAdd)
-    			elementToAdd.addEventListener(arrayElements[i].eventType, arrayElements[i].functionToCall, false);
+    			var elementToAdd = document.querySelector(arrayElements[i].element),
+                    functionToDO = eval(arrayElements[i].functionToCall);
+    			elementToAdd.addEventListener(arrayElements[i].eventType, functionToDO, false);
     		}
     	},
         functionWhenClick : function(){
@@ -194,20 +194,20 @@
     };
 
     var doubleClickEvents = {
-    	initializer : function(){
+        initializer : function(){
             if(!Enabler.isInitialized()){ 
-				Enabler.addEventListener(studio.events.StudioEvent.INIT, doubleClickEvents.functionsWhenInit);
-			} 
+                Enabler.addEventListener(studio.events.StudioEvent.INIT, doubleClickEvents.functionsWhenInit);
+            } 
 
-			if(!Enabler.isPageLoaded()){ 
-				Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, doubleClickEvents.functionsWhenPageLoaded);
-			}
+            if(!Enabler.isPageLoaded()){ 
+                Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, doubleClickEvents.functionsWhenPageLoaded);
+            }
 
             Enabler.setExpandingPixelOffsets(0, 0,298,452);
             Enabler.addEventListener( studio.events.StudioEvent.EXPAND_START,  function() { Enabler.finishExpand()});
             Enabler.addEventListener( studio.events.StudioEvent.COLLAPSE_START, function() { Enabler.finishCollapse()});
             Enabler.addEventListener( studio.events.StudioEvent.COLLAPSE_FINISH, function() { Enabler.reportManualClose()});
-    	},
+        },
         functionsWhenInit : function(){
             servicesLibrary.addListener(elementsToRegister);
         },
