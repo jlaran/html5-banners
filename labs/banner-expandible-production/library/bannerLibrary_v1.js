@@ -24,7 +24,7 @@
             frame_dur: 0
         },
         configOptions : function(){
-    		motionLibrary.defaultOptions.duration = customConfigOptions.duration || .1;
+    		motionLibrary.defaultOptions.duration = customConfigOptions.duration || .5;
     		motionLibrary.defaultOptions.distance = customConfigOptions.distance || -300;
     		motionLibrary.defaultOptions.frame_dur = customConfigOptions.frame_dur || 3;
         },
