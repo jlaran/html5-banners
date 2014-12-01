@@ -7,8 +7,8 @@ body{
 #banner {
   position:relative;
   -webkit-backface-visibility:hidden;
-  width:296px;
-  height:246px;
+  width:298px;
+  height:248px;
   background:white;
   overflow:hidden;
   border:1px solid #333;
@@ -26,8 +26,8 @@ body{
 .panel {
   font-family:Helvetica, Arial, sans-serif;
   position:absolute;
-  width:296px;
-  height:246px;
+  width:298px;
+  height:248px;
   overflow:hidden;
   /*background:#fff;*/
 }
@@ -140,7 +140,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', end
   font-family:Helvetica, Arial, sans-serif;
   position:absolute;
   top:-2000px;
-  width:296px;
+  width:298px;
   height:450px;
   overflow:hidden;
   background: url(../images/LF.jpg) no-repeat #fff;
