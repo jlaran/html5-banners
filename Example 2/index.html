@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>templates for ads - CodePen</title>
+
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+</head>
+
+<body>
+
+   <div id="main-panel">
+   <div id="collapsed-panel">
+     <!-- Add collapsed content here. -->
+     <button id="cta_dc"></button>
+     <h1>HTML5</h1>
+     <h2>EXPAND TEMPLATE</h2>
+     <h3>DOUBLECLICK STUDIO</h3>
+      <h4>EXPAND HERE <img src="images/arrow.gif"/></h4>
+      <img src="images/studiologo.png" class="logo" />
+   </div>
+   <div id="expanded-panel">
+     <img src="images/studiologo.png" />
+     <h1>HTML5</h1>
+     <h2>EXPAND TEMPLATE</h2>
+     <h3>DOUBLECLICK STUDIO</h3>
+     <button id="collapse_btn">CLOSE X</button>
+
+     <div id="video1_container_dc">
+        	<video id="video1_dc"> <!-- These are 3 different codecs due to different browser specifications - we recommend you have all 3 filetypes. -->
+            	<source id="video_1_mp4_src_dc" type="video/mp4" src="images/video.mp4" />
+            	<source id="video_1_ogg_src_dc" type="video/ogg" src="images/video.ogg" />
+            	<source id="video_1_webm_sr_dcc" type="video/webm" src="images/video.webm" />
+        	</video>
+        <button id="video1_control_play_dc" class="video_controls_dc"></button>
+        <button id="video1_control_pause_dc" class="video_controls_dc"></button>
+        <button id="video1_control_replay_dc" class="video_controls_dc"></button>
+       	<button id="video1_control_stop_dc" class="video_controls_dc"></button>
+    </div>
+   
+    <div id="btn-map">LOAD IN MAP</div>
+    <div id="map-canvas"></div>
+
+   </div>
+ </div>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+  <script src='http://s0.2mdn.net/ads/studio/Enabler.js'></script>
+  <script type="text/javascript" src="js/TweenLite.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>

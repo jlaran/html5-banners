@@ -1,0 +1,192 @@
+body{
+  font-family:Helvetica, Arial;
+	background-color:#CCC;
+  color:#fff;
+  margin:5px;  
+}
+
+#banner {
+  position:relative;
+  -webkit-backface-visibility:hidden;
+  width:300px;
+   height:250px;
+  background:white;
+  overflow:hidden;
+  border: 1px solid #000;
+  
+}
+
+.logoPanel{
+  position:absolute;
+  width:80px;
+  height:80px;
+  background: url(../images/logoVerizon.png) no-repeat 15px 0px;
+  z-index:1;
+  
+}
+
+.panel {
+  position:absolute;
+  width:300px;
+  height:250px;
+  overflow:hidden;
+  background:#fff;
+  border:1px solid #CCC;
+}
+
+#panel1 {
+  top:260px;
+  left:-1px;
+  background: url(../images/LF_freeicon_300x250.jpg);
+ 
+}
+
+#panel2 {
+  top:520px;
+  left:-1px;
+  background: url(../images/LF_freeicon_300x250.jpg);
+}
+
+#panel1 h1 {
+  position: absolute;
+  top:160px;
+  font-size:23px;
+  padding: 5px 0 0 15px;
+  width:200px;
+  height:29px;
+  background: url(../images/box.png);
+}
+
+#panel1 h2 {
+  position: absolute;
+  top:190px;
+  font-size:23px;
+  padding: 5px 0 0 13px;
+  width:240px;
+  height:30px;
+  background: url(../images/box.png);
+}
+
+#panel2 h1{
+  position: absolute;
+  top:160px;
+  font-size:21px;
+  padding: 5px 0 0 15px;
+  width:200px;
+  height:28px;
+  background: url(../images/box.png);
+}
+
+#panel2 h2{
+  position: absolute;
+  top:190px;
+  font-size:21px;
+  padding: 5px 0 0 13px;
+  width:260px;
+  height:30px;
+  background: url(../images/box.png);
+}
+
+#panel3 {
+  top:770px;
+  left:-1px;
+  width:300px;
+  height:250px;
+  background: #ED1C24;
+
+}
+
+#panel3 #info{
+  position:absolute;
+  top:110px;
+  width:240px;
+  padding:0 0 0 13px;
+  height:65px;
+  line-height:1.4;
+}
+
+#panel3 h1 {
+  font-size:20px;
+  letter-spacing: 1px;
+}
+
+#panel4 {
+  top:1020px;
+  width:300px;
+  height:250px;
+}
+
+#panel4 h1 {
+  position:absolute;
+  font-weight:800px;
+  font-size:50px;
+  top:50px;
+  width:150px;
+  height:50px;
+  padding: 0 0 0 11px;
+  color:#ED1C24;
+}
+
+#panel4 h2 {
+  position:absolute;
+  font-weight:800px;
+  font-size:30px;
+  top:110px;
+  width:200px;
+  height:40px;
+  padding: 0 0 0 13px;
+  color:#333;
+}
+
+#panel4 h3 {
+  position:absolute;
+  font-size:11px;
+  top:160px;
+  width:180px;
+  height:20px;
+  padding: 0 0 0 13px;
+  color:#333;
+}
+
+#panel4 h4{
+  position:absolute;
+  font-size:11px;
+  top:218px;
+  width:240px;
+  height:20px;
+  padding: 0 0 0 13px;
+  color:#333;
+  
+}
+
+#panel4 .device{
+  position:absolute;
+  background: url(../images/device.png) no-repeat;
+  width:200px;
+  height:200px;
+  top:60px;
+  left:210px;
+  
+}
+
+#panel4 .cta {
+  position:absolute;
+  margin-left:15px;
+  font-size:14px;
+  font-weight:bold;
+  top:190px;
+  width:80px;
+  height:15px;
+  padding: 10px;
+  border-radius:5px;
+  border: 1px solid #000;
+  background: -webkit-linear-gradient(0deg, #333, #5F5F5F); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(0deg, #333, #5F5F5F); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(0deg, #333, #5F5F5F); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(0deg, #333, #5F5F5F); /* Standard syntax */
+  color:#fff;
+}
+
+#panel4 .cta:hover{
+  background: #333;
+ }
