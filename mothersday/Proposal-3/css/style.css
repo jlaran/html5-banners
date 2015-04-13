@@ -161,7 +161,6 @@ sup {
 
 #FF a {
 	position: absolute;
-	
   	height: 18px;
 	background:#ed1c24;
 	color:#fff;
@@ -169,6 +168,10 @@ sup {
 	font-size: 15px;
 	padding: 8px;
 	text-align:center; 
+}
+
+#FF a:hover {
+	background: #C81D1E;
 }
 
 #FF #ff-cta{
