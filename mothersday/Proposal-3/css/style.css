@@ -19,7 +19,7 @@ p,h1,h2,h3,h4 {
 	position:absolute;
 	font-size: 15px;
   	top: 14px;
-  	left: 85px;
+  	left: 87px;
   	color:#fff;
 }
 
@@ -27,11 +27,35 @@ p,h1,h2,h3,h4 {
 	position:absolute;
   font-size: 8px;
   top: 37px;
-  left: 85px;
+  left: 87px;
   color:#fff;
 }
 
 #collapse-banner img {
-	margin-left: 10px;
+	margin-left: 2px;
   	margin-top: -10px;
 }
+
+#expanded-banner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:320px;
+	height:460px;
+	background: #d2d2d4;
+}
+
+.titles {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+}
+
+#f1_txt1{
+	position: absolute;
+	top: 295px;
+	left: 79px;
+}
+
+
+
+
