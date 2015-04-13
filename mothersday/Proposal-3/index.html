@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
   <meta charset="UTF-8">
-
-  <title>CodePen - HTML5 banner Galaxy S6</title>
+  <title>Mothesday Verizon</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
 
@@ -13,20 +10,38 @@
 
 <body>
 
-  <div id="banner">
-	<div id="collapse-banner">
-		<img src="img/logo-verizon.svg" alt="logo-verizon" width="64px">
-		<h1>It's your mom</h1>
-		<h2>Tap to Expand</h2>
-	</div>
-
-	<div id="expanded-banner">
-		<div id="info"></div>
-		<div id="map">	
+	<div id="banner">
+		<div id="collapse-banner">
+			<img src="img/logo-verizon.svg" alt="logo-verizon" width="64px">
+			<h1>It's your mom</h1>
+			<h2>Tap to Expand</h2>
 		</div>
+
+		<div id="expanded-banner">
+			<div id="info"></div>
+			
+			<!-- Map Markup -->
+			<div id="map">	
+				
+				<div id="map-canvas"></div>
+
+			</div>
+			<!-- end map markup -->
+		</div>
+
 	</div>
 
-</div>
+	<!-- Import Enabler - Doubleclick Library -->
+	<script src="http://s0.2mdn.net/ads/studio/Enabler.js"></script>
+	<!-- Import TweenMax - Animation Core Library -->
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.2/TweenMax.min.js'></script>
+	<!-- Import CutBack JS - Banner Core Library -->
+	<script src="http://prodigious.cr/moxie/html5/Gab/DocumentationPage/library/cutBack.js"></script>
+	<!-- Import Google Maps Library -->
+	<script src='https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places'></script>
+
+	<!-- Import custom Javascript file -->
+	<script src="js/script.js"></script>
 </body>
 
 </html>
