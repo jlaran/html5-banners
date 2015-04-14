@@ -24,7 +24,7 @@ p,h1,h2,h3,h4 {
 }
 
 #collapse-banner h2 {
-	position:absolute;
+position:absolute;
   font-size: 8px;
   top: 37px;
   left: 87px;
@@ -59,3 +59,134 @@ p,h1,h2,h3,h4 {
 
 
 
+
+/* Map Styles */
+
+.red-button {
+	background: #ed1c24;
+	padding: 12px 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 100;
+	text-decoration: none;
+}
+
+#get-direction-button {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+}
+
+#info {
+	display: none;
+}
+
+#map {
+	border: 1px solid #000;
+	width:320px;
+	height:460px;
+}
+
+#map-canvas {
+	height: 100%;
+}
+
+.controls {
+	margin-top: 16px;
+	border: 1px solid transparent;
+	border-radius: 2px 0 0 2px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	height: 32px;
+	outline: none;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#pac-input {
+	background-color: #fff;
+	font-family: Roboto;
+	font-size: 15px;
+	font-weight: 300;
+	margin-left: 12px;
+	padding: 0 11px 0 13px;
+	text-overflow: ellipsis;
+	width: 220px;
+}
+
+#pac-input:focus {
+	border-color: #4d90fe;
+}
+
+.pac-container {
+	font-family: Roboto;
+}
+
+#type-selector {
+	color: #fff;
+	background-color: #4d90fe;
+	padding: 5px 11px 0px 11px;
+}
+
+#type-selector label {
+	font-family: Roboto;
+	font-size: 13px;
+	font-weight: 300;
+}
+
+#target {
+    width: 345px;
+}
+
+#slider-directions {
+	background: rgba(255, 255, 255, 0.7);
+	width: 285px;
+	height: 110px;
+	position: absolute;
+	bottom: 20px;
+	left: 18px;
+	z-index: 1000;
+}
+
+#right-arrow {
+	background: blue;
+	width: 15px;
+	height: 20px;
+	position: absolute;
+	right: 10px;
+	top: 30px;
+	cursor: pointer;
+}
+
+#left-arrow {
+	background: blue;
+	width: 15px;
+	height: 20px;
+	position: absolute;
+	left: 10px;
+	top: 30px;
+	cursor: pointer;
+}
+
+#slider {
+	font-size: 12px;
+	width: 205px;
+	height: 40px;
+	overflow: hidden;
+	margin: 0 auto;
+	margin-top: 20px;
+	position: relative;
+}
+
+#container {
+	position: absolute;
+	left: 0;
+}
+
+#container div {
+	float: left;
+}
+
+#slider p {
+	margin-bottom: 2px;
+}
