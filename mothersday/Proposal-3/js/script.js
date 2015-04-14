@@ -1,14 +1,22 @@
-//Required function to initialize DoubleClick and banner animations
 doubleClickEvents.initializer();
 
-//Required array of objects - Contain EventType, TargetElements, and Function to call
-var elementsToRegister = [];
+var elementsToRegister = [
+  {eventType: "click", element: "#collapse-banner", functionToCall: "expanded" }
+  ];
 
-//Required default First Frame animation
 function firstFrame(){
-	//Animations here
-	console.log("Frame Uno");
+  
+  motionLibrary.animations("fadeIn", "#collapse-banner h1", 0);
+  motionLibrary.animations("fadeIn", "#collapse-banner h2", 0.5);
 
+}
+
+function expanded() {
+  //console.log("sds");
+  motionLibrary.animations("fadeIn", "#expanded-banner", 0);
+  motionLibrary.animations("fadeIn", "#expanded-banner #info", 0);
+
+  motionLibrary.animations("fadeIn", "#expanded-banner #info #f1_txt1", 1, Strong.easeOut);
 }
 
 // Map Code
