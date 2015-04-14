@@ -1,21 +1,19 @@
 doubleClickEvents.initializer();
 
 var elementsToRegister = [
-  {eventType: "click", element: "#collapse-banner", functionToCall: "expanded" }
-  ];
+    {eventType: "click", element: "#collapse-banner", functionToCall: "expanded"},
+    {eventType: "click", element: "#getLocation", functionToCall: "updatePosition"},
+    {eventType: "click", element: "#route", functionToCall: "getRoute"}
+];
 
 function firstFrame(){
-  
-  motionLibrary.animations("fadeIn", "#collapse-banner h1", 0);
-  motionLibrary.animations("fadeIn", "#collapse-banner h2", 0.5);
-
+    motionLibrary.animations("fadeIn", "#collapse-banner h1", 0);
+    motionLibrary.animations("fadeIn", "#collapse-banner h2", 0.5);
 }
 
 function expanded() {
-  //console.log("sds");
   motionLibrary.animations("fadeIn", "#expanded-banner", 0);
   motionLibrary.animations("fadeIn", "#expanded-banner #info", 0);
-
   motionLibrary.animations("fadeIn", "#expanded-banner #info #f1_txt1", 1, Strong.easeOut);
 }
 
@@ -49,11 +47,40 @@ function updatePosition(){
     }
 }
 
+function getRoute(){
+    window.open('waze://?ll=9.927731,-84.08900&navigate=yes');
+}
+
+var arrayOfStores = [
+    {
+        "title": "1. Verizon Wireless Store",
+        "direction": "770 Broadway, New York, NY 10003",
+        "phone": "1 (800) 444-5555",
+        "lat": 9.927731, 
+        "lng": -84.08900
+    },
+    {
+        "title": "2. Verizon Wireless Store",
+        "direction": "770 Broadway, New York, NY 10003",
+        "phone": "1 (800) 444-5555",
+        "lat": 9.947731, 
+        "lng": -84.08900
+    },
+    {
+        "title": "3. Verizon Wireless Store",
+        "direction": "770 Broadway, New York, NY 10003",
+        "phone": "1 (800) 444-5555",
+        "lat": 9.927731, 
+        "lng": -84.05900
+    }
+];
+
+var directionsDisplay;
+var directionsService = new google.maps.DirectionsService();
+
 function callMap(position){
 
-    //alert("Latitude: "+position.coords.latitude);
-    //alert("Longitude: "+position.coords.longitude);
-
+    directionsDisplay = new google.maps.DirectionsRenderer();
     var bounds = new google.maps.LatLngBounds(),
         infowindow = new google.maps.InfoWindow(),
         centerLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
@@ -66,26 +93,28 @@ function callMap(position){
             },
             mapTypeControl: false,
             streetViewControl: false,
-            zoom: 8
+            zoom: 11
         });
+        directionsDisplay.setMap(map);
+        directionsDisplay.setPanel(document.getElementById('directions'));
 
-    // for (var i = 0; i < arrayOfStores.length; i++) {
-    //   var localLocation = new google.maps.LatLng(arrayOfStores[i].lat, arrayOfStores[i].lng),
-    //   marker = new google.maps.Marker({
-    //     position: localLocation,
-    //     map: map,
-    //     title: arrayOfStores[i].title
-    //   });
+    for (var i = 0; i < arrayOfStores.length; i++) {
+      var localLocation = new google.maps.LatLng(arrayOfStores[i].lat, arrayOfStores[i].lng),
+      marker = new google.maps.Marker({
+        position: localLocation,
+        map: map,
+        title: arrayOfStores[i].title
+      });
 
-    //   bounds.extend(marker.position);
+      bounds.extend(marker.position);
 
-    //   google.maps.event.addListener(marker, 'click', (function(marker, i) {
-    //     return function() {
-    //       infowindow.setContent(arrayOfStores[i].title);//locations[i][0]
-    //       infowindow.open(map, marker);
-    //     }
-    //   })(marker, i));
-    // }
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(arrayOfStores[i].title);//locations[i][0]
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
 
     map.fitBounds(bounds);
 }
@@ -134,25 +163,34 @@ initialize();
 updatePosition();
 
 // Slider Code
-
 //Common Vars
 var sliderParentDiv = document.getElementById('slider'),
 	sliderBullets = document.getElementById('bullets'),
 	container = document.getElementById('container'),
 	rightArrow = document.getElementById('right-arrow'),
 	leftArrow = document.getElementById('left-arrow'),
-	slides = document.querySelectorAll('#container div'),
-	slideOffsetWidth = slides[0].offsetWidth,
+    slides,
+	slideOffsetWidth,
 	currentSlide = 1,
 	marginRight = 10,
-  active = false;
+    active = false;
 
-//Set Container Width
-container.style.width = (slideOffsetWidth * slides.length) + (slides.length * marginRight+2)+'px';
+//Set Content
+for (var i = 0; i < arrayOfStores.length; i++) {
+    container.innerHTML += '<div><p class="bold">'+arrayOfStores[i].title+'</p><p class="bold">'+arrayOfStores[i].direction+'</p><p>'+arrayOfStores[i].phone+'</p></div>';
+};
 
-for (i = 0; i < slides.length; i++) { 
-    slides[i].style.marginRight = marginRight+"px";
-}
+window.setTimeout(function() {
+    slides = document.querySelectorAll('#container div');
+    slideOffsetWidth = slides[0].offsetWidth;
+    //Set Container Width
+    container.style.width = (slideOffsetWidth * slides.length) + (slides.length * marginRight+2)+'px';
+
+    for (i = 0; i < slides.length; i++) { 
+        slides[i].style.marginRight = marginRight+"px";
+    }
+}, 1000);
+
 
 //Listener for Arrows
 rightArrow.addEventListener("click", nextSlide, false);
