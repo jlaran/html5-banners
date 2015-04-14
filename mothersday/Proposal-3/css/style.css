@@ -52,6 +52,7 @@ body {
     background: #d2d2d4;
     display: none;
     opacity: 0;
+    overflow: hidden;
 }
 
 #device1 {
@@ -60,9 +61,49 @@ body {
     left: 54px;
     width: 211px;
     height: 429px;
-    background: url(../img/Samsung_Galaxy_S6_anim1.jpg) no-repeat 0 0;
+    background: url(../img/Samsung_Galaxy_S6_anim.jpg) no-repeat;
     -webkit-border-radius: 35px;
             border-radius: 35px;
+}
+
+#device2 {
+    position: absolute;
+    top: -93px;
+    left: 133px;
+    width: 143px;
+    height: 441px;
+    background: url(../img/2.jpg) no-repeat;
+    opacity: 0;
+}
+
+#device3 {
+    position: absolute;
+    top: -93px;
+    left: 190px;
+    width: 102px;
+    height: 441px;
+    background: url(../img/3.jpg) no-repeat;
+    opacity: 0;
+}
+
+#device4 {
+    position: absolute;
+    top: -93px;
+    left: 227px;
+    width: 28px;
+    height: 441px;
+    background: url(../img/4.jpg) no-repeat;
+    opacity: 0;
+}
+
+#device5 {
+    position: absolute;
+    top: -93px;
+    left: 205px;
+    width: 104px;
+    height: 441px;
+    background: url(../img/5.jpg) no-repeat;
+    opacity: 0;
 }
 
 #info {
@@ -244,6 +285,7 @@ sup {
     height: 460px;
     background: #ffffff;
     position: absolute;
+    display: none;
 }
 
 #map-canvas {
