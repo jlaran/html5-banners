@@ -40,8 +40,13 @@
 			<!-- Map Markup -->
 			<div id="map">
 
-				<input id="pac-input" class="controls" type="text" placeholder="Search Box"/>
-	
+				<div id="controls">
+					<input id="autocomplete" type="text" name="location" placeholder="City, State, Zip Code"/>
+					<span id="getLocation"></span>
+					<span id="separator"></span>
+					<span id="route"></span>
+				</div>
+
 				<div id="slider-directions">
 					<span id="right-arrow"></span>
 					<span id="left-arrow"></span>
@@ -90,7 +95,7 @@
 	<!-- Import CutBack JS - Banner Core Library -->
 	<script src="http://prodigious.cr/moxie/html5/Gab/DocumentationPage/library/cutBack.js"></script>
 	<!-- Import Google Maps Library -->
-	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+	<script src='https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places'></script>
 	
 	<!-- Import custom Javascript file -->
 	<script src="js/script.js"></script>

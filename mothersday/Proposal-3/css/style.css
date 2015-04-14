@@ -193,7 +193,6 @@ sup {
   	top: 25px;
   	left: 195px;
 }
-}
 
 
 /* Map Styles */
@@ -222,56 +221,12 @@ sup {
 	border: 1px solid #000;
 	width:320px;
 	height:460px;
+	background: #fff;
+	position: absolute;
 }
 
 #map-canvas {
 	height: 100%;
-}
-
-.controls {
-	margin-top: 16px;
-	border: 1px solid transparent;
-	border-radius: 2px 0 0 2px;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	height: 32px;
-	outline: none;
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-#pac-input {
-	background-color: #fff;
-	font-family: Roboto;
-	font-size: 15px;
-	font-weight: 300;
-	margin-left: 12px;
-	padding: 0 11px 0 13px;
-	text-overflow: ellipsis;
-	width: 220px;
-}
-
-#pac-input:focus {
-	border-color: #4d90fe;
-}
-
-.pac-container {
-	font-family: Roboto;
-}
-
-#type-selector {
-	color: #fff;
-	background-color: #4d90fe;
-	padding: 5px 11px 0px 11px;
-}
-
-#type-selector label {
-	font-family: Roboto;
-	font-size: 13px;
-	font-weight: 300;
-}
-
-#target {
-    width: 345px;
 }
 
 #slider-directions {
@@ -325,4 +280,65 @@ sup {
 
 #slider p {
 	margin-bottom: 2px;
+}
+
+#autocomplete {
+	border: 0;
+	background: url(../img/search.png) 7px 9px no-repeat #fff;
+	position: absolute;
+	z-index: 1;
+	padding: 5px 5px 5px 27px;
+	width: 170px;
+	height: 23px;
+	top: 0px;
+	left: 0px;
+	border: 1px solid #fff;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+}
+
+#autocomplete:focus {
+	border: 1px solid #4d90fe;
+	outline: none;
+}
+
+#getLocation {
+  background: url(../img/geolocation.png) center center no-repeat #fff;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  right: 36px;
+  top: 0;
+  z-index: 1;
+}
+
+#route {
+	background: url(../img/route.png) center center no-repeat #fff;
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	z-index: 1;
+}
+
+#controls {
+	background: #fff;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.3),0 4px 15px -5px rgba(0,0,0,0.0);
+	width: 275px;
+	height: 35px;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	z-index: 1;
+}
+
+#separator {
+	background: #8f8f8f;
+	width: 1px;
+	height: 18px;
+	position: absolute;
+	right: 35px;
+	top: 9px;
+	z-index: 1;
 }

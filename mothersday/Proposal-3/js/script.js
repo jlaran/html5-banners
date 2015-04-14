@@ -11,82 +11,119 @@ function firstFrame(){
 
 }
 
-function initialize() {
+// Map Code
 
-  var markers = [];
-  var map = new google.maps.Map(document.getElementById('map-canvas'), {
-    mapTypeId: google.maps.MapTypeId.ROADMAP,
-    zoomControl: true,
-    zoomControlOptions: {
-      style: google.maps.ZoomControlStyle.SMALL,
-      position: google.maps.ControlPosition.RIGHT_TOP
+var placeSearch, 
+    autocomplete, 
+    autocompleteInput = document.getElementById('autocomplete'),
+    loaderSpin = document.getElementById('loaderSpin'),
+    ctaDirections = document.getElementById('ctaDirection'),
+    componentForm = {
+      street_number: 'short_name',
+      route: 'long_name',
+      locality: 'long_name',
+      administrative_area_level_1: 'short_name',
+      country: 'long_name',
+      postal_code: 'short_name'
     },
-    mapTypeControl: false,
-    streetViewControl: false,
-    panControl: false
-  });
+    conexion = new XMLHttpRequest(),
+    zipCode,
+    stateName,
+    cityName,
+    arrayOfStores = [];
 
-  var defaultBounds = new google.maps.LatLngBounds(
-      new google.maps.LatLng(-33.8902, 151.1759),
-      new google.maps.LatLng(-33.8474, 151.2631));
-  map.fitBounds(defaultBounds);
 
-  // Create the search box and link it to the UI element.
-  var input = (document.getElementById('pac-input'));
-  
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-  var searchBox = new google.maps.places.SearchBox((input));
-
-  google.maps.event.addListener(searchBox, 'places_changed', function() {
-    var places = searchBox.getPlaces();
-
-    if (places.length == 0) {
-      return;
+function updatePosition(){
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(callMap);
+    } else { 
+        alert("Geolocation is not supported by this browser");
     }
-    for (var i = 0, marker; marker = markers[i]; i++) {
-      marker.setMap(null);
-    }
-
-    // For each place, get the icon, place name, and location.
-    markers = [];
-    var bounds = new google.maps.LatLngBounds();
-    for (var i = 0, place; place = places[i]; i++) {
-      var image = {
-        url: place.icon,
-        size: new google.maps.Size(71, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
-        scaledSize: new google.maps.Size(25, 25)
-      };
-
-      // Create a marker for each place.
-      var marker = new google.maps.Marker({
-        map: map,
-        icon: image,
-        title: place.name,
-        position: place.geometry.location
-      });
-
-      markers.push(marker);
-
-      bounds.extend(place.geometry.location);
-    }
-
-    map.fitBounds(bounds);
-  });
-  
-  google.maps.event.addListener(map, 'bounds_changed', function() {
-    var bounds = map.getBounds();
-    searchBox.setBounds(bounds);
-  });
 }
 
-google.maps.event.addDomListener(window, 'load', initialize);
+function callMap(position){
+
+    //alert("Latitude: "+position.coords.latitude);
+    //alert("Longitude: "+position.coords.longitude);
+
+    var bounds = new google.maps.LatLngBounds(),
+        infowindow = new google.maps.InfoWindow(),
+        centerLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+        map = new google.maps.Map(document.getElementById('map-canvas'), {
+            center: centerLocation,
+            zoomControl: true,
+            zoomControlOptions: {
+              style: google.maps.ZoomControlStyle.SMALL,
+              position: google.maps.ControlPosition.RIGHT_CENTER
+            },
+            mapTypeControl: false,
+            streetViewControl: false,
+            zoom: 8
+        });
+
+    // for (var i = 0; i < arrayOfStores.length; i++) {
+    //   var localLocation = new google.maps.LatLng(arrayOfStores[i].lat, arrayOfStores[i].lng),
+    //   marker = new google.maps.Marker({
+    //     position: localLocation,
+    //     map: map,
+    //     title: arrayOfStores[i].title
+    //   });
+
+    //   bounds.extend(marker.position);
+
+    //   google.maps.event.addListener(marker, 'click', (function(marker, i) {
+    //     return function() {
+    //       infowindow.setContent(arrayOfStores[i].title);//locations[i][0]
+    //       infowindow.open(map, marker);
+    //     }
+    //   })(marker, i));
+    // }
+
+    map.fitBounds(bounds);
+}
 
 
+//AUTOCOMPLETE CODE
 
+function initialize() {
+    var options = { 
+      types: ['geocode'],
+      componentRestrictions: {country: "us"}
+    }
 
+    autocomplete = new google.maps.places.Autocomplete(autocompleteInput, options);
+
+    google.maps.event.addListener(autocomplete, 'place_changed', function() {
+        fillInAddress();
+    });
+}
+
+function fillInAddress() {
+  var place = autocomplete.getPlace();
+
+  for (var i = 0; i < place.address_components.length; i++) {
+    var addressType = place.address_components[i].types[0];
+    if (componentForm[addressType]) {
+      var val = place.address_components[i][componentForm[addressType]];
+      if(addressType == 'locality'){
+        cityName = val;
+      }else if(addressType == 'administrative_area_level_1'){
+        stateName = val;
+      }else if(addressType == 'postal_code'){
+        zipCode = val;
+      }
+    }
+  }
+
+  if ((cityName && stateName) || zipCode) {
+    console.log(cityName +" "+ stateName);
+  }else{
+    alert('Please enter a valid State and City from the US');
+  }
+}
+
+initialize();
+updatePosition();
 
 // Slider Code
 
@@ -99,7 +136,8 @@ var sliderParentDiv = document.getElementById('slider'),
 	slides = document.querySelectorAll('#container div'),
 	slideOffsetWidth = slides[0].offsetWidth,
 	currentSlide = 1,
-	marginRight = 10;
+	marginRight = 10,
+  active = false;
 
 //Set Container Width
 container.style.width = (slideOffsetWidth * slides.length) + (slides.length * marginRight+2)+'px';
@@ -112,21 +150,23 @@ for (i = 0; i < slides.length; i++) {
 rightArrow.addEventListener("click", nextSlide, false);
 leftArrow.addEventListener("click", previewSlide, false);
 
-console.log("Left Container: "+ container.offsetLeft);
-
 //Functions to do
 function nextSlide(){
-	if (currentSlide != slides.length){
-		console.log("next");
-		TweenLite.to(container, 0.5, {left: "-="+ (slideOffsetWidth + 11) +"px"});
+	if (currentSlide != slides.length && active == false){
+    active = true;
+		TweenLite.to(container, 0.5, {left: "-="+ (slideOffsetWidth + marginRight) +"px", onComplete:function(){
+      active = false;
+    }});
 		currentSlide++;	
 	}
 }
 
 function previewSlide(){
-	if (currentSlide != 1){
-		console.log("prev");
-		TweenLite.to(container, 0.5, {left: "+="+ (slideOffsetWidth + 11) +"px"});
+	if (currentSlide != 1 && active == false){
+    active = true;
+		TweenLite.to(container, 0.5, {left: "+="+ (slideOffsetWidth + marginRight) +"px", onComplete:function(){
+      active = false;
+    }});
 		currentSlide--;
 	}
 }
