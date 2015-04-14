@@ -1,5 +1,10 @@
-p,h1,h2,h3,h4 {
+p,h1,h2,h3,h4,a {
 	font-family: Arial, Helvetica, sans-serif;
+	color:#333;
+}
+
+body{
+	background: #313131;
 }
 
 #banner {
@@ -45,19 +50,150 @@ position:absolute;
 	background: #d2d2d4;
 }
 
+#info {
+	display: none;
+}
+
+#expanded-banner #FF img.logo {
+	margin-left: 11px;
+  	margin-top: 0;
+}
+
+sup {
+    vertical-align: super;
+    font-size: smaller;
+    font-size: 12px;
+}
+
 .titles {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 20px;
+	position: absolute;
 }
 
 #f1_txt1{
-	position: absolute;
 	top: 295px;
 	left: 79px;
+	font-size: 20px;
+}
+
+#f1_txt2{
+	top: 314px;
+	left: 28px;
+	width: 260px;
+	font-size: 20px;
+}
+
+#f2_txt1{
+	top: 385px;
+	left: 12px;
+	width: 311px;
+	font-size: 19px;
+}
+
+#f3_txt1{
+	top: 157px;
+	left: 12px;
+	width: 170px;
+	font-size: 19px;
 }
 
 
+#f3_txt2{
+	top: 196px;
+	left: 12px;
+	width: 170px;
+	font-size: 19px;
+}
 
+#FF {
+	position: absolute;
+	width: 320px;
+	height: 480px;
+}
+
+#FF sup {
+    font-size: 9px;
+}
+
+#FF #ff_txt1{
+	top: 128px;
+	left: 12px;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 16px;
+}
+
+#FF #ff_txt2{
+	top: 150px;
+  	left: 12px;
+  	font-weight: 100;
+  	font-size: 17px;
+  	letter-spacing: 0px;
+}
+
+#FF #ff_txt3{
+	top: 173px;
+	left: 12px;
+	font-size: 12px;
+	letter-spacing: 0px;
+	line-height: 14px;
+	width: 147px;
+}
+
+#FF #ff_txt3 sup{
+	font-size: 7px;
+}
+
+#FF #ff_txt4{
+	top: 262px;
+  	left: 12px;
+  	font-size: 9px;
+  	line-height: 12px;
+  	width: 153px;
+}
+
+#FF #ff_txt5{
+  	top: 26px;
+  	left: 12px;
+  	font-size: 15px;
+  	line-height: 15px;
+  	width: 166px;
+}
+
+#FF a {
+	position: absolute;
+  	height: 18px;
+	background:#ed1c24;
+	color:#fff;
+	text-decoration: none;
+	font-size: 15px;
+	padding: 8px;
+	text-align:center; 
+}
+
+#FF a:hover {
+	background: #C81D1E;
+}
+
+#FF #ff-cta{
+	width: 105px;
+	top:222px;
+	left: 12px;
+}
+
+#FF #footer {
+	position: absolute;
+	top:380px;
+	width:100%;
+	height: 80px;
+	background: #fff;
+}
+
+#FF #footer-cta{
+	width: 92px;
+  	top: 25px;
+  	left: 195px;
+}
+}
 
 
 /* Map Styles */
