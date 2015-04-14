@@ -28,11 +28,10 @@ function frame2() {
 
 function frame3() {
   TweenMax.to("#expanded-banner #info #f2_txt1", 2, { css:{alpha:0} , delay:1})
-  TweenMax.to("#device1", .2, { css:{alpha:0} , delay:1})
-  TweenMax.to("#device2", .5, { css:{alpha:.2, left:164}, delay:1})
-  TweenMax.to("#device3", .5, { css:{alpha:.2}, delay:1.5})
-  TweenMax.to("#device2", .5, { css:{alpha:0}, delay:1})
-  TweenMax.to("#device4", .5, { css:{alpha:.2}, delay:1}) 
+  TweenMax.to("#device1", .5, { css:{alpha:0} , delay:1})
+  TweenMax.to("#device2", .5, { css:{alpha:.2, left:130}, delay:1})
+  //TweenMax.to("#device3", .5, { css:{alpha:.2}, delay:1.5})
+  //TweenMax.to("#device4", .5, { css:{alpha:.2}, delay:1}) 
   //TweenMax.to("#device5", .5, { css:{alpha:.2}, delay:1}) 
   //TweenMax.to("#expanded-banner #info #f3_txt1", 2, { css:{alpha:1}, delay:2})
   //TweenMax.to("#expanded-banner #info #f3_txt2", 2, { css:{alpha:1}, delay:2.5})
