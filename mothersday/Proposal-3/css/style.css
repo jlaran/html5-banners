@@ -26,6 +26,7 @@ body{
   	top: 14px;
   	left: 87px;
   	color:#fff;
+  	opacity: 0;
 }
 
 #collapse-banner h2 {
@@ -34,6 +35,7 @@ position:absolute;
   top: 37px;
   left: 87px;
   color:#fff;
+  opacity: 0;
 }
 
 #collapse-banner img {
@@ -48,10 +50,23 @@ position:absolute;
 	width:320px;
 	height:460px;
 	background: #d2d2d4;
+	display: none;
+	opacity: 0;
+}
+
+#device1 {
+	position: absolute;
+	top: -197px;
+  	left: 54px;
+	width: 211px;
+  	height: 429px;
+	background: url(../img/Samsung_Galaxy_S6_anim1.jpg) no-repeat 0 0;
+	-webkit-border-radius: 35px;
+	border-radius: 35px;
 }
 
 #info {
-	display: none;
+	display: block;
 }
 
 #expanded-banner #FF img.logo {
@@ -73,6 +88,7 @@ sup {
 	top: 295px;
 	left: 79px;
 	font-size: 20px;
+	opacity: 0;
 }
 
 #f1_txt2{
@@ -80,6 +96,7 @@ sup {
 	left: 28px;
 	width: 260px;
 	font-size: 20px;
+	opacity: 0;
 }
 
 #f2_txt1{
@@ -87,6 +104,7 @@ sup {
 	left: 12px;
 	width: 311px;
 	font-size: 19px;
+	opacity: 0;
 }
 
 #f3_txt1{
@@ -94,6 +112,7 @@ sup {
 	left: 12px;
 	width: 170px;
 	font-size: 19px;
+	opacity: 0;
 }
 
 
@@ -102,12 +121,14 @@ sup {
 	left: 12px;
 	width: 170px;
 	font-size: 19px;
+	opacity: 0;
 }
 
 #FF {
 	position: absolute;
 	width: 320px;
 	height: 480px;
+	display: none;
 }
 
 #FF sup {
@@ -222,6 +243,7 @@ sup {
 	border: 1px solid #000;
 	width:320px;
 	height:460px;
+	display: none;
 }
 
 #map-canvas {
