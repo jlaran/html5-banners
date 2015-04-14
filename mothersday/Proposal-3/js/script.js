@@ -12,9 +12,30 @@ function firstFrame(){
 }
 
 function expanded() {
-  motionLibrary.animations("fadeIn", "#expanded-banner", 0);
-  motionLibrary.animations("fadeIn", "#expanded-banner #info", 0);
-  motionLibrary.animations("fadeIn", "#expanded-banner #info #f1_txt1", 1, Strong.easeOut);
+  motionLibrary.animations("fadeIn", "#expanded-banner", 0)
+  motionLibrary.animations("fadeIn", "#expanded-banner #info", 0)
+  TweenMax.from("#device1", 3, {top:"-500px", ease:Strong.easeOut})
+  TweenMax.to("#expanded-banner #info #f1_txt1", 2, { css:{alpha:1}})
+  TweenMax.to("#expanded-banner #info #f1_txt2", 2, { css:{alpha:1}, delay:2, onComplete:frame2})
+}
+
+function frame2() {
+  TweenMax.to("#device1", 2, {top:"-93", ease:Strong.easeInOut, delay:2})
+  TweenMax.to("#expanded-banner #info #f1_txt1", .5, { css:{alpha:0}, delay:1})
+  TweenMax.to("#expanded-banner #info #f1_txt2", .5, { css:{alpha:0}, delay:1.5})
+  TweenMax.to("#expanded-banner #info #f2_txt1", 2, { css:{alpha:1}, delay:3.5, onComplete:frame3})
+}
+
+function frame3() {
+  TweenMax.to("#expanded-banner #info #f2_txt1", 2, { css:{alpha:0} , delay:1})
+  TweenMax.to("#device1", .2, { css:{alpha:0} , delay:1})
+  TweenMax.to("#device2", .5, { css:{alpha:.2, left:164}, delay:1})
+  TweenMax.to("#device3", .5, { css:{alpha:.2}, delay:1.5})
+  TweenMax.to("#device2", .5, { css:{alpha:0}, delay:1})
+  TweenMax.to("#device4", .5, { css:{alpha:.2}, delay:1}) 
+  //TweenMax.to("#device5", .5, { css:{alpha:.2}, delay:1}) 
+  //TweenMax.to("#expanded-banner #info #f3_txt1", 2, { css:{alpha:1}, delay:2})
+  //TweenMax.to("#expanded-banner #info #f3_txt2", 2, { css:{alpha:1}, delay:2.5})
 }
 
 // Map Code
@@ -215,27 +236,4 @@ function previewSlide(){
     }});
 		currentSlide--;
 	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
+}	
