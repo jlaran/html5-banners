@@ -272,6 +272,10 @@ sup {
     opacity: 0;
 }
 
+#FF #ff-cta:hover {
+    cursor: pointer;
+}
+
 #FF #footer {
     position: absolute;
     top: 380px;
@@ -286,6 +290,10 @@ sup {
     left: 195px;
 }
 
+#FF #footer-cta:hover {
+    cursor: pointer;
+}
+
 
 /* Map Styles */
 
@@ -296,6 +304,10 @@ sup {
     font-size: 12px;
     padding: 12px 20px;
     height: auto;
+}
+
+#get-direction-button:hover {
+    cursor: pointer;
 }
 
 #info {

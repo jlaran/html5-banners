@@ -4,6 +4,7 @@ var elementsToRegister = [
     {eventType: "click", element: "#collapse-banner", functionToCall: "expanded"},
     {eventType: "click", element: "#getLocation", functionToCall: "updatePosition"},
     {eventType: "click", element: "#FF #footer-cta", functionToCall: "loadMap"},
+    {eventType: "click", element: "#ff-cta", functionToCall: "shopGift"},
     {eventType: "click", element: "#route", functionToCall: "getRoute"}
 ];
 
@@ -57,6 +58,10 @@ function frame4(){
   TweenMax.to("#FF #ff-cta", .8, { css:{alpha:1}, delay:3.1})
   TweenMax.to("#FF #ff_txt4", .8, { css:{alpha:1}, delay:3.3})  
   TweenMax.from("#FF #footer", 1, { top:460, delay:2, ease:Strong.easeOut})   
+}
+
+function shopGift(){
+  window.open('http://www.verizonwireless.com/smartphones/samsung/','_blank');
 }
 
 function loadMap(){
