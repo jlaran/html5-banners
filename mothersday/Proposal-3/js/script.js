@@ -31,20 +31,38 @@ function frame2() {
 
 function frame3() {
   TweenMax.to("#expanded-banner #info #f2_txt1", 2, { css:{alpha:0} , delay:1})
-  TweenMax.to("#device1", .3, { css:{alpha:0} , delay:1})
-  TweenMax.to("#device2", .8, { css:{alpha:1, left:160}, delay:1})
-  TweenMax.to("#device2", .8, { css:{alpha:0}, delay:1.3})
-  TweenMax.to("#device3", .8, { css:{alpha:1}, delay:1.3})
-  TweenMax.to("#device3", .8, { css:{alpha:0}, delay:1.6})
-  TweenMax.to("#device4", .8, { css:{alpha:1}, delay:1.6}) 
-  TweenMax.to("#device4", .8, { css:{alpha:0}, delay:1.9}) 
-  TweenMax.to("#device5", .8, { css:{alpha:1}, delay:1.9})
-  TweenMax.to("#device5", .8, { css:{alpha:0}, delay:2.3})
-  TweenMax.to("#device6", .8, { css:{alpha:1}, delay:2.3}) 
-  TweenMax.to("#device6", 2, { top:63, delay:2.3, ease:Strong.easeOut}) 
-  TweenMax.to("#expanded-banner #info #f3_txt1", 2, { css:{alpha:1}, delay:3.5})
-  TweenMax.to("#expanded-banner #info #f3_txt2", 2, { css:{alpha:1}, delay:4, onComplete:frame4})
-  TweenMax.to(".logo", .8, { css:{alpha:1}, delay:2})
+  
+  TweenMax.to("#device1", 1, { left:115, delay:1})
+  TweenMax.to("#device1", 1, { scaleX:0.65, delay:1.3})
+  TweenMax.to("#device1", 1, { css:{alpha:0}, delay:1.5})
+  TweenMax.to("#device2", .8, { css:{alpha:.8}, delay:1.5})
+  
+  TweenMax.to("#device2", 1, { left:165, delay:2})
+  TweenMax.to("#device2", 2, { scaleX:0.5, delay:2})
+
+  TweenMax.to("#device2", .8, { css:{alpha:0}, delay:2.2})
+  TweenMax.to("#device3", .8, { css:{alpha:.5}, delay:2.5})
+
+  TweenMax.to("#device3", 1, { left:195, delay:2.8})
+  TweenMax.to("#device3", 1, { scaleX:0.2, delay:2.8})
+  TweenMax.to("#device3", .8, { css:{alpha:0}, delay:3})
+  TweenMax.to("#device4", .8, { css:{alpha:1}, delay:3})
+  TweenMax.to("#device4", 1, { left:241, delay:3.2}) 
+  
+  TweenMax.to("#device4", .8, { css:{alpha:0}, delay:3.5}) 
+  TweenMax.to("#device5", .8, { css:{alpha:1}, delay:3.8}) 
+  
+  TweenMax.from("#device5", 1, { scaleX:0.4, delay:3.5})
+  TweenMax.to("#device5", .8, { css:{alpha:0}, delay:3.8})
+
+  TweenMax.from("#device6", .8, { scaleX:0.4, delay:4})
+  TweenMax.to("#device6", .8, { css:{alpha:1}, delay:4.2})  
+  
+  
+  TweenMax.to("#device6", 2, { top:63, delay:4.4, ease:Strong.easeOut}) 
+  TweenMax.to("#expanded-banner #info #f3_txt1", 2, { css:{alpha:1}, delay:4.6})
+  TweenMax.to("#expanded-banner #info #f3_txt2", 2, { css:{alpha:1}, delay:4.8, onComplete:frame4})
+  TweenMax.to(".logo", .8, { css:{alpha:1}, delay:5})
 }
 
 function frame4(){
