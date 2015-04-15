@@ -5,7 +5,8 @@ var elementsToRegister = [
     {eventType: "click", element: "#getLocation", functionToCall: "updatePosition"},
     {eventType: "click", element: "#FF #footer-cta", functionToCall: "loadMap"},
     {eventType: "click", element: "#ff-cta", functionToCall: "shopGift"},
-    {eventType: "click", element: "#route", functionToCall: "getRoute"}
+    {eventType: "click", element: "#route", functionToCall: "getRoute"},
+    {eventType: "click", element: "#get-direction-button", functionToCall: "getDirection"}
 ];
 
 function firstFrame(){
@@ -68,6 +69,10 @@ function loadMap(){
   motionLibrary.animations("fadeIn", "#map", 0.5);
   updatePosition();
   buildSlidesSize();
+}
+
+function getDirection(){
+  window.open('http://www.verizonwireless.com/vzw/storelocator/store-list-result.jsp?allow=1&result=verizon&q=10003','_blank');
 }
 
 // Map Code
