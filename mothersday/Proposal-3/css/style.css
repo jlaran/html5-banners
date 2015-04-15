@@ -18,6 +18,7 @@ body {
     height: 50px;
     background: #ed1c24;
     overflow: hidden;
+    cursor: pointer;
 }
 
 #collapse-banner h1 {
