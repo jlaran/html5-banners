@@ -10,7 +10,7 @@ body {
 #banner {
     width: 320px;
     height: 460px;
-    //background: #dedede;
+    /*background: #dedede;*/
 }
 
 #collapse-banner {
@@ -249,7 +249,8 @@ sup {
     width: 166px;
 }
 
-#FF a {
+.Redbutton {
+    font-family: Arial, Helvetica, sans-serif;
     position: absolute;
     height: 18px;
     background: #ed1c24;
@@ -260,7 +261,7 @@ sup {
     text-align: center;
 }
 
-#FF a:hover {
+.Redbutton:hover {
     background: #c81d1e;
 }
 
@@ -288,20 +289,13 @@ sup {
 
 /* Map Styles */
 
-.red-button {
-    background: #ed1c24;
-    padding: 12px 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: 100;
-    text-decoration: none;
-}
-
 #get-direction-button {
     position: absolute;
     bottom: 10px;
     right: 20px;
+    font-size: 12px;
+    padding: 12px 20px;
+    height: auto;
 }
 
 #info {
@@ -314,6 +308,9 @@ sup {
     height: 460px;
     background: #ffffff;
     position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
     display: none;
 }
 

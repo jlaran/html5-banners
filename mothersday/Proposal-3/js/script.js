@@ -60,8 +60,9 @@ function frame4(){
 }
 
 function loadMap(){
-  var map = document.getElementById("#map");
-  map.style.display = "block"
+  motionLibrary.animations("fadeIn", "#map", 0.5);
+  updatePosition();
+  buildSlidesSize();
 }
 
 // Map Code
@@ -122,12 +123,9 @@ var arrayOfStores = [
     }
 ];
 
-var directionsDisplay;
-var directionsService = new google.maps.DirectionsService();
 
 function callMap(position){
 
-    directionsDisplay = new google.maps.DirectionsRenderer();
     var bounds = new google.maps.LatLngBounds(),
         infowindow = new google.maps.InfoWindow(),
         centerLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
@@ -140,10 +138,8 @@ function callMap(position){
             },
             mapTypeControl: false,
             streetViewControl: false,
-            zoom: 11
+            zoom: 8
         });
-        directionsDisplay.setMap(map);
-        directionsDisplay.setPanel(document.getElementById('directions'));
 
     for (var i = 0; i < arrayOfStores.length; i++) {
       var localLocation = new google.maps.LatLng(arrayOfStores[i].lat, arrayOfStores[i].lng),
@@ -168,6 +164,8 @@ function callMap(position){
 
 
 //AUTOCOMPLETE CODE
+
+initialize();
 
 function initialize() {
     var options = { 
@@ -206,9 +204,6 @@ function fillInAddress() {
   }
 }
 
-initialize();
-updatePosition();
-
 // Slider Code
 //Common Vars
 var sliderParentDiv = document.getElementById('slider'),
@@ -216,7 +211,7 @@ var sliderParentDiv = document.getElementById('slider'),
 	container = document.getElementById('container'),
 	rightArrow = document.getElementById('right-arrow'),
 	leftArrow = document.getElementById('left-arrow'),
-    slides,
+  slides,
 	slideOffsetWidth,
 	currentSlide = 1,
 	marginRight = 10,
@@ -227,7 +222,7 @@ for (var i = 0; i < arrayOfStores.length; i++) {
     container.innerHTML += '<div><p class="bold">'+arrayOfStores[i].title+'</p><p class="bold">'+arrayOfStores[i].direction+'</p><p>'+arrayOfStores[i].phone+'</p></div>';
 };
 
-window.setTimeout(function() {
+function buildSlidesSize() {
     slides = document.querySelectorAll('#container div');
     slideOffsetWidth = slides[0].offsetWidth;
     //Set Container Width
@@ -236,7 +231,7 @@ window.setTimeout(function() {
     for (i = 0; i < slides.length; i++) { 
         slides[i].style.marginRight = marginRight+"px";
     }
-}, 1000);
+}
 
 
 //Listener for Arrows
