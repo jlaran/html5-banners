@@ -28,13 +28,34 @@ function frame2() {
 
 function frame3() {
   TweenMax.to("#expanded-banner #info #f2_txt1", 2, { css:{alpha:0} , delay:1})
-  TweenMax.to("#device1", .5, { css:{alpha:0} , delay:1})
-  TweenMax.to("#device2", .5, { css:{alpha:.2, left:130}, delay:1})
-  //TweenMax.to("#device3", .5, { css:{alpha:.2}, delay:1.5})
-  //TweenMax.to("#device4", .5, { css:{alpha:.2}, delay:1}) 
-  //TweenMax.to("#device5", .5, { css:{alpha:.2}, delay:1}) 
-  //TweenMax.to("#expanded-banner #info #f3_txt1", 2, { css:{alpha:1}, delay:2})
-  //TweenMax.to("#expanded-banner #info #f3_txt2", 2, { css:{alpha:1}, delay:2.5})
+  TweenMax.to("#device1", .3, { css:{alpha:0} , delay:1})
+  TweenMax.to("#device2", .8, { css:{alpha:1, left:160}, delay:1})
+  TweenMax.to("#device2", .8, { css:{alpha:0}, delay:1.3})
+  TweenMax.to("#device3", .8, { css:{alpha:1}, delay:1.3})
+  TweenMax.to("#device3", .8, { css:{alpha:0}, delay:1.6})
+  TweenMax.to("#device4", .8, { css:{alpha:1}, delay:1.6}) 
+  TweenMax.to("#device4", .8, { css:{alpha:0}, delay:1.9}) 
+  TweenMax.to("#device5", .8, { css:{alpha:1}, delay:1.9})
+  TweenMax.to("#device5", .8, { css:{alpha:0}, delay:2.3})
+  TweenMax.to("#device6", .8, { css:{alpha:1}, delay:2.3}) 
+  TweenMax.to("#device6", 2, { top:63, delay:2.3, ease:Strong.easeOut}) 
+  TweenMax.to("#expanded-banner #info #f3_txt1", 2, { css:{alpha:1}, delay:3.5})
+  TweenMax.to("#expanded-banner #info #f3_txt2", 2, { css:{alpha:1}, delay:4, onComplete:frame4})
+  TweenMax.to(".logo", .8, { css:{alpha:1}, delay:2})
+}
+
+function frame4(){
+  TweenMax.to("#expanded-banner #info #f3_txt1", .5, { css:{alpha:0}, delay:1})
+  TweenMax.to("#expanded-banner #info #f3_txt2", .5, { css:{alpha:0}, delay:1})
+  TweenMax.to("#device6", .8, { css:{alpha:0, left:184, top:30}, delay:1}) 
+  TweenMax.to("#device7", .8, { css:{alpha:1}, delay:1.4}) 
+  TweenMax.to("#FF", .8, { css:{alpha:1}, delay:2}) 
+  TweenMax.to("#FF #ff_txt1", .8, { css:{alpha:1}, delay:2.3}) 
+  TweenMax.to("#FF #ff_txt2", .8, { css:{alpha:1}, delay:2.6})
+  TweenMax.to("#FF #ff_txt3", .8, { css:{alpha:1}, delay:2.9})  
+  TweenMax.to("#FF #ff-cta", .8, { css:{alpha:1}, delay:3.1})
+  TweenMax.to("#FF #ff_txt4", .8, { css:{alpha:1}, delay:3.3})  
+  TweenMax.from("#FF #footer", 1, { top:460, delay:2, ease:Strong.easeOut})   
 }
 
 // Map Code

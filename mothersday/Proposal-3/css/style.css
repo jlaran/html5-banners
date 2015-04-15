@@ -10,7 +10,7 @@ body {
 #banner {
     width: 320px;
     height: 460px;
-    background: #dedede;
+    //background: #dedede;
 }
 
 #collapse-banner {
@@ -49,7 +49,7 @@ body {
     left: 0;
     width: 320px;
     height: 460px;
-    background: #d2d2d4;
+    background: #dcdcdc;
     display: none;
     opacity: 0;
     overflow: hidden;
@@ -69,7 +69,7 @@ body {
 #device2 {
     position: absolute;
     top: -93px;
-    left: 133px;
+    left: 88px;
     width: 143px;
     height: 441px;
     background: url(../img/2.jpg) no-repeat;
@@ -106,13 +106,34 @@ body {
     opacity: 0;
 }
 
+#device6 {
+    position: absolute;
+    top: -87px;
+  	left: 159px;
+    width: 214px;
+    height: 441px;
+    background: url(../img/6.jpg) no-repeat;
+    opacity: 0;
+}
+
+#device7 {
+    position: absolute;
+    top: 21px;
+  	left: 185px;
+    width: 214px;
+    height: 441px;
+    background: url(../img/7.jpg) no-repeat;
+    opacity: 0;
+}
+
 #info {
     display: block;
 }
 
-#expanded-banner #FF img.logo {
+.logo {
     margin-left: 11px;
     margin-top: 0;
+    opacity: 0;
 }
 
 sup {
@@ -167,9 +188,11 @@ sup {
 
 #FF {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 320px;
     height: 480px;
-    display: none;
+    opacity: 0;
 }
 
 #FF sup {
@@ -182,6 +205,7 @@ sup {
     font-weight: bold;
     font-style: italic;
     font-size: 16px;
+    opacity: 0;
 }
 
 #FF #ff_txt2 {
@@ -190,6 +214,7 @@ sup {
     font-weight: 100;
     font-size: 17px;
     letter-spacing: 0;
+    opacity: 0;
 }
 
 #FF #ff_txt3 {
@@ -199,6 +224,7 @@ sup {
     letter-spacing: 0;
     line-height: 14px;
     width: 147px;
+    opacity: 0;
 }
 
 #FF #ff_txt3 sup {
@@ -211,6 +237,7 @@ sup {
     font-size: 9px;
     line-height: 12px;
     width: 153px;
+    opacity: 0;
 }
 
 #FF #ff_txt5 {
@@ -240,6 +267,7 @@ sup {
     width: 105px;
     top: 222px;
     left: 12px;
+    opacity: 0;
 }
 
 #FF #footer {
