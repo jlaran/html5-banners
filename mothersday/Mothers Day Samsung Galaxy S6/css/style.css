@@ -16,7 +16,7 @@ body {
 #collapse-banner {
     width: 300px;
     height: 50px;
-    background: #fff;
+    background: #ffffff;
     overflow: hidden;
     cursor: pointer;
 }
@@ -26,7 +26,7 @@ body {
     font-size: 15px;
     top: 12px;
     left: 107px;
-    color: #333;
+    color: #333333;
     opacity: 0;
 }
 
@@ -35,7 +35,7 @@ body {
     font-size: 8px;
     top: 37px;
     left: 107px;
-    color: #333;
+    color: #333333;
     opacity: 0;
 }
 
@@ -45,7 +45,6 @@ body {
     width: 52px;
     height: 52px;
     background: url(../img/logo_verizon_collapse.jpg) no-repeat;
-    
 }
 
 #expanded-banner {
@@ -54,7 +53,7 @@ body {
     left: 0;
     width: 320px;
     height: 460px;
-    background: #fff;
+    background: #ffffff;
     display: none;
     opacity: 0;
     overflow: hidden;
@@ -62,8 +61,8 @@ body {
 
 #persp {
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 320px;
     height: 480px;
 }
@@ -71,12 +70,11 @@ body {
 #shadow {
     position: absolute;
     top: 135px;
-    left: 0px;
+    left: 0;
     width: 320px;
     height: 50px;
     background: url(../img/shadow.jpg) no-repeat;
-    opacity:1;
-    
+    opacity: 1;
 }
 
 #device1 {
@@ -85,17 +83,16 @@ body {
     left: 45px;
     width: 231px;
     height: 465px;
-    -moz-border-radius: 34px;
+       -moz-border-radius: 34px;
     -webkit-border-radius: 34px;
-    border-radius: 34px;
+            border-radius: 34px;
     background: url(../img/device_bck.jpg) no-repeat;
-
 }
 
 #persp2 {
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 320px;
     height: 480px;
 }
@@ -105,9 +102,9 @@ body {
     left: 30px;
     width: 231px;
     height: 465px;
-    -moz-border-radius: 34px;
+       -moz-border-radius: 34px;
     -webkit-border-radius: 34px;
-    border-radius: 34px;
+            border-radius: 34px;
     background: url(../img/device_ft.jpg) no-repeat;
     opacity: 0;
 }
@@ -122,7 +119,7 @@ body {
     width: 67px;
     height: 67px;
     background: url(../img/logo_verizon.jpg) no-repeat;
-    opacity:  0;
+    opacity: 0;
     z-index: 100000000000;
 }
 
@@ -244,6 +241,7 @@ sup {
     font-size: 9px;
     line-height: 12px;
     width: 166px;
+    opacity: 0;
 }
 
 .Redbutton {
@@ -256,6 +254,7 @@ sup {
     font-size: 15px;
     padding: 8px;
     text-align: center;
+    opacity: 0;
 }
 
 .Redbutton:hover {
@@ -358,9 +357,9 @@ sup {
     top: 30px;
     cursor: pointer;
     display: block;
-    -ms-transform: rotate(180deg); /* IE 9 */
+        -ms-transform: rotate(180deg); /* IE 9 */
     -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
-    transform: rotate(180deg);
+            transform: rotate(180deg);
 }
 
 #slider {
@@ -387,7 +386,7 @@ sup {
 }
 
 #slider p.bold {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 #autocomplete {
@@ -431,11 +430,11 @@ sup {
 }
 
 #getLocation:hover {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 #route:hover {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 #controls {
