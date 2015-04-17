@@ -2,8 +2,8 @@ doubleClickEvents.initializer();
 
 var elementsToRegister = [
     {eventType: "click", element: "#collapse-banner", functionToCall: "expanded"},
-    {eventType: "click", element: "#getLocation", functionToCall: "updatePosition"},
-    {eventType: "click", element: "#FF #footer-cta", functionToCall: "loadMap"},
+    {eventType: "click", element: "#getLocation", functionToCall: "loadMapDC"},
+    {eventType: "click", element: "#FF #footer-cta", functionToCall: "loadMapDC"},
     {eventType: "click", element: "#ff-cta", functionToCall: "shopGift"},
     {eventType: "click", element: "#route", functionToCall: "getRoute"},
     {eventType: "click", element: "#get-direction-button", functionToCall: "getDirection"}
@@ -108,14 +108,31 @@ var placeSearch,
       country: 'long_name',
       postal_code: 'short_name'
     },
+    products,
+    layoutContent,
+    slideContainer,
+    slidesNumber,
+    circles,
+    zipCode,
+    address,
+    layer,
+    geocoder,
+    tableId = '16vNUgk-hiwwIzq1wuSCyYFqnKHdIqfRh3umdbdnR',
     conexion = new XMLHttpRequest(),
+    locationColumn = 'Address',
     zipCode,
     stateName,
     cityName,
+    mapAdded = false, 
+    mapLoaded = false,
+    isMapCreated = false,
     arrayOfStores = [];
 
 
 function updatePosition(){
+
+
+  
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(callMap);
     } else { 
@@ -151,6 +168,130 @@ var arrayOfStores = [
     }
 ];
 
+//////////////// DC functions
+
+function loadMapDC () {
+    if(!mapAdded) {
+        //Enabler.loadScript('http://maps.google.com/maps/api/js?v=3.exp&sensor=false&callback=setMap');
+        mapLoaded = true;
+        mapAdded = true;
+        setMap()
+    } else {
+        if(!mapLoaded) {
+            setMap();
+        }else {
+            zoomToAddress();
+        }
+    }
+    document.getElementById("map").style.display = 'block';
+}
+
+var LatLngList = [];
+var convertInd = 0;
+var bounds;
+
+function setMap() {
+    console.log('entro')
+    var defaultCenter = new google.maps.LatLng(40.7127837, -74.00594130000002);
+    var defaultZoom = 8;
+
+    map = new google.maps.Map(document.getElementById('map-canvas'), {
+        center: defaultCenter,
+            zoomControl: true,
+            zoomControlOptions: {
+              style: google.maps.ZoomControlStyle.SMALL,
+              position: google.maps.ControlPosition.RIGHT_CENTER
+            },
+            mapTypeControl: false,
+            streetViewControl: false,
+            zoom: 8
+    });
+
+    address = autocomplete;
+
+    google.maps.event.addListener(map, 'tilesloaded', function(evt) {
+        if(!isMapCreated) {
+            geocoder = new google.maps.Geocoder();
+
+            layer = new google.maps.FusionTablesLayer({
+                query: {
+                    select: locationColumn,
+                    from: tableId
+                },
+                map: map
+            });
+            zoomToAddress();
+        }
+        isMapCreated = true;
+         console.log(layer)
+    });
+}
+
+var zoomToAddress = function() {
+    geocoder.geocode({
+        address: address
+    }, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            // OPTIONAL: run spatial query to find results within bounds.
+            var resultLoc = results[0].geometry.location;
+            var nearLat = resultLoc[Object.keys(resultLoc)[0]];
+            var nearLng = resultLoc[Object.keys(resultLoc)[1]];
+            var where = 'ST_DISTANCE(' + locationColumn + ', LATLNG(' + nearLat + ', ' + nearLng +'))';
+
+            var xmlhttp = new XMLHttpRequest();
+            var url = 'https://www.googleapis.com/fusiontables/v1/query?sql=SELECT%20Address%20' +
+                'FROM%2016vNUgk-hiwwIzq1wuSCyYFqnKHdIqfRh3umdbdnR%20ORDER%20BY%20' + where + '%20LIMIT%204' +
+                '&key=AIzaSyCsUfW1UjOAmWTIQA2OkX1WQollfHDii-A';
+            xmlhttp.onreadystatechange = function() {
+                
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var myArr = JSON.parse(xmlhttp.responseText);
+                    searchCallback(myArr);
+
+                }
+            };
+            xmlhttp.open('GET', url, true);
+            xmlhttp.send();
+        }
+    });
+};
+
+function searchCallback(arr) {
+    for(var i = 0; i < arr.rows.length; i++) {
+        convertAddress(arr.rows[i][0]);
+    }
+}
+
+function convertAddress(address) {
+    geocoder.geocode({
+        address: address
+    }, function(results, status) {
+        if(status == google.maps.GeocoderStatus.OK) {
+            var resultLoc = results[0].geometry.location;
+            var nearLat = resultLoc[Object.keys(resultLoc)[0]];
+            var nearLng = resultLoc[Object.keys(resultLoc)[1]];
+
+            LatLngList.push(new google.maps.LatLng(nearLat, nearLng));
+
+            if (convertInd === 3) {
+                bounds = new google.maps.LatLngBounds();
+                for (var i = 0, LtLgLen = LatLngList.length; i < LtLgLen; i++) {
+                    bounds.extend(LatLngList[i]);
+                }
+                map.setCenter(bounds.getCenter());
+                map.fitBounds(bounds);
+
+                LatLngList = [];
+                convertInd = 0;
+                bounds = null;
+            } else {
+                convertInd++;
+            }
+        }
+    })
+}
+
+//////////////// DC functions
 
 function callMap(position){
 
@@ -210,7 +351,6 @@ function initialize() {
 
 function fillInAddress() {
   var place = autocomplete.getPlace();
-
   for (var i = 0; i < place.address_components.length; i++) {
     var addressType = place.address_components[i].types[0];
     if (componentForm[addressType]) {
