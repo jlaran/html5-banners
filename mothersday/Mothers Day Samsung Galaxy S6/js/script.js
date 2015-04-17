@@ -17,13 +17,12 @@ function firstFrame(){
 }
 
 function expanded() {
+    Enabler.requestExpand();
     motionLibrary.animations("fadeIn", "#expanded-banner", 0)
     motionLibrary.animations("fadeIn", "#expanded-banner #info", 0)
     TweenMax.from("#device1", 3, {top:"-500px", ease:Strong.easeOut})
     TweenMax.from("#shadow", 3, {top:"-50px", ease:Strong.easeOut})
     TweenMax.to("#expanded-banner #info #f1_txt1", 2, { opacity:1, onComplete:frame2})
-    Enabler.requestExpand();
-    
 }
 
 function frame2() {
@@ -75,6 +74,7 @@ function frame4(){
 
 function GeneralClose() {
     Enabler.requestCollapse();
+    Enabler.reportManualClose();
     console.log("Close Ad");
 }
 
@@ -84,9 +84,9 @@ function shopGift(){
 }
 
 function loadMap(){
+    Enabler.counter('Map Load');
     motionLibrary.animations("fadeIn", "#map", 0.5);
     updatePosition();
-    Enabler.counter('Map Load', true);
 }
 
 
