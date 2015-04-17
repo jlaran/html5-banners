@@ -65,12 +65,13 @@ function frame4(){
 TweenMax.to("#logo", 0, { opacity:1, delay:1.2});
 TweenMax.to("#FF", .8, { opacity:1, delay:1.2});
 TweenMax.to("#device6", .8, { left: 185, opacity:1, delay:0.2});
-TweenMax.from("#ff_txt1", .5, { left: 0, opacity:1, delay:0.4});
-TweenMax.from("#ff_txt2", .5, { left: 0, opacity:1, delay:0.6});
-TweenMax.to("#ff-cta", 1, { opacity:1, delay:.8 });   
-TweenMax.from("#ff_txt3", .5, { left: 0, opacity:1, delay:0.8});
-//TweenMax.to("#FF #ff_txt4", .5, { left: 12, opacity:1, delay:0.8})
-TweenMax.from("#footer-cta", 1, { opacity:1, delay:2 });   
+TweenMax.to("#ff_txt1", .5, { left: 12, opacity:1, delay:0.5});
+TweenMax.to("#ff_txt2", .5, { left: 12, opacity:1, delay:0.8}); 
+TweenMax.to("#ff_txt3", .5, { left: 12, opacity:1, delay:1});
+TweenMax.to("#ff_txt4", .5, { left: 12, opacity:1, delay:1.2})
+TweenMax.to("#ff-cta", 1, { opacity:1, delay:1.8 });  
+TweenMax.to("#ff_txt5", 1, { opacity:1, delay:1.8})
+TweenMax.from("#footer-cta", 1, { opacity:1, delay:1.8 });   
 
 }
 

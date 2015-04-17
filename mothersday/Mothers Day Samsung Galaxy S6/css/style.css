@@ -228,7 +228,7 @@ sup {
 
 #ff_txt1 {
     top: 128px;
-    left: -100px;
+    left: -200px;
     font-weight: bold;
     font-style: italic;
     font-size: 16px;
@@ -237,7 +237,7 @@ sup {
 
 #ff_txt2 {
     top: 147px;
-    left: -100px;
+    left: -200px;
     font-weight: bold;
     font-style: italic;
     font-size: 16px;
@@ -246,7 +246,7 @@ sup {
 
 #ff_txt3 {
     top: 173px;
-    left: 12px;
+    left: -200px;
     font-size: 17px;
     letter-spacing: 0;
     line-height: 14px;
@@ -260,7 +260,7 @@ sup {
 
 #ff_txt4 {
     top: 193px;
-    left: 12px;
+    left: -200;
     font-size: 12px;
     line-height: 12px;
     width: 153px;
@@ -268,7 +268,7 @@ sup {
 }
 
 #ff_txt5 {
-    top: 236px;
+    top: 276px;
     left: 12px;
     font-size: 9px;
     line-height: 12px;
@@ -292,8 +292,8 @@ sup {
 }
 
 #FF #ff-cta {
-    width: 105px;
-    top: 195px;
+    width: 129px;
+    top: 238px;
     left: 12px;
     opacity: 0;
 }
