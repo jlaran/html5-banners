@@ -3,10 +3,10 @@ doubleClickEvents.initializer();
 var elementsToRegister = [
     {eventType: "click", element: "#collapse-banner", functionToCall: "expanded"},
     {eventType: "click", element: "#getLocation", functionToCall: "updatePosition"},
-    {eventType: "click", element: "#FF #footer-cta", functionToCall: "loadMap"},
+    //{eventType: "click", element: "#FF #footer-cta", functionToCall: "loadMap"},
     {eventType: "click", element: "#ff-cta", functionToCall: "shopGift"},
-    {eventType: "click", element: "#route", functionToCall: "getRoute"},
-    {eventType: "click", element: "#get-direction-button", functionToCall: "getDirection"}
+    {eventType: "click", element: "#get-direction-button", functionToCall: "getDirectionsExit"},
+    {eventType: "keypress", element: "#autocomplete", functionToCall: "searchMap"}
 ];
 
 function firstFrame(){
@@ -75,206 +75,184 @@ function shopGift(){
   window.open('http://www.verizonwireless.com/smartphones/samsung/','_blank');
 }
 
-function loadMap(){
-  motionLibrary.animations("fadeIn", "#map", 0.5);
-  updatePosition();
-  buildSlidesSize();
-}
+// function loadMap(){
+//   motionLibrary.animations("fadeIn", "#map", 0.5);
+//   updatePosition();
+//   buildSlidesSize();
+// }
 
-function getDirection(){
-  window.open('http://www.verizonwireless.com/vzw/storelocator/store-list-result.jsp?allow=1&result=verizon&q=10003','_blank');
-}
 
 // Map Code
 
-var placeSearch, 
-    autocomplete, 
-    autocompleteInput = document.getElementById('autocomplete'),
-    loaderSpin = document.getElementById('loaderSpin'),
-    ctaDirections = document.getElementById('ctaDirection'),
-    componentForm = {
-      street_number: 'short_name',
-      route: 'long_name',
-      locality: 'long_name',
-      administrative_area_level_1: 'short_name',
-      country: 'long_name',
-      postal_code: 'short_name'
-    },
-    conexion = new XMLHttpRequest(),
+var mapAdded = false,
+    mapLoaded = false,
+    isMapCreated = false,
+    locationColumn = 'Address',
+    tableId = '16vNUgk-hiwwIzq1wuSCyYFqnKHdIqfRh3umdbdnR',
+    circles,
     zipCode,
-    stateName,
-    cityName,
-    arrayOfStores = [];
+    address,
+    layer,
+    geocoder,
+    mapContainer = document.getElementById('map'),
+    LatLngList = [],
+    convertInd = 0,
+    bounds,
+    searchInput = document.getElementById('autocomplete');
 
+
+function getDirectionsExit() {
+    //Enabler.requestCollapse();
+    //Enabler.exit('Get Directions Exit', 'http://www.verizonwireless.com/vzw/storelocator/store-list-result.jsp?allow=1&result=verizon&q=' + searchInput.value);
+    window.open('http://www.verizonwireless.com/vzw/storelocator/store-list-result.jsp?allow=1&result=verizon&q=' + searchInput.value);
+}
 
 function updatePosition(){
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(callMap);
+        navigator.geolocation.getCurrentPosition(printlocation);
     } else { 
         alert("Geolocation is not supported by this browser");
     }
 }
 
-function getRoute(){
-    window.open('waze://?ll=9.927731,-84.08900&navigate=yes');
+
+function printlocation(position) {
+  var center = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+  map.panTo(center);
 }
 
-var arrayOfStores = [
-    {
-        "title": "1. Verizon Wireless Store",
-        "direction": "770 Broadway, New York, NY 10003",
-        "phone": "1 (800) 444-5555",
-        "lat": 9.927731, 
-        "lng": -84.08900
-    },
-    {
-        "title": "2. Verizon Wireless Store",
-        "direction": "770 Broadway, New York, NY 10003",
-        "phone": "1 (800) 444-5555",
-        "lat": 9.947731, 
-        "lng": -84.08900
-    },
-    {
-        "title": "3. Verizon Wireless Store",
-        "direction": "770 Broadway, New York, NY 10003",
-        "phone": "1 (800) 444-5555",
-        "lat": 9.927731, 
-        "lng": -84.05900
+function loadMap(){
+  motionLibrary.animations("fadeIn", "#map", 0.5);
+  //updatePosition();
+  if(!mapLoaded) {
+      setMap();
+  }else {
+      zoomToAddress();
+  }
+}
+
+
+function convertAddress(address) {
+    geocoder.geocode({
+        address: address
+    }, function(results, status) {
+        if(status == google.maps.GeocoderStatus.OK) {
+            var resultLoc = results[0].geometry.location;
+            var nearLat = resultLoc[Object.keys(resultLoc)[0]];
+            var nearLng = resultLoc[Object.keys(resultLoc)[1]];
+
+            LatLngList.push(new google.maps.LatLng(nearLat, nearLng));
+
+            if (convertInd === 3) {
+                bounds = new google.maps.LatLngBounds();
+                for (var i = 0, LtLgLen = LatLngList.length; i < LtLgLen; i++) {
+                    bounds.extend(LatLngList[i]);
+                }
+                map.setCenter(bounds.getCenter());
+                map.fitBounds(bounds);
+
+                LatLngList = [];
+                convertInd = 0;
+                bounds = null;
+            } else {
+                convertInd++;
+            }
+        }
+    })
+}
+
+function searchCallback(arr) {
+    for(var i = 0; i < arr.rows.length; i++) {
+        convertAddress(arr.rows[i][0]);
     }
-];
+}
 
+var zoomToAddress = function() {
+    geocoder.geocode({
+        address: address
+    }, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            // OPTIONAL: run spatial query to find results within bounds.
+            var resultLoc = results[0].geometry.location;
+            var nearLat = resultLoc[Object.keys(resultLoc)[0]];
+            var nearLng = resultLoc[Object.keys(resultLoc)[1]];
+            var where = 'ST_DISTANCE(' + locationColumn + ', LATLNG(' + nearLat + ', ' + nearLng +'))';
 
-function callMap(position){
+            var xmlhttp = new XMLHttpRequest();
+            var url = 'https://www.googleapis.com/fusiontables/v1/query?sql=SELECT%20Address%20' +
+                'FROM%2016vNUgk-hiwwIzq1wuSCyYFqnKHdIqfRh3umdbdnR%20ORDER%20BY%20' + where + '%20LIMIT%204' +
+                '&key=AIzaSyCsUfW1UjOAmWTIQA2OkX1WQollfHDii-A';
 
-    var bounds = new google.maps.LatLngBounds(),
-        infowindow = new google.maps.InfoWindow(),
-        centerLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
-        map = new google.maps.Map(document.getElementById('map-canvas'), {
-            center: centerLocation,
-            zoomControl: true,
-            zoomControlOptions: {
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var myArr = JSON.parse(xmlhttp.responseText);
+                    searchCallback(myArr);
+                }
+            };
+            xmlhttp.open('GET', url, true);
+            xmlhttp.send();
+        }
+    });
+};
+
+function setMap() {
+    var defaultCenter = new google.maps.LatLng(40.7127837, -74.00594130000002);
+    var defaultZoom = 8;
+
+    map = new google.maps.Map(document.getElementById('map-canvas'), {
+        center: defaultCenter,
+        zoom: defaultZoom,
+        zoomControlOptions: {
               style: google.maps.ZoomControlStyle.SMALL,
               position: google.maps.ControlPosition.RIGHT_CENTER
-            },
-            mapTypeControl: false,
-            streetViewControl: false,
-            zoom: 8
-        });
+        },
+        mapTypeControl: false,
+        streetViewControl: false,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
 
-    for (var i = 0; i < arrayOfStores.length; i++) {
-      var localLocation = new google.maps.LatLng(arrayOfStores[i].lat, arrayOfStores[i].lng),
-      marker = new google.maps.Marker({
-        position: localLocation,
-        map: map,
-        title: arrayOfStores[i].title
-      });
+    address = searchInput.value;
 
-      bounds.extend(marker.position);
+    google.maps.event.addListener(map, 'tilesloaded', function(evt) {
+        if(!isMapCreated) {
+            geocoder = new google.maps.Geocoder();
 
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-          infowindow.setContent(arrayOfStores[i].title);//locations[i][0]
-          infowindow.open(map, marker);
+            layer = new google.maps.FusionTablesLayer({
+                query: {
+                    select: locationColumn,
+                    from: tableId
+                },
+                map: map
+            });
+
+            zoomToAddress();
         }
-      })(marker, i));
-    }
-
-    map.fitBounds(bounds);
-}
-
-
-//AUTOCOMPLETE CODE
-
-initialize();
-
-function initialize() {
-    var options = { 
-      types: ['geocode'],
-      componentRestrictions: {country: "us"}
-    }
-
-    autocomplete = new google.maps.places.Autocomplete(autocompleteInput, options);
-
-    google.maps.event.addListener(autocomplete, 'place_changed', function() {
-        fillInAddress();
+        
+        mapAdded = true;
+        mapLoaded = true;
+        isMapCreated = true;
     });
 }
 
-function fillInAddress() {
-  var place = autocomplete.getPlace();
+function searchMap (e) {
+    address = searchInput.value;
+    if (!e) e = window.event;
 
-  for (var i = 0; i < place.address_components.length; i++) {
-    var addressType = place.address_components[i].types[0];
-    if (componentForm[addressType]) {
-      var val = place.address_components[i][componentForm[addressType]];
-      if(addressType == 'locality'){
-        cityName = val;
-      }else if(addressType == 'administrative_area_level_1'){
-        stateName = val;
-      }else if(addressType == 'postal_code'){
-        zipCode = val;
-      }
+    if(e.target.hasClass('search-icon')) {
+        loadMap();
+        return false;
+    } else {
+        var keyCode = e.keyCode || e.which;
+        if (keyCode == '13' && searchInput.value != '') {
+            loadMap();
+            return false;
+        } else if (keyCode == '13' && searchInput.value == ''){
+          alert("Please enter a valid direction");
+        }
     }
-  }
-
-  if ((cityName && stateName) || zipCode) {
-    console.log(cityName +" "+ stateName);
-  }else{
-    alert('Please enter a valid State and City from the US');
-  }
 }
 
-// Slider Code
-//Common Vars
-var sliderParentDiv = document.getElementById('slider'),
-	sliderBullets = document.getElementById('bullets'),
-	container = document.getElementById('container'),
-	rightArrow = document.getElementById('right-arrow'),
-	leftArrow = document.getElementById('left-arrow'),
-  slides,
-	slideOffsetWidth,
-	currentSlide = 1,
-	marginRight = 10,
-    active = false;
-
-//Set Content
-for (var i = 0; i < arrayOfStores.length; i++) {
-    container.innerHTML += '<div><p class="bold">'+arrayOfStores[i].title+'</p><p class="bold">'+arrayOfStores[i].direction+'</p><p>'+arrayOfStores[i].phone+'</p></div>';
+// Return a boolean for one class
+Element.prototype.hasClass = function (className) {
+    return this.className && new RegExp("(^|\\s)" + className + "(\\s|$)").test(this.className);
 };
-
-function buildSlidesSize() {
-    slides = document.querySelectorAll('#container div');
-    slideOffsetWidth = slides[0].offsetWidth;
-    //Set Container Width
-    container.style.width = (slideOffsetWidth * slides.length) + (slides.length * marginRight+2)+'px';
-
-    for (i = 0; i < slides.length; i++) { 
-        slides[i].style.marginRight = marginRight+"px";
-    }
-}
-
-
-//Listener for Arrows
-rightArrow.addEventListener("click", nextSlide, false);
-leftArrow.addEventListener("click", previewSlide, false);
-
-//Functions to do
-function nextSlide(){
-	if (currentSlide != slides.length && active == false){
-    active = true;
-		TweenLite.to(container, 0.5, {left: "-="+ (slideOffsetWidth + marginRight) +"px", onComplete:function(){
-      active = false;
-    }});
-		currentSlide++;	
-	}
-}
-
-function previewSlide(){
-	if (currentSlide != 1 && active == false){
-    active = true;
-		TweenLite.to(container, 0.5, {left: "+="+ (slideOffsetWidth + marginRight) +"px", onComplete:function(){
-      active = false;
-    }});
-		currentSlide--;
-	}
-}	

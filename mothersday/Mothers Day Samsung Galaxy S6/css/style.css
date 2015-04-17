@@ -321,11 +321,12 @@ sup {
 
 #get-direction-button {
     position: absolute;
-    bottom: 10px;
+    bottom: 30px;
     right: 20px;
     font-size: 12px;
     padding: 12px 20px;
     height: auto;
+    z-index: 1;
 }
 
 #get-direction-button:hover {
@@ -481,4 +482,8 @@ sup {
     right: 35px;
     top: 9px;
     z-index: 1;
+}
+
+.googft-info-window b {
+    font-weight: bold;
 }
