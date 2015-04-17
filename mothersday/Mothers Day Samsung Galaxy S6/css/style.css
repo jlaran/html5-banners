@@ -59,6 +59,19 @@ body {
     overflow: hidden;
 }
 
+#generalClose {
+    width: 20px;
+    height: 20px;
+    background: url(../img/close.png);
+    background-size: contain;
+    position: absolute;
+    z-index: 1000;
+    top: 5px;
+    right: 5px;
+    display: block;
+    cursor: pointer;
+}
+
 #persp {
     position: absolute;
     top: 0;

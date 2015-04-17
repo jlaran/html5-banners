@@ -1,4 +1,5 @@
-doubleClickEvents.initializer();
+var dimentions = [0,0,300,460];
+doubleClickEvents.initializer("expandible", dimentions);
 
 var elementsToRegister = [
     {eventType: "click", element: "#collapse-banner", functionToCall: "expanded"},
@@ -6,7 +7,8 @@ var elementsToRegister = [
     {eventType: "click", element: "#FF #footer-cta", functionToCall: "loadMap"},
     {eventType: "click", element: "#ff-cta", functionToCall: "shopGift"},
     {eventType: "click", element: "#get-direction-button", functionToCall: "getDirectionsExit"},
-    {eventType: "keypress", element: "#autocomplete", functionToCall: "searchMap"}
+    {eventType: "keypress", element: "#autocomplete", functionToCall: "searchMap"},
+    {eventType: "click", element: "#generalClose", functionToCall: "GeneralClose"}
 ];
 
 function firstFrame(){
@@ -20,6 +22,8 @@ function expanded() {
     TweenMax.from("#device1", 3, {top:"-500px", ease:Strong.easeOut})
     TweenMax.from("#shadow", 3, {top:"-50px", ease:Strong.easeOut})
     TweenMax.to("#expanded-banner #info #f1_txt1", 2, { opacity:1, onComplete:frame2})
+    Enabler.requestExpand();
+    
 }
 
 function frame2() {
@@ -68,13 +72,21 @@ function frame4(){
     TweenMax.to("#footer-cta", 1, { opacity:1, delay:1.8});
 }
 
+
+function GeneralClose() {
+    Enabler.requestCollapse();
+    console.log("Close Ad");
+}
+
 function shopGift(){
-    window.open('http://www.verizonwireless.com/smartphones/samsung/','_blank');
+    Enabler.requestCollapse();
+    Enabler.exit('ClickTag Shop Gift');
 }
 
 function loadMap(){
     motionLibrary.animations("fadeIn", "#map", 0.5);
     updatePosition();
+    Enabler.counter('Map Load', true);
 }
 
 
@@ -98,9 +110,8 @@ var mapAdded = false,
 
 
 function getDirectionsExit() {
-    //Enabler.requestCollapse();
-    //Enabler.exit('Get Directions Exit', 'http://www.verizonwireless.com/vzw/storelocator/store-list-result.jsp?allow=1&result=verizon&q=' + searchInput.value);
-    window.open('http://www.verizonwireless.com/vzw/storelocator/store-list-result.jsp?allow=1&result=verizon&q=' + searchInput.value);
+    Enabler.requestCollapse();
+    Enabler.exit('Get Directions Exit', 'http://www.verizonwireless.com/vzw/storelocator/store-list-result.jsp?allow=1&result=verizon&q=' + searchInput.value);
 }
 
 function updatePosition(){
