@@ -65,7 +65,7 @@ function frame4(){
     TweenMax.to("#ff_txt4", .5, { left: 12, opacity:1, delay:1.2})
     TweenMax.to("#ff-cta", 1, { opacity:1, delay:1.8 });  
     TweenMax.to("#ff_txt5", 1, { opacity:1, delay:1.8});
-    TweenMax.from("#footer-cta", 1, { opacity:1, delay:1.8});
+    TweenMax.to("#footer-cta", 1, { opacity:1, delay:1.8});
 }
 
 function shopGift(){
