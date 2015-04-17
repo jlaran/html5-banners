@@ -301,6 +301,7 @@ sup {
     padding: 12px 20px;
     height: auto;
     z-index: 1;
+    opacity: 1;
 }
 
 #get-direction-button:hover {
