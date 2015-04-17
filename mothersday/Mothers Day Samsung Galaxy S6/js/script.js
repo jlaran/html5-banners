@@ -63,12 +63,12 @@ function frame3() {
 
 function frame4(){
 TweenMax.to("#logo", 0, { opacity:1, delay:1.2})
-  TweenMax.to("#device6", .8, { left: 185, opacity:1, delay:0.2})
-  TweenMax.to("#FF #ff_txt1", .5, { left: 12, opacity:1, delay:0.4})
-  TweenMax.to("#expanded-banner #FF #ff_txt2", .7, { left: 12, opacity:1, delay:0.5})
-  
-  
-  TweenMax.from("#FF #footer", 1, { top:460, delay:2, ease:Strong.easeOut})   
+TweenMax.to("#FF", .8, { opacity:1, delay:1.2})
+TweenMax.to("#device6", .8, { left: 185, opacity:1, delay:0.2})
+TweenMax.to("#FF #ff_txt1", .5, { left: 12, opacity:1, delay:0.4})
+TweenMax.to("#expanded-banner #FF #ff_txt2", .7, { left: 12, opacity:1, delay:0.5})
+TweenMax.from("#FF #footer", 1, { top:460, delay:2, ease:Strong.easeOut})   
+
 }
 
 function shopGift(){
