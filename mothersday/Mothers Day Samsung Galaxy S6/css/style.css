@@ -1,5 +1,5 @@
 p, h1, h2, h3, h4, a {
-    font-family: 'Verizon Apex Book', Helvetica, Arial, sans-serif;
+    font-family: 'Verizon Apex Medium', Helvetica, Arial, sans-serif;
     color: #333333;
 }
 
@@ -32,6 +32,7 @@ body {
 }
 
 #collapse-banner h2 {
+    font-family: Helvetica, Arial, sans-serif;
     position: absolute;
     font-size: 8px;
     top: 37px;
@@ -148,46 +149,49 @@ sup {
 }
 
 #f1_txt1 {
-    top: 295px;
-    left: 82px;
+    width: 159px;
+    top: 294px;
+    left: 80px;
     font-size: 20px;
     opacity: 0;
 }
 
 
 #f2_txt1 {
-    top: 385px;
-    left: 100px;
-    font-size: 19px;
+    top: 381px;
+    width: 129px;
+    left: 93px;
+    font-size: 20px;
     opacity: 0;
 }
 
 #f2_txt2 {
-    top: 407px;
+    top: 400px;
     left: 78px;
     font-size: 20px;
     opacity: 0;
 }
 
 #f3_txt1 {
-    top: 157px;
+    top: 153px;
     left: -100px;
-    font-size: 19px;
+    font-size: 20px;
     opacity: 0;
 }
 
 
 #f3_txt2 {
-    top: 179px;
+    top: 174px;
     left: -100px;
-    font-size: 19px;
+    font-size: 20px;
     opacity: 0;
 }
 
 #f3_txt3 {
-    top: 202px;
+    top: 194px;
     left: -100px;
-    font-size: 19px;
+    font-size: 20px;
+    letter-spacing: -1px;
     opacity: 0;
 }
 
@@ -209,27 +213,28 @@ sup {
 }
 
 #ff_txt1 {
-    top: 128px;
+    top: 103px;
+    width: 100px;
     left: -200px;
     font-weight: bold;
     font-style: italic;
-    font-size: 16px;
+    font-size: 17px;
     opacity: 0;
 }
 
 #ff_txt2 {
-    top: 147px;
+    top: 124px;
     left: -200px;
     font-weight: bold;
     font-style: italic;
-    font-size: 16px;
+    font-size: 17px;
     opacity: 0;
 }
 
 #ff_txt3 {
-    top: 173px;
+    top: 149px;
     left: -200px;
-    font-size: 17px;
+    font-size: 18px;
     letter-spacing: 0;
     line-height: 14px;
     width: 165px;
@@ -241,20 +246,19 @@ sup {
 }
 
 #ff_txt4 {
-    top: 193px;
+    top: 170px;
     left: -200;
-    font-size: 12px;
-    line-height: 12px;
-    width: 153px;
+    font-size: 13px;
+    line-height: 14px;
+    width: 156px;
     opacity: 0;
 }
 
 #ff_txt5 {
-    top: 276px;
+    top: 262px;
     left: 12px;
     font-size: 9px;
-    line-height: 12px;
-    width: 166px;
+    line-height: 11px;
     opacity: 0;
 }
 
@@ -276,9 +280,11 @@ sup {
 }
 
 #FF #ff-cta {
-    width: 129px;
-    top: 238px;
+    width: 120px;
+    top: 225px;
     left: 12px;
+    height: 13px;
+    font-size: 13px;
     opacity: 0;
 }
 
@@ -296,7 +302,7 @@ sup {
 
 #FF #footer-cta {
     width: 92px;
-    top: 397px;
+    top: 404px;
     left: 12px;
 }
 
