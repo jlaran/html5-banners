@@ -46,7 +46,7 @@ body {
     margin-top: -5px;
     width: 52px;
     height: 52px;
-    background: url(../img/logo_verizon_collapse.jpg) no-repeat;
+    background: url(../img/logo-verizon.svg) no-repeat;
 }
 
 #expanded-banner {
@@ -133,7 +133,7 @@ body {
     margin-top: 0;
     width: 67px;
     height: 67px;
-    background: url(../img/logo_verizon.jpg) no-repeat;
+    background: url(../img/logo-verizon.svg) no-repeat;
     opacity: 0;
     z-index: 100000000000;
 }
@@ -224,6 +224,7 @@ sup {
 
 #ff_txt2 {
     top: 124px;
+    width: 161px;
     left: -200px;
     font-weight: bold;
     font-style: italic;
@@ -257,8 +258,9 @@ sup {
 #ff_txt5 {
     top: 262px;
     left: 12px;
+    width: 168px;
     font-size: 9px;
-    line-height: 11px;
+    line-height: 14px;
     opacity: 0;
 }
 
