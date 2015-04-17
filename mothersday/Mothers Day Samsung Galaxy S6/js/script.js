@@ -43,32 +43,30 @@ function frame3() {
     TweenLite.set("#persp2", {perspective:1000})
     TweenMax.to("#device2", 1, {left:155, rotationY:180, ease:Power2.easeInOut, transformOrigin:"center bottom", delay:1.5})
     TweenMax.to("#device2", 0.1, {opacity:1, delay:2}) 
-    TweenMax.to("#device2", 1.5, {top:60, ease:Circ.easeOut, delay:3})
-    TweenMax.to("#shadow", 1.5, {opacity:0, top:500, ease:Circ.easeOut, delay:3})
-    TweenMax.to("#logo", 1, { opacity:1, delay:5})
-    TweenMax.to("#expanded-banner #info #f3_txt1", .5, { left: 12, opacity:1, delay:5})
-    TweenMax.to("#expanded-banner #info #f3_txt2", .7, { left: 12, opacity:1, delay:5.1})
-    TweenMax.to("#expanded-banner #info #f3_txt3", .7, { left: 12, opacity:1, delay:5.2})
-    TweenMax.to("#device2", 0.6, {left:320, ease:Sine.easeOut, delay:6.5})
-    TweenMax.to("#shadow", 0.6, {left:320, ease:Sine.easeOut, delay:6.5})
-    TweenMax.to("#expanded-banner #info #f3_txt1", .5, { left: -25, opacity:0, delay:6.5})
-    TweenMax.to("#expanded-banner #info #f3_txt2", .4, { left: -25, opacity:0, delay:6.6})
-    TweenMax.to("#expanded-banner #info #f3_txt3", .3, { left: -25, opacity:0, delay:6.7})
+    TweenMax.to("#device2", 1.5, {top:60, ease:Expo.easeOut, delay:2.5})
+    TweenMax.to("#shadow", 1.5, {opacity:0, top:500, ease:Expo.easeOut, delay:2.5})
+    TweenMax.to("#logo", 1, { opacity:1, delay:3})
+    TweenMax.to("#expanded-banner #info #f3_txt1", .5, { left: 12, opacity:1, delay:3.2})
+    TweenMax.to("#expanded-banner #info #f3_txt2", .7, { left: 12, opacity:1, delay:3.4})
+    TweenMax.to("#expanded-banner #info #f3_txt3", .7, { left: 12, opacity:1, delay:3.6})
+    TweenMax.to("#device2", 0.6, {left:320, ease:Sine.easeOut, delay:5.7})
+    TweenMax.to("#shadow", 0.6, {left:320, ease:Sine.easeOut, delay:5.7})
+    TweenMax.to("#expanded-banner #info #f3_txt1", .5, { left: -25, opacity:0, delay:5.5})
+    TweenMax.to("#expanded-banner #info #f3_txt2", .4, { left: -25, opacity:0, delay:5.7})
+    TweenMax.to("#expanded-banner #info #f3_txt3", .3, { left: -25, opacity:0, delay:5.9, onComplete:frame4})
     TweenLite.set("#persp2", {perspective:500})
-    TweenMax.to("#device2", 1, {top:40, left:-25, scaleX:0.65, scaleY:0.92, rotationY:135, ease:Power4.easeOut, transformOrigin:"right bottom", delay:7, onComplete:frame4})
+    TweenMax.to("#device2", 1, {top:40, left:-25, scaleX:0.65, scaleY:0.92, rotationY:135, ease:Power4.easeOut, transformOrigin:"right bottom", delay:6.1})
 }
 
 function frame4(){
-    TweenMax.to("#logo", 0, { opacity:1, delay:1.2});
-    TweenMax.to("#FF", .8, { opacity:1, delay:0.2});
-    TweenMax.to("#device6", .8, { left: 185, opacity:1, delay:0.2});
-    TweenMax.to("#ff_txt1", .5, { left: 12, opacity:1, delay:0.5});
-    TweenMax.to("#ff_txt2", .5, { left: 12, opacity:1, delay:0.8}); 
-    TweenMax.to("#ff_txt3", .5, { left: 12, opacity:1, delay:1});
-    TweenMax.to("#ff_txt4", .5, { left: 12, opacity:1, delay:1.2})
-    TweenMax.to("#ff-cta", 1, { opacity:1, delay:1.8 });  
-    TweenMax.to("#ff_txt5", 1, { opacity:1, delay:1.8});
-    TweenMax.to("#footer-cta", 1, { opacity:1, delay:1.8});
+    TweenMax.to("#FF", 0, { opacity:1});
+    TweenMax.to("#ff_txt1", .5, { left: 12, opacity:1, delay:0.2});
+    TweenMax.to("#ff_txt2", .5, { left: 12, opacity:1, delay:.3}); 
+    TweenMax.to("#ff_txt3", .5, { left: 12, opacity:1, delay:.4});
+    TweenMax.to("#ff_txt4", .5, { left: 12, opacity:1, delay:.5})
+    TweenMax.to("#ff-cta", .5, { opacity:1, delay:.7 });  
+    TweenMax.to("#ff_txt5", .5, { opacity:1, delay:.9});
+    TweenMax.to("#footer-cta", .5, { opacity:1, delay:1.2});
 }
 
 
