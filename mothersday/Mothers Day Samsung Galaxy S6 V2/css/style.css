@@ -4,7 +4,7 @@ p, h1, h2, h3, h4, a {
 }
 
 body {
-    background: #fff;
+    background: #ffffff;
     font-family: "Verizon Apex Book", Helvetica, Arial, sans-serif;
 }
 
@@ -26,7 +26,7 @@ sup {
     background: #ffffff;
     overflow: hidden;
     cursor: pointer;
-    border: 1px #333 solid;
+    border: 1px #333333 solid;
     background: url(../img/bg_collapsed.jpg) no-repeat;
 }
 
@@ -67,7 +67,7 @@ sup {
     display: none;
     opacity: 0;
     overflow: hidden;
-    border: 1px #333 solid;
+    border: 1px #333333 solid;
 }
 
 #generalClose {

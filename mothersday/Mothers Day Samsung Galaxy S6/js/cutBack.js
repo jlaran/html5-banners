@@ -49,7 +49,7 @@
                     break;
 
                 case "fadeIn":
-                    TweenLite.to(targetElement, .4, {delay:_delay, css:{alpha:1}});
+                    TweenLite.to(targetElement, .2, {delay:_delay, css:{alpha:1}});
                     targetElement.style.display = 'block';
                     break;
 

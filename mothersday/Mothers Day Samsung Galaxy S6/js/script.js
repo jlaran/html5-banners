@@ -66,16 +66,14 @@ function frame4(){
     TweenMax.to("#ff_txt4", .5, { left: 12, opacity:1, delay:.5})
     TweenMax.to("#ff-cta", .5, { opacity:1, delay:.7 });  
     TweenMax.to("#ff_txt5", .5, { opacity:1, delay:.9});
-    TweenMax.to("#footer-cta", .5, { opacity:1, delay:1.2});
+    TweenMax.to("#footer-cta", .5, { opacity:1, delay:1});
 }
 
 
 function GeneralClose() {
     Enabler.requestCollapse();
     Enabler.reportManualClose();
-
     TweenMax.set("#expanded-banner", {opacity:0, display:'none'});
-
     motionLibrary.resetWhenCloseOrExit();
 }
 
