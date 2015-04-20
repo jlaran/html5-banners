@@ -61,7 +61,7 @@ sup {
     top: 0;
     left: 0;
     width: 318px;
-    height: 458px;
+    height: 478px;
     background: #ffffff;
     display: none;
     opacity: 0;
@@ -92,7 +92,7 @@ sup {
 
 #shadow {
     position: absolute;
-    top: 135px;
+    top: 195px;
     left: 0;
     width: 320px;
     height: 50px;
@@ -102,8 +102,8 @@ sup {
 
 #device1 {
     position: absolute;
-    top: -300px;
-    left: 45px;
+    top: -240px;
+    left: 43px;
     width: 231px;
     height: 465px;
        -moz-border-radius: 34px;
@@ -160,7 +160,7 @@ sup {
 
 
 #f2_txt1 {
-    top: 381px;
+    top: 390px;
     width: 129px;
     left: 93px;
     font-size: 20px;
@@ -168,7 +168,7 @@ sup {
 }
 
 #f2_txt2 {
-    top: 405px;
+    top: 416px;
     left: 78px;
     font-size: 20px;
     opacity: 0;
@@ -211,7 +211,7 @@ sup {
 }
 
 #ff_txt1 {
-    top: 103px;
+    top: 117px;
     width: 100px;
     left: -200px;
     font-family: "Verizon Apex Medium Italic", sans-serif;
@@ -220,7 +220,7 @@ sup {
 }
 
 #ff_txt2 {
-    top: 124px;
+    top: 138px;
     width: 175px;
     left: -200px;
     font-family: "Verizon Apex Medium Italic", sans-serif;
@@ -229,7 +229,7 @@ sup {
 }
 
 #ff_txt3 {
-    top: 150px;
+    top: 162px;
     left: -200px;
     font-size: 18px;
     font-family: "Verizon Apex Book", sans-serif;
@@ -246,7 +246,7 @@ sup {
 }
 
 #ff_txt4 {
-    top: 170px;
+    top: 184px;
     left: -200;
     font-size: 13px;
     font-family: "Verizon Apex Book", sans-serif;
@@ -262,7 +262,7 @@ sup {
 }
 
 #ff_txt5 {
-    top: 262px;
+    top: 284px;
     left: 12px;
     width: 156px;
     font-size: 9px;
@@ -287,7 +287,7 @@ sup {
 }
 
 #FF #ff-cta {
-    top: 225px;
+    top: 248px;
     left: 12px;
     font-size: 13px;
     opacity: 0;

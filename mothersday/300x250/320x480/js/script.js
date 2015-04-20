@@ -28,8 +28,8 @@ function expanded() {
 
 function frame2() {
     TweenMax.to("#expanded-banner #info #f1_txt1", .5, { opacity:0, delay:1});
-    TweenMax.to("#device1", 2, {top:"-120", ease:Strong.easeInOut, delay:2});
-    TweenMax.to("#shadow", 2, {top:"315", ease:Strong.easeInOut, delay:2});
+    TweenMax.to("#device1", 2, {top:"-110", ease:Strong.easeInOut, delay:2});
+    TweenMax.to("#shadow", 2, {top:"325", ease:Strong.easeInOut, delay:2});
     TweenMax.to("#expanded-banner #info #f2_txt1", 2, { opacity:1, delay:3.5});
     TweenMax.to("#expanded-banner #info #f2_txt2", 2, { opacity:1, delay:3.7, onComplete:frame3});
 }
