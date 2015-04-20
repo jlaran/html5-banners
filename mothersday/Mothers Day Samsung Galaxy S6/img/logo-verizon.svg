@@ -34,7 +34,6 @@
 		<stop  offset="1" style="stop-color:#ED1C24"/>
 	</linearGradient>
 	<polygon fill="url(#SVGID_2_)" points="137,319.7 135.2,314.2 123.3,318.8 129.7,335.2 555.4,179.9 550.8,168.1 	"/>
-	
 		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="23.4471" y1="568.7" x2="45.8471" y2="568.7" gradientTransform="matrix(9.1343 0 0 -9.1343 90 5590.2085)">
 		<stop  offset="0.2223" style="stop-color:#FFFFFF"/>
 		<stop  offset="0.3539" style="stop-color:#FFFCFC"/>

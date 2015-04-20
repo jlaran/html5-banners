@@ -8,6 +8,7 @@ var elementsToRegister = [
     {eventType: "click", element: "#ff-cta", functionToCall: "shopGift"},
     {eventType: "click", element: "#get-direction-button", functionToCall: "getDirectionsExit"},
     {eventType: "keypress", element: "#autocomplete", functionToCall: "searchMap"},
+    {eventType: "click", element: "#route", functionToCall: "searchMap"},
     {eventType: "click", element: "#generalClose", functionToCall: "GeneralClose"}
 ];
 
@@ -20,15 +21,15 @@ function expanded() {
     Enabler.requestExpand();
     motionLibrary.animations("fadeIn", "#expanded-banner", 0);
     motionLibrary.animations("fadeIn", "#expanded-banner #info", 0);
-    TweenMax.from("#device1", 3, {top:"-500px", ease:Strong.easeOut, delay:.5});
-    TweenMax.from("#shadow", 3, {top:"-50px", ease:Strong.easeOut, delay:.5});
+    TweenMax.from("#device1", 3, {top:-500, ease:Strong.easeOut, delay:.5});
+    TweenMax.from("#shadow", 3, {top:-50, ease:Strong.easeOut, delay:.5});
     TweenMax.to("#expanded-banner #info #f1_txt1", 2, { opacity:1, delay:.5, onComplete:frame2});
 }
 
 function frame2() {
     TweenMax.to("#expanded-banner #info #f1_txt1", .5, { opacity:0, delay:1});
-    TweenMax.to("#device1", 2, {top:"-120", ease:Strong.easeInOut, delay:2});
-    TweenMax.to("#shadow", 2, {top:"315", ease:Strong.easeInOut, delay:2});
+    TweenMax.to("#device1", 2, {top:-120, ease:Strong.easeInOut, delay:2});
+    TweenMax.to("#shadow", 2, {top:315, ease:Strong.easeInOut, delay:2});
     TweenMax.to("#expanded-banner #info #f2_txt1", 2, { opacity:1, delay:3.5});
     TweenMax.to("#expanded-banner #info #f2_txt2", 2, { opacity:1, delay:3.7, onComplete:frame3});
 }
@@ -43,8 +44,8 @@ function frame3() {
     TweenLite.set("#persp2", {perspective:1000});
     TweenMax.to("#device2", 1, {left:155, rotationY:180, ease:Power2.easeInOut, transformOrigin:"center bottom", delay:1.5});
     TweenMax.to("#device2", 0.1, {opacity:1, delay:2});
-    TweenMax.to("#device2", 1.5, {top:60, ease:Expo.easeOut, delay:2.5});
-    TweenMax.to("#shadow", 1.5, {opacity:0, top:500, ease:Expo.easeOut, delay:2.5});
+    TweenMax.to("#device2", 1.5, {top:60, ease:Expo.easeInOut, delay:2});
+    TweenMax.to("#shadow", 1.5, {opacity:0, top:500, ease:Expo.easeInOut, delay:2});
     TweenMax.to("#logo", 1, { opacity:1, delay:3});
     TweenMax.to("#expanded-banner #info #f3_txt1", .5, { left: 12, opacity:1, delay:3.2});
     TweenMax.to("#expanded-banner #info #f3_txt2", .7, { left: 12, opacity:1, delay:3.4});
@@ -66,13 +67,8 @@ function frame4(){
     TweenMax.to("#ff_txt4", .5, { left: 12, opacity:1, delay:.5})
     TweenMax.to("#ff-cta", .5, { opacity:1, delay:.7 });  
     TweenMax.to("#ff_txt5", .5, { opacity:1, delay:.9});
-    TweenMax.to("#footer-cta", .5, { opacity:1, delay:1, onComplete:dispatchEnd});
+    TweenMax.to("#footer-cta", .5, { opacity:1, delay:1});
 }
-
-function dispatchEnd() {
-    Enabler.counter('End of Animations');
-}
-
 
 function GeneralClose() {
     Enabler.requestCollapse();
@@ -130,17 +126,15 @@ function printlocation(position) {
 }
 
 function loadMap(){
-    Enabler.counter('Map Load');
-    TweenMax.to("#map", .5, { opacity:0, delay:1});
     motionLibrary.animations("fadeIn", "#map", 0.5);
 
-    if (mapAdded == false){
-        if(!mapLoaded) {
-            setMap();
-            mapAdded = true;
-        }else {
-            zoomToAddress();
-        }
+    if (mapAdded == false && !mapLoaded){
+        setMap();
+        mapAdded = true;
+        Enabler.counter('Map Load');
+    } else {
+        zoomToAddress();
+        Enabler.counter('Search for address');
     }
 }
 
@@ -251,13 +245,14 @@ function searchMap (e) {
     address = searchInput.value;
     if (!e) e = window.event;
 
-    if(e.target.hasClass('search-icon')) {
+    if(e.target.hasClass('search')) {
         loadMap();
         return false;
     } else {
         var keyCode = e.keyCode || e.which;
         if (keyCode == '13' && searchInput.value != '') {
             loadMap();
+            console.log(keyCode);
             return false;
         } else if (keyCode == '13' && searchInput.value == ''){
           alert("Please enter a valid direction");

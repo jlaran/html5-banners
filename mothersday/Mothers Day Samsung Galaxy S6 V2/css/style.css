@@ -169,7 +169,7 @@ sup {
 }
 
 #f2_txt2 {
-    top: 400px;
+    top: 405px;
     left: 78px;
     font-size: 20px;
     opacity: 0;
@@ -184,14 +184,14 @@ sup {
 
 
 #f3_txt2 {
-    top: 174px;
+    top: 179px;
     left: -100px;
     font-size: 20px;
     opacity: 0;
 }
 
 #f3_txt3 {
-    top: 194px;
+    top: 206px;
     left: -100px;
     font-size: 20px;
     letter-spacing: -1px;
@@ -215,27 +215,25 @@ sup {
     top: 103px;
     width: 100px;
     left: -200px;
-    font-weight: bold;
-    font-style: italic;
+    font-family: "Verizon Apex Medium Italic", sans-serif;
     font-size: 17px;
     opacity: 0;
 }
 
 #ff_txt2 {
     top: 124px;
-    width: 170px;
+    width: 175px;
     left: -200px;
-    font-weight: bold;
-    font-style: italic;
+    font-family: "Verizon Apex Medium Italic", sans-serif;
     font-size: 17px;
     opacity: 0;
-    width: 300px;
 }
 
 #ff_txt3 {
-    top: 149px;
+    top: 150px;
     left: -200px;
     font-size: 18px;
+    font-family: "Verizon Apex Book", sans-serif;
     letter-spacing: 0;
     line-height: 14px;
     width: 175px;
@@ -252,7 +250,8 @@ sup {
     top: 170px;
     left: -200;
     font-size: 13px;
-    line-height: 14px;
+    font-family: "Verizon Apex Book", sans-serif;
+    line-height: 16px;
     width: 156px;
     opacity: 0;
 }
@@ -266,7 +265,7 @@ sup {
 #ff_txt5 {
     top: 262px;
     left: 12px;
-    width: 168px;
+    width: 156px;
     font-size: 9px;
     line-height: 14px;
     opacity: 0;
@@ -275,7 +274,6 @@ sup {
 .Redbutton {
     font-family: Arial, Helvetica, sans-serif;
     position: absolute;
-    height: 18px;
     background: #ed1c24;
     color: #ffffff;
     text-decoration: none;
@@ -290,10 +288,8 @@ sup {
 }
 
 #FF #ff-cta {
-    width: 120px;
     top: 225px;
     left: 12px;
-    height: 13px;
     font-size: 13px;
     opacity: 0;
 }
@@ -311,7 +307,6 @@ sup {
 }
 
 #FF #footer-cta {
-    width: 92px;
     top: 404px;
     left: 12px;
 }
