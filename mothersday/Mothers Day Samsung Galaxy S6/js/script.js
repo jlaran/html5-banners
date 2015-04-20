@@ -76,10 +76,11 @@ function GeneralClose() {
     TweenMax.set("#expanded-banner", {opacity:0, display:'none'});
     TweenMax.set("#map", {opacity:0, display:'none'});
     motionLibrary.resetWhenCloseOrExit();
-    mapAdded = false,
-    mapLoaded = false,
+    mapAdded = false;
+    mapLoaded = false;
     isMapCreated = false;
     document.getElementById("map-canvas").innerHTML = "";
+    searchInput.value = "";
 }
 
 function shopGift(){
@@ -256,7 +257,6 @@ function searchMap (e) {
         var keyCode = e.keyCode || e.which;
         if (keyCode == '13' && searchInput.value != '') {
             loadMap();
-            console.log(keyCode);
             return false;
         } else if (keyCode == '13' && searchInput.value == ''){
           alert("Please enter a valid direction");

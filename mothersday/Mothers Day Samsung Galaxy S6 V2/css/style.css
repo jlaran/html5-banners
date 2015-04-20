@@ -27,7 +27,6 @@ sup {
     overflow: hidden;
     cursor: pointer;
     border: 1px #333333 solid;
-    background: url(../img/bg_collapsed.jpg) no-repeat;
 }
 
 #collapse-banner h1 {
@@ -50,11 +49,11 @@ sup {
 }
 
 #collapse-banner #logo_collapse {
-    margin-left: 8px;
-    margin-top: -9px;
-    width: 77px;
-    height: 77px;
-    background: url(../img/logo-verizon-notab.svg) no-repeat;
+    margin-left: 11px;
+    margin-top: -2px;
+    width: 46px;
+    height: 40px;
+    background: url(../img/logo-verizon-initial.svg) no-repeat;
 }
 
 #expanded-banner {

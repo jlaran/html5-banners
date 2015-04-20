@@ -76,10 +76,11 @@ function GeneralClose() {
     TweenMax.set("#expanded-banner", {opacity:0, display:'none'});
     TweenMax.set("#map", {opacity:0, display:'none'});
     motionLibrary.resetWhenCloseOrExit();
-    mapAdded = false,
-    mapLoaded = false,
+    mapAdded = false;
+    mapLoaded = false;
     isMapCreated = false;
     document.getElementById("map-canvas").innerHTML = "";
+    searchInput.value = "";
 }
 
 function shopGift(){
@@ -133,7 +134,7 @@ function printlocation(position) {
 function loadMap(){
     motionLibrary.animations("fadeIn", "#map", 0.5);
 
-    if (mapAdded == false && !mapLoaded){
+    if (mapAdded == false && mapLoaded == false){
         setMap();
         mapAdded = true;
         Enabler.counter('Map Load');
