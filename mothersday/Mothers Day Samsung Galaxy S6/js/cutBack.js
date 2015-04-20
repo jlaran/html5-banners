@@ -49,7 +49,7 @@
                     break;
 
                 case "fadeIn":
-                    TweenLite.to(targetElement, .2, {delay:_delay, css:{alpha:1}});
+                    TweenLite.to(targetElement, .4, {delay:_delay, css:{alpha:1}});
                     targetElement.style.display = 'block';
                     break;
 
@@ -166,7 +166,31 @@
             };
         },
         resetWhenCloseOrExit : function(){
-            TweenMax.set("div", {clearProps:"all"});
+            var divs = document.querySelectorAll("div"),
+                map = document.getElementById("map");
+
+            for (var i = 0; i < divs.length; i++) {
+                
+                //console.log(isDescendant(map,divs[i]));
+                
+                if (isDescendant(map,divs[i]) == false){
+                    TweenMax.set(divs[i], {clearProps:"all"});
+                }
+            };
+
+
+            function isDescendant(parent, child) {
+                var node = child.parentNode;
+                while (node != null) {
+                    if (node == parent) {
+                        return true;
+                    }
+                    node = node.parentNode;
+                }
+                return false;
+            }
+
+
             TweenMax.set("span", {clearProps:"all"});
             TweenMax.set("p", {clearProps:"all"});
             TweenMax.set("h1", {clearProps:"all"});
