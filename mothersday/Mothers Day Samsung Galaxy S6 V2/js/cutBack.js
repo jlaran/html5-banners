@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 ///
-///  Banner Library v1.1
+///  Banner Library v1.1.2
 ///  Moxie Team
 ///  
 ///  Contact information: 
@@ -166,33 +166,7 @@
             };
         },
         resetWhenCloseOrExit : function(){
-
-            var divs = document.querySelectorAll("div"),
-                map = document.getElementById("map");
-
-            for (var i = 0; i < divs.length; i++) {
-                if (map != null){
-                    if (isDescendant(map,divs[i]) == false){
-                        TweenMax.set(divs[i], {clearProps:"all"});
-                    }
-                } else {
-                    TweenMax.set(divs[i], {clearProps:"all"});
-                }
-            };
-
-
-            function isDescendant(parent, child) {
-                var node = child.parentNode;
-                while (node != null) {
-                    if (node == parent) {
-                        return true;
-                    }
-                    node = node.parentNode;
-                }
-                return false;
-            }
-
-
+            TweenMax.set("div", {clearProps:"all"});
             TweenMax.set("span", {clearProps:"all"});
             TweenMax.set("p", {clearProps:"all"});
             TweenMax.set("h1", {clearProps:"all"});
@@ -202,9 +176,7 @@
             TweenMax.set("a", {clearProps:"all"});
             TweenMax.set("input", {clearProps:"all"});
             TweenMax.set("canvas", {clearProps:"all"});
-
             TweenMax.killAll();
-
             firstFrame();
         }
     };

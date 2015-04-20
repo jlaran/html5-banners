@@ -76,6 +76,10 @@ function GeneralClose() {
     TweenMax.set("#expanded-banner", {opacity:0, display:'none'});
     TweenMax.set("#map", {opacity:0, display:'none'});
     motionLibrary.resetWhenCloseOrExit();
+    mapAdded = false,
+    mapLoaded = false,
+    isMapCreated = false;
+    document.getElementById("map-canvas").innerHTML = "";
 }
 
 function shopGift(){
