@@ -84,12 +84,6 @@ function shopGift(){
     motionLibrary.resetWhenCloseOrExit();
 }
 
-function loadMap(){
-    Enabler.counter('Map Load');
-    motionLibrary.animations("fadeIn", "#map", 0.5);
-    updatePosition();
-}
-
 
 // Map Code
 
@@ -132,12 +126,15 @@ function printlocation(position) {
 }
 
 function loadMap(){
-  motionLibrary.animations("fadeIn", "#map", 0.5);
-  if(!mapLoaded) {
-      setMap();
-  }else {
-      zoomToAddress();
-  }
+	Enabler.counter('Map Load');
+	motionLibrary.animations("fadeIn", "#map", 0.5);
+	if(!mapLoaded) {
+		setMap();
+        console.log('set map');
+	}else {
+		zoomToAddress();
+        console.log('zoom to adress');
+	}
 }
 
 
