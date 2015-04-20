@@ -15,14 +15,14 @@ sup {
 }
 
 #banner {
-    width: 320px;
-    height: 460px;
+    width: 160px;
+    height: 600px;
     /*background: #dedede;*/
 }
 
 #collapse-banner {
-    width: 318px;
-    height: 48px;
+    width: 158px;
+    height: 598px;
     background: #ffffff;
     overflow: hidden;
     cursor: pointer;
@@ -31,28 +31,29 @@ sup {
 
 #collapse-banner h1 {
     position: absolute;
-    font-size: 15px;
-    top: 12px;
-    left: 107px;
+    font-size: 22px;
+    top: 226px;
+    left: 22px;
     color: #333333;
     opacity: 0;
+    width: 110px;
 }
 
 #collapse-banner h2 {
     font-family: Helvetica, Arial, sans-serif;
     position: absolute;
-    font-size: 8px;
-    top: 34px;
-    left: 107px;
+    font-size: 15px;
+    top: 283px;
+    left: 22px;
     color: #333333;
     opacity: 0;
 }
 
 #collapse-banner #logo_collapse {
     margin-left: 11px;
-    margin-top: -2px;
-    width: 46px;
-    height: 40px;
+    margin-top: 0px;
+    width: 70px;
+    height: 70px;
     background: url(../img/logo-verizon-initial.svg) no-repeat;
 }
 
