@@ -66,14 +66,18 @@ function frame4(){
     TweenMax.to("#ff_txt4", .5, { left: 12, opacity:1, delay:.5})
     TweenMax.to("#ff-cta", .5, { opacity:1, delay:.7 });  
     TweenMax.to("#ff_txt5", .5, { opacity:1, delay:.9});
-    TweenMax.to("#footer-cta", .5, { opacity:1, delay:1});
+    TweenMax.to("#footer-cta", .5, { opacity:1, delay:1, onComplete:dispatchEnd});
 }
 
+function dispatchEnd() {
+    Enabler.counter('End of Animations');
+}
 
 function GeneralClose() {
     Enabler.requestCollapse();
     Enabler.reportManualClose();
     TweenMax.set("#expanded-banner", {opacity:0, display:'none'});
+    TweenMax.set("#map", {opacity:0, display:'none'});
     motionLibrary.resetWhenCloseOrExit();
 }
 
@@ -126,15 +130,17 @@ function printlocation(position) {
 }
 
 function loadMap(){
-	Enabler.counter('Map Load');
-	motionLibrary.animations("fadeIn", "#map", 0.5);
-	if(!mapLoaded) {
-		setMap();
-        console.log('set map');
-	}else {
-		zoomToAddress();
-        console.log('zoom to adress');
-	}
+    Enabler.counter('Map Load');
+    motionLibrary.animations("fadeIn", "#map", 0.5);
+
+    if (mapAdded == false){
+        if(!mapLoaded) {
+            setMap();
+            mapAdded = true;
+        }else {
+            zoomToAddress();
+        }
+    }
 }
 
 

@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 ///
-///  Banner Library v1.0
+///  Banner Library v1.1
 ///  Moxie Team
 ///  
 ///  Contact information: 
@@ -166,14 +166,16 @@
             };
         },
         resetWhenCloseOrExit : function(){
+
             var divs = document.querySelectorAll("div"),
                 map = document.getElementById("map");
 
             for (var i = 0; i < divs.length; i++) {
-                
-                //console.log(isDescendant(map,divs[i]));
-                
-                if (isDescendant(map,divs[i]) == false){
+                if (map != null){
+                    if (isDescendant(map,divs[i]) == false){
+                        TweenMax.set(divs[i], {clearProps:"all"});
+                    }
+                } else {
                     TweenMax.set(divs[i], {clearProps:"all"});
                 }
             };
