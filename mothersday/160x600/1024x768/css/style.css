@@ -98,18 +98,19 @@ sup {
     width: 1024px;
     height: 50px;
     background: url(../img/shadow.jpg) no-repeat;
+    background-size: contain;
     opacity: 1;
 }
 
 #device1 {
     position: absolute;
-    top: -300px;
-    left: 45px;
-    width: 231px;
-    height: 465px;
-       -moz-border-radius: 34px;
-    -webkit-border-radius: 34px;
-            border-radius: 34px;
+    top: -440px;
+    left: 300px;
+    width: 426px;
+    height: 866px;
+       -moz-border-radius: 64px;
+    -webkit-border-radius: 64px;
+            border-radius: 64px;
     background: url(../img/device_bck.jpg) no-repeat;
 }
 

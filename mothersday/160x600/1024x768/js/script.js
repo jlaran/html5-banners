@@ -21,7 +21,7 @@ function expanded() {
     Enabler.requestExpand();
     motionLibrary.animations("fadeIn", "#expanded-banner", 0);
     motionLibrary.animations("fadeIn", "#expanded-banner #info", 0);
-    TweenMax.from("#device1", 3, {top:"-500px", ease:Strong.easeOut, delay:.5});
+    TweenMax.from("#device1", 3, {top:"-866px", ease:Strong.easeOut, delay:.5});
     TweenMax.from("#shadow", 3, {top:"-50px", ease:Strong.easeOut, delay:.5});
     TweenMax.to("#expanded-banner #info #f1_txt1", 2, { opacity:1, delay:.5});//, onComplete:frame2
 }
