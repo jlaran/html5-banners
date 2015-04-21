@@ -61,8 +61,8 @@ sup {
     position: absolute;
     top: 0;
     left: 0;
-    width: 318px;
-    height: 458px;
+    width: 1022px;
+    height: 766px;
     background: #ffffff;
     display: none;
     opacity: 0;
@@ -95,7 +95,7 @@ sup {
     position: absolute;
     top: 135px;
     left: 0;
-    width: 320px;
+    width: 1024px;
     height: 50px;
     background: url(../img/shadow.jpg) no-repeat;
     opacity: 1;
@@ -152,10 +152,10 @@ sup {
 }
 
 #f1_txt1 {
-    width: 159px;
-    top: 294px;
-    left: 80px;
-    font-size: 20px;
+    width: 385px;
+    top: 561px;
+    left: 321px;
+    font-size: 48px;
     opacity: 0;
 }
 
