@@ -60,8 +60,8 @@ sup {
     position: absolute;
     top: 0;
     left: 0;
-    width: 318px;
-    height: 458px;
+    width: 478px;
+    height: 318px;
     background: #ffffff;
     display: none;
     opacity: 0;
@@ -93,7 +93,7 @@ sup {
 #shadow {
     position: absolute;
     top: 135px;
-    left: 0;
+    left: 77px;
     width: 320px;
     height: 50px;
     background: url(../img/shadow.jpg) no-repeat;
@@ -103,7 +103,7 @@ sup {
 #device1 {
     position: absolute;
     top: -300px;
-    left: 45px;
+    left: 124px;
     width: 231px;
     height: 465px;
        -moz-border-radius: 34px;
@@ -121,7 +121,7 @@ sup {
 }
 #device2 {
     position: absolute;
-    top: -120px;
+    top: -230px;
     left: 30px;
     width: 231px;
     height: 465px;
@@ -152,16 +152,16 @@ sup {
 
 #f1_txt1 {
     width: 159px;
-    top: 294px;
-    left: 80px;
+    top: 226px;
+    left: 159px;
     font-size: 20px;
     opacity: 0;
 }
 
 
 #f2_txt1 {
-    top: 381px;
-    width: 129px;
+    top: 272px;
+    width: 295px;
     left: 93px;
     font-size: 20px;
     opacity: 0;
