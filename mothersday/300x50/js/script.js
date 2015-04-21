@@ -201,6 +201,7 @@ var zoomToAddress = function() {
                     searchCallback(myArr);
                 }
             };
+            
             xmlhttp.open('GET', url, true);
             xmlhttp.send();
         }
