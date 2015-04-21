@@ -93,12 +93,13 @@ sup {
 
 #shadow {
     position: absolute;
-    top: 135px;
+    top: 375px;
     left: 0;
     width: 1024px;
-    height: 50px;
+    height: 86px;
     background: url(../img/shadow.jpg) no-repeat;
     background-size: contain;
+    background-position: center center;
     opacity: 1;
 }
 
@@ -108,10 +109,11 @@ sup {
     left: 300px;
     width: 426px;
     height: 866px;
-       -moz-border-radius: 64px;
-    -webkit-border-radius: 64px;
-            border-radius: 64px;
+       -moz-border-radius: 70px;
+    -webkit-border-radius: 70px;
+            border-radius: 70px;
     background: url(../img/device_bck.jpg) no-repeat;
+    z-index: 1;
 }
 
 #persp2 {
@@ -123,15 +125,16 @@ sup {
 }
 #device2 {
     position: absolute;
-    top: -120px;
-    left: 30px;
-    width: 231px;
-    height: 465px;
-       -moz-border-radius: 34px;
-    -webkit-border-radius: 34px;
-            border-radius: 34px;
+    top: -230px;
+    left: 300px;
+    width: 426px;
+    height: 866px;
+       -moz-border-radius: 70px;
+    -webkit-border-radius: 70px;
+            border-radius: 70px;
     background: url(../img/device_ft.jpg) no-repeat;
     opacity: 0;
+    z-index: 1;
 }
 
 #info {
@@ -139,13 +142,14 @@ sup {
 }
 
 #logo {
-    margin-left: 11px;
+    margin-left: 45px;
     margin-top: 0;
-    width: 67px;
-    height: 67px;
+    width: 130px;
+    height: 130px;
+    margin-top: 0;
     background: url(../img/logo-verizon.svg) no-repeat;
     opacity: 0;
-    z-index: 100000000000;
+    z-index: 1000;
 }
 
 .titles {
@@ -162,24 +166,24 @@ sup {
 
 
 #f2_txt1 {
-    top: 381px;
-    width: 129px;
-    left: 93px;
-    font-size: 20px;
+    top: 687px;
+    width: 307px;
+    left: 163px;
+    font-size: 48px;
     opacity: 0;
 }
 
 #f2_txt2 {
-    top: 405px;
-    left: 78px;
-    font-size: 20px;
+    top: 687px;
+    left: 480px;
+    font-size: 48px;
     opacity: 0;
 }
 
 #f3_txt1 {
-    top: 153px;
-    left: -100px;
-    font-size: 20px;
+    top: 304px;
+    left: 65px;
+    font-size: 48px;
     opacity: 0;
 }
 
