@@ -50,9 +50,9 @@ sup {
 
 #collapse-banner #logo_collapse {
     margin-left: 11px;
-    margin-top: -2px;
-    width: 65px;
-    height: 64px;
+    margin-top: 0;
+    width: 67px;
+    height: 67px;
     background: url(../img/logo-verizon.svg) no-repeat;
 }
 
@@ -175,24 +175,24 @@ sup {
 }
 
 #f3_txt1 {
-    top: 153px;
+    top: 133px;
     left: -100px;
-    font-size: 20px;
+    font-size: 24px;
     opacity: 0;
 }
 
 
 #f3_txt2 {
-    top: 179px;
+    top: 163px;
     left: -100px;
-    font-size: 20px;
+    font-size: 24px;
     opacity: 0;
 }
 
 #f3_txt3 {
-    top: 206px;
+    top: 193px;
     left: -100px;
-    font-size: 20px;
+    font-size: 24px;
     letter-spacing: -1px;
     opacity: 0;
 }
@@ -211,8 +211,8 @@ sup {
 }
 
 #ff_txt1 {
-    top: 103px;
-    width: 100px;
+    top: 89px;
+    width: 400px;
     left: -200px;
     font-family: "Verizon Apex Medium Italic", sans-serif;
     font-size: 17px;
@@ -229,7 +229,7 @@ sup {
 }
 
 #ff_txt3 {
-    top: 150px;
+    top: 117px;
     left: -200px;
     font-size: 18px;
     font-family: "Verizon Apex Book", sans-serif;
@@ -239,19 +239,19 @@ sup {
     opacity: 0;
 }
 
-#ff_txt2 sup {
+#ff_txt1 sup {
     top: -7.5px;
     font-size: 9px;
     left: 1px;
 }
 
 #ff_txt4 {
-    top: 170px;
+    top: 138px;
     left: -200;
     font-size: 13px;
     font-family: "Verizon Apex Book", sans-serif;
     line-height: 16px;
-    width: 156px;
+    width: 210px;
     opacity: 0;
 }
 
@@ -262,9 +262,9 @@ sup {
 }
 
 #ff_txt5 {
-    top: 262px;
+    top: 212px;
     left: 12px;
-    width: 156px;
+    width: 202px;
     font-size: 9px;
     line-height: 14px;
     opacity: 0;
@@ -287,7 +287,7 @@ sup {
 }
 
 #FF #ff-cta {
-    top: 225px;
+    top: 178px;
     left: 12px;
     font-size: 13px;
     opacity: 0;
@@ -306,7 +306,7 @@ sup {
 }
 
 #FF #footer-cta {
-    top: 404px;
+    top: 276px;
     left: 12px;
 }
 
@@ -338,8 +338,8 @@ sup {
 
 #map {
     border: 1px solid #000000;
-    width: 320px;
-    height: 460px;
+    width: 480px;
+    height: 320px;
     background: #ffffff;
     position: absolute;
     top: 0;

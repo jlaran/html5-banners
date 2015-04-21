@@ -1,4 +1,4 @@
-var dimentions = [0,0,320,460];
+var dimentions = [0,0,480,320];
 doubleClickEvents.initializer("expandible", dimentions);
 
 var elementsToRegister = [
@@ -49,13 +49,13 @@ function frame3() {
     TweenMax.to("#expanded-banner #info #f3_txt1", .5, { left: 21, opacity:1, delay:3.2});
     TweenMax.to("#expanded-banner #info #f3_txt2", .7, { left: 21, opacity:1, delay:3.4});
     TweenMax.to("#expanded-banner #info #f3_txt3", .7, { left: 21, opacity:1, delay:3.6});
-    // // TweenMax.to("#device2", 0.6, {left:320, ease:Sine.easeOut, delay:5.7});
-    // TweenMax.to("#shadow", 0.6, {left:320, ease:Sine.easeOut, delay:5.7});
-    // TweenMax.to("#expanded-banner #info #f3_txt1", .5, { left: -25, opacity:0, delay:5.5});
-    // TweenMax.to("#expanded-banner #info #f3_txt2", .4, { left: -25, opacity:0, delay:5.7});
-    // TweenMax.to("#expanded-banner #info #f3_txt3", .3, { left: -25, opacity:0, delay:5.9, onComplete:frame4});
-    // TweenLite.set("#persp2", {perspective:500});
-    // TweenMax.to("#device2", 1, {top:40, left:-25, scaleX:0.65, scaleY:0.92, rotationY:135, ease:Power4.easeOut, transformOrigin:"right bottom", delay:6.1});
+    TweenMax.to("#device2", 1, {left:485, ease:Sine.easeInOut, delay:5.7});
+    TweenMax.to("#shadow", 1, {left:485, ease:Sine.easeInOut, delay:5.7});
+    TweenMax.to("#expanded-banner #info #f3_txt1", .5, { left: -25, opacity:0, delay:5.5});
+    TweenMax.to("#expanded-banner #info #f3_txt2", .4, { left: -25, opacity:0, delay:5.7});
+    TweenMax.to("#expanded-banner #info #f3_txt3", .3, { left: -25, opacity:0, delay:5.9, onComplete:frame4});
+    TweenLite.set("#persp2", {perspective:500});
+    TweenMax.to("#device2", 1, {top:40, left:60, scaleX:0.65, scaleY:0.92, rotationY:135, ease:Power4.easeOut, transformOrigin:"right bottom", delay:7});
 }
 
 function frame4(){
