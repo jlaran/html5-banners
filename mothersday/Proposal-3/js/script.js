@@ -33,8 +33,9 @@ function frame3() {
   TweenMax.to("#expanded-banner #info #f2_txt1", 2, { css:{alpha:0} , delay:1})
   
   TweenMax.to("#device1", 1, { left:115, delay:1})
-  TweenMax.to("#device1", 1, { scaleX:0.65, delay:1.3})
-  TweenMax.to("#device1", 1, { css:{alpha:0}, delay:1.5})
+   TweenMax.to("#device1", 1, { transformPerspective:200, delay:1})
+  /*TweenMax.to("#device1", 1, { scaleX:0.65, delay:1.3})
+  TweenMax.to("#device1", 1, { alpha:0, delay:1.5})
   TweenMax.to("#device2", .8, { css:{alpha:.8}, delay:1.5})
   
   TweenMax.to("#device2", 1, { left:165, delay:2})
@@ -62,7 +63,7 @@ function frame3() {
   TweenMax.to("#device6", 2, { top:63, delay:4.4, ease:Strong.easeOut}) 
   TweenMax.to("#expanded-banner #info #f3_txt1", 2, { css:{alpha:1}, delay:4.6})
   TweenMax.to("#expanded-banner #info #f3_txt2", 2, { css:{alpha:1}, delay:4.8, onComplete:frame4})
-  TweenMax.to(".logo", .8, { css:{alpha:1}, delay:5})
+  TweenMax.to(".logo", .8, { css:{alpha:1}, delay:5})*/
 }
 
 function frame4(){
