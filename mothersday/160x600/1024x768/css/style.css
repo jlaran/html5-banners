@@ -54,7 +54,7 @@ sup {
     margin-top: 0px;
     width: 70px;
     height: 70px;
-    background: url(../img/logo-verizon-initial.svg) no-repeat;
+    background: url(../img/logo-verizon.svg) no-repeat;
 }
 
 #expanded-banner {
@@ -148,6 +148,7 @@ sup {
     -moz-border-radius: 70px;
     -webkit-border-radius: 70px;
     border-radius: 70px;
+    z-index: -1;
 }
 
 #info {

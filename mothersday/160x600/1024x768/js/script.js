@@ -1,4 +1,4 @@
-var dimentions = [0,0,320,460];
+var dimentions = [0,0,1024,768];
 doubleClickEvents.initializer("expandible", dimentions);
 
 var elementsToRegister = [

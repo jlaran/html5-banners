@@ -1,4 +1,4 @@
-var dimentions = [0,0,320,460];
+var dimentions = [0,0,1024,768];
 doubleClickEvents.initializer("expandible", dimentions);
 
 var elementsToRegister = [
@@ -21,50 +21,52 @@ function expanded() {
     Enabler.requestExpand();
     motionLibrary.animations("fadeIn", "#expanded-banner", 0);
     motionLibrary.animations("fadeIn", "#expanded-banner #info", 0);
-    TweenMax.from("#device1", 3, {top:"-500px", ease:Strong.easeOut, delay:.5});
-    TweenMax.from("#shadow", 3, {top:"-50px", ease:Strong.easeOut, delay:.5});
+    TweenMax.from("#device1", 3, {top:-909, ease:Strong.easeOut, delay:.5});
+    TweenMax.from("#shadow", 3, {top:-86, ease:Strong.easeOut, delay:.5});
     TweenMax.to("#expanded-banner #info #f1_txt1", 2, { opacity:1, delay:.5, onComplete:frame2});
 }
 
 function frame2() {
     TweenMax.to("#expanded-banner #info #f1_txt1", .5, { opacity:0, delay:1});
-    TweenMax.to("#device1", 2, {top:"-120", ease:Strong.easeInOut, delay:2});
-    TweenMax.to("#shadow", 2, {top:"315", ease:Strong.easeInOut, delay:2});
+    TweenMax.to("#device1", 2, {top:-230, ease:Strong.easeInOut, delay:2});
+    TweenMax.to("#shadow", 2, {top:588, ease:Strong.easeInOut, delay:2});
     TweenMax.to("#expanded-banner #info #f2_txt1", 2, { opacity:1, delay:3.5});
-    TweenMax.to("#expanded-banner #info #f2_txt2", 2, { opacity:1, delay:3.7, onComplete:frame3});
+    TweenMax.to("#expanded-banner #info #f2_txt2", 2, { opacity:1, delay:3.5, onComplete:frame3});
 }
 
 function frame3() {
     TweenMax.to("#expanded-banner #info #f2_txt1", .5, { opacity:0, delay:1});
-    TweenMax.to("#expanded-banner #info #f2_txt2", .7, { opacity:0, delay:1});
-    TweenLite.set("#persp", {perspective:1000});
-    TweenMax.to("#device1", 1, {left:155, rotationY:180, ease:Power2.easeInOut, transformOrigin:"center bottom", delay:1.5});
-    TweenMax.to("#shadow", 1, {left:100, rotationY:180, ease:Power2.easeInOut, transformOrigin:"center bottom", delay:1.5});
+    TweenMax.to("#expanded-banner #info #f2_txt2", .5, { opacity:0, delay:1});
+    TweenLite.set("#persp", {perspective:4500});
+    TweenMax.to("#device1", 1, {left:560, rotationY:180, ease:Power2.easeInOut, transformOrigin:"center bottom", delay:1.5});
+    TweenMax.to("#shadow", 1, {left:253, rotationY:180, ease:Power2.easeInOut, transformOrigin:"center bottom", delay:1.5});
     TweenMax.to("#device1", 0.01, {opacity:0, delay:2.1});
-    TweenLite.set("#persp2", {perspective:1000});
-    TweenMax.to("#device2", 1, {left:155, rotationY:180, ease:Power2.easeInOut, transformOrigin:"center bottom", delay:1.5});
+    TweenLite.set("#persp2", {perspective:4500});
+    TweenMax.to("#device2", 1, {left:560, rotationY:180, ease:Power2.easeInOut, transformOrigin:"center bottom", delay:1.5});
     TweenMax.to("#device2", 0.1, {opacity:1, delay:2});
-    TweenMax.to("#device2", 1.5, {top:60, ease:Expo.easeInOut, delay:2});
-    TweenMax.to("#shadow", 1.5, {opacity:0, top:500, ease:Expo.easeInOut, delay:2});
+    TweenMax.to("#device2", 1.5, {top:94, ease:Expo.easeInOut, delay:2});
+    TweenMax.to("#shadow", 1.5, {opacity:0, top:950, ease:Expo.easeInOut, delay:2});
     TweenMax.to("#logo", 1, { opacity:1, delay:3});
-    TweenMax.to("#expanded-banner #info #f3_txt1", .5, { left: 12, opacity:1, delay:3.2});
-    TweenMax.to("#expanded-banner #info #f3_txt2", .7, { left: 12, opacity:1, delay:3.4});
-    TweenMax.to("#expanded-banner #info #f3_txt3", .7, { left: 12, opacity:1, delay:3.6});
-    TweenMax.to("#device2", 0.6, {left:320, ease:Sine.easeOut, delay:5.7});
-    TweenMax.to("#shadow", 0.6, {left:320, ease:Sine.easeOut, delay:5.7});
+    TweenMax.to("#expanded-banner #info #f3_txt1", .5, { left: 65, opacity:1, delay:3.2});
+    TweenMax.to("#expanded-banner #info #f3_txt2", .7, { left: 65, opacity:1, delay:3.4});
+    TweenMax.to("#expanded-banner #info #f3_txt3", .7, { left: 65, opacity:1, delay:3.6});
     TweenMax.to("#expanded-banner #info #f3_txt1", .5, { left: -25, opacity:0, delay:5.5});
     TweenMax.to("#expanded-banner #info #f3_txt2", .4, { left: -25, opacity:0, delay:5.7});
-    TweenMax.to("#expanded-banner #info #f3_txt3", .3, { left: -25, opacity:0, delay:5.9, onComplete:frame4});
-    TweenLite.set("#persp2", {perspective:500});
-    TweenMax.to("#device2", 1, {top:40, left:-25, scaleX:0.65, scaleY:0.92, rotationY:135, ease:Power4.easeOut, transformOrigin:"right bottom", delay:6.1});
+    TweenMax.to("#expanded-banner #info #f3_txt3", .3, { left: -25, opacity:0, delay:5.9});
+    TweenMax.to("#device2", 0.00000000001, {left:134, rotationY:180, ease:Power2.easeInOut, transformOrigin:"right bottom", delay:6.1});
+    TweenLite.set("#persp2", {perspective:2250});
+    TweenMax.to("#persp2", 0.5, {height:"1240px", delay:6.1});
+    TweenMax.to("#bordeDevice", 2, {width:"0px", scaleY:0.8, transformOrigin:"right bottom", delay:5});
+    TweenMax.to("#device2", 1, {rotationY:135, scaleX:0.95, scaleY:1, ease:Power4.easeOut, transformOrigin:"right bottom", delay:6.1, onComplete:frame4});
+    TweenMax.to("#bordeDevice", 1, {opacity:1, width:"70px", top: 38, left: 898, scaleY:1, transformOrigin:"right bottom", ease:Power4.easeOut, delay:6.1});
 }
 
 function frame4(){
     TweenMax.to("#FF", 0, { opacity:1});
-    TweenMax.to("#ff_txt1", .5, { left: 12, opacity:1, delay:0.2});
-    TweenMax.to("#ff_txt2", .5, { left: 12, opacity:1, delay:.3}); 
-    TweenMax.to("#ff_txt3", .5, { left: 12, opacity:1, delay:.4});
-    TweenMax.to("#ff_txt4", .5, { left: 12, opacity:1, delay:.5})
+    TweenMax.to("#ff_txt1", .5, { left: 45, opacity:1, delay:0.2});
+    TweenMax.to("#ff_txt2", .5, { left: 45, opacity:1, delay:.3}); 
+    TweenMax.to("#ff_txt3", .5, { left: 45, opacity:1, delay:.4});
+    TweenMax.to("#ff_txt4", .5, { left: 45, opacity:1, delay:.5})
     TweenMax.to("#ff-cta", .5, { opacity:1, delay:.7 });  
     TweenMax.to("#ff_txt5", .5, { opacity:1, delay:.9});
     TweenMax.to("#footer-cta", .5, { opacity:1, delay:1});
