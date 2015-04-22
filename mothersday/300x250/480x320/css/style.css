@@ -136,6 +136,19 @@ sup {
     display: block;
 }
 
+#bordeDevice {
+    position: absolute;
+    top: 49px;
+    left: 436px;
+    width: 70px;
+    height: 866px;
+    background: url(../img/device_sd.jpg) no-repeat;
+    opacity: 0;
+    -moz-border-radius: 70px;
+    -webkit-border-radius: 70px;
+    border-radius: 70px;
+}
+
 #logo {
     margin-left: 11px;
     margin-top: 0;

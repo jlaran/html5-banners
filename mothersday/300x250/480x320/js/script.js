@@ -38,24 +38,28 @@ function frame3() {
     TweenMax.to("#expanded-banner #info #f2_txt2", .7, { opacity:0, delay:1});
     TweenLite.set("#persp", {perspective:1000});
     TweenMax.to("#device1", 1, {left:265, rotationY:180, ease:Power2.easeInOut, transformOrigin:"center bottom", delay:1.5});
-    TweenMax.to("#shadow", 1, {left:190, rotationY:180, ease:Power2.easeInOut, transformOrigin:"center bottom", delay:1.5});
+    TweenMax.to("#shadow", 1, {left:230, rotationY:180, ease:Power2.easeInOut, transformOrigin:"center bottom", delay:1.5});
     TweenMax.to("#device1", 0.01, {opacity:0, delay:2.1});
     TweenLite.set("#persp2", {perspective:1000});
-    TweenMax.to("#device2", 1, {left:230, rotationY:180, ease:Power2.easeInOut, transformOrigin:"center bottom", delay:1.5});
+    TweenMax.to("#device2", 1, {left:284, rotationY:180, ease:Power2.easeInOut, transformOrigin:"center bottom", delay:1.5});
     TweenMax.to("#device2", 0.1, {opacity:1, delay:2});
-    TweenMax.to("#device2", 1.5, {top:30, ease:Expo.easeInOut, delay:2});
+    TweenMax.to("#device2", 1.5, {top:82, ease:Expo.easeInOut, delay:2});
     TweenMax.to("#shadow", 1.5, {opacity:0, top:520, ease:Expo.easeInOut, delay:2});
     TweenMax.to("#logo", 1, { opacity:1, delay:3});
     TweenMax.to("#expanded-banner #info #f3_txt1", .5, { left: 21, opacity:1, delay:3.2});
     TweenMax.to("#expanded-banner #info #f3_txt2", .7, { left: 21, opacity:1, delay:3.4});
     TweenMax.to("#expanded-banner #info #f3_txt3", .7, { left: 21, opacity:1, delay:3.6});
-    TweenMax.to("#device2", 1, {left:485, ease:Sine.easeInOut, delay:5.7});
     TweenMax.to("#shadow", 1, {left:485, ease:Sine.easeInOut, delay:5.7});
     TweenMax.to("#expanded-banner #info #f3_txt1", .5, { left: -25, opacity:0, delay:5.5});
     TweenMax.to("#expanded-banner #info #f3_txt2", .4, { left: -25, opacity:0, delay:5.7});
     TweenMax.to("#expanded-banner #info #f3_txt3", .3, { left: -25, opacity:0, delay:5.9, onComplete:frame4});
-    TweenLite.set("#persp2", {perspective:500});
-    TweenMax.to("#device2", 1, {top:40, left:60, scaleX:0.65, scaleY:0.92, rotationY:135, ease:Power4.easeOut, transformOrigin:"right bottom", delay:7});
+    TweenMax.to("#expanded-banner #info #f3_txt3", .3, { left: -25, opacity:0, delay:5.9});
+    TweenMax.to("#device2", 0.00000000001, {left:52, top:81, rotationY:180, ease:Power2.easeInOut, transformOrigin:"right bottom", delay:6.1});
+    TweenLite.set("#persp2", {perspective:2250});
+    TweenMax.to("#persp2", 0.5, {height:"1240px", delay:6.1});
+    TweenMax.to("#device2", 1, {rotationY:135, scaleX:0.95, scaleY:1, ease:Power4.easeOut, transformOrigin:"right bottom", delay:6.1, onComplete:frame4});
+    TweenMax.from("#bordeDevice", .4, { top:80, left:400, delay:6.2 });
+    TweenMax.to("#bordeDevice", .4, { opacity: 1, delay:6 });
 }
 
 function frame4(){
