@@ -114,24 +114,22 @@ function frame4(){
         TweenMax.to("#ff_txt2", .5, { left: 45, opacity:1, delay:.1}); 
         TweenMax.to("#ff_txt3", .5, { left: 45, opacity:1, delay:.2});
         TweenMax.to("#ff_txt4", .5, { left: 45, opacity:1, delay:.3})
-        TweenMax.to("#ff-cta", .5, { opacity:1, delay:.5 });  
+        TweenMax.to("#ff-cta", .5, { display:'block', opacity:1, delay:.5 });  
         TweenMax.to("#ff_txt5", .5, { opacity:1, delay:.7});
-        TweenMax.to("#footer-cta", .5, { opacity:1, delay:.9});
+        TweenMax.to("#footer-cta", .5, { display:'block', opacity:1, delay:.9});
     } else {
         TweenMax.to("#FF", 0, { opacity:1});
         TweenMax.to("#ff_txt1", .5, { left: 45, opacity:1, delay:0});
         TweenMax.to("#ff_txt2", .5, { left: 45, opacity:1, delay:.1}); 
         TweenMax.to("#ff_txt3", .5, { left: 45, opacity:1, delay:.2});
         TweenMax.to("#ff_txt4", .5, { left: 45, opacity:1, delay:.3})
-        TweenMax.to("#ff-cta", .5, { opacity:1, delay:.5});  
+        TweenMax.to("#ff-cta", .5, { display:'block', opacity:1, delay:.5});  
         TweenMax.to("#ff_txt5", .5, { opacity:1, delay:.7});
-        TweenMax.to("#footer-cta", .5, { opacity:1, delay:.9});
+        TweenMax.to("#footer-cta", .5, { display:'block', opacity:1, delay:.9});
     }
 }
 
 function GeneralClose() {
-    Enabler.requestCollapse();
-    Enabler.reportManualClose();
     TweenMax.set("#expanded-banner", {opacity:0, display:'none'});
     TweenMax.set("#map", {opacity:0, display:'none'});
     motionLibrary.resetWhenCloseOrExit();

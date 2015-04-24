@@ -236,7 +236,7 @@
                 Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, doubleClickEvents.functionsWhenPageLoaded);
                 Enabler.addEventListener( studio.events.StudioEvent.EXPAND_START,  function() {Enabler.finishExpand()});
                 Enabler.addEventListener( studio.events.StudioEvent.EXPAND_FINISH,  function() { });
-                Enabler.addEventListener( studio.events.StudioEvent.COLLAPSE_START, function() {GeneralClose()});
+                Enabler.addEventListener( studio.events.StudioEvent.COLLAPSE_START, function() {GeneralClose();Enabler.finishCollapse()});
                 Enabler.addEventListener( studio.events.StudioEvent.COLLAPSE_FINISH, function() { });
                 Enabler.addEventListener( studio.events.StudioEvent.ORIENTATION, doubleClickEvents.orientationChange);
             } else {

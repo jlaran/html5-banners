@@ -340,6 +340,7 @@ sup {
     left: 45px;
     font-size: 20px;
     opacity: 0;
+    display: none;
 }
 
 .landscape #FF #ff-cta:hover {
@@ -358,6 +359,7 @@ sup {
     top: 664px;
     left: 45px;
     font-size: 20px;
+    display: none;
 }
 
 .landscape #FF #footer-cta:hover {
@@ -555,12 +557,14 @@ sup {
         left: 45px;
         font-size: 20px;
         opacity: 0;
+        display: none;
     }
 
     .landscape #FF #footer-cta {
         top: 350px;
         left: 45px;
         font-size: 20px;
+        display: none;
     }
 }
 
@@ -831,6 +835,7 @@ sup {
     left: 45px;
     font-size: 20px;
     opacity: 0;
+    display: none;
 }
 
 .portrait #FF #ff-cta:hover {
@@ -848,6 +853,7 @@ sup {
 .portrait #FF #footer-cta {
     top: 694px;
     left: 45px;
+    display: none;
 }
 
 .portrait #FF #footer-cta:hover {
@@ -1081,6 +1087,7 @@ sup {
         left: 45px;
         font-size: 20px;
         opacity: 0;
+        display: none;
     }
 
     .portrait #ff_txt5 {
@@ -1096,5 +1103,6 @@ sup {
         top: 424px;
         left: 45px;
         font-size: 20px;
+        display: none;
     }
 }

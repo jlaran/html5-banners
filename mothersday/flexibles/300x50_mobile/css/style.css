@@ -15,8 +15,8 @@ sup {
 }
 
 #banner {
-    width: 100%;
-    height: 100%;
+    width: 300px;
+    height: 50px;
     /*background: #dedede;*/
 }
 
@@ -350,6 +350,7 @@ sup {
     left: 25px;
     opacity: 0;
     top: 113px;
+    display: none;
 }
 
 .landscape #FF #ff-cta:hover {
@@ -368,6 +369,7 @@ sup {
     font-size: 12px;
     left: 25px;
     top: 217px;
+    display: none;
 }
 
 .landscape #FF #footer-cta:hover {
@@ -565,12 +567,14 @@ sup {
         left: 25px;
         opacity: 0;
         top: 113px;
+        display: none;
     }
 
     .landscape #FF #footer-cta {
         font-size: 12px;
         left: 25px;
         top: 217px;
+        display: none;
     }
 }
 
@@ -843,6 +847,7 @@ sup {
     font-size: 14px;
     left: 25px;
     top: 146px;
+    display: none;
 }
 
 .portrait #FF #ff-cta:hover {
@@ -861,6 +866,7 @@ sup {
     font-size: 14px;
     left: 25px;
     top: 284px;
+    display: none;
 }
 
 .portrait #FF #footer-cta:hover {
@@ -1093,6 +1099,7 @@ sup {
         font-size: 14px;
         left: 25px;
         top: 146px;
+        display: none;
     }
 
     .portrait #ff_txt5 {
@@ -1108,5 +1115,6 @@ sup {
         font-size: 14px;
         left: 25px;
         top: 284px;
+        display: none;
     }
 }
