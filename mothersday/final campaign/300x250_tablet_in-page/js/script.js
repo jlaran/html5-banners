@@ -2,6 +2,13 @@ doubleClickEvents.initializer("in-app");
 
 var orientationNumber;
 
+var currentdate = new Date(),
+    afterDay = false; 
+
+    if ((currentdate.getMonth()+1) == 5 && currentdate.getDate() >= 3){
+        afterDay = true;
+    }
+
 var elementsToRegister = [
     {eventType: "click", element: "#collapse-banner", functionToCall: "expanded"},
     {eventType: "click", element: "#getLocation", functionToCall: "updatePosition"},
@@ -9,8 +16,8 @@ var elementsToRegister = [
     {eventType: "click", element: "#ff-cta", functionToCall: "shopGift"},
     {eventType: "click", element: "#get-direction-button", functionToCall: "getDirectionsExit"},
     {eventType: "keypress", element: "#autocomplete", functionToCall: "searchMap"},
-    {eventType: "click", element: "#route", functionToCall: "searchMap"}
-    //{eventType: "click", element: "#generalClose", functionToCall: "GeneralClose"}
+    {eventType: "click", element: "#route", functionToCall: "searchMap"},
+    {eventType: "click", element: "#generalClose", functionToCall: "GeneralClose"}
 ];
 
 function firstFrame(){
@@ -33,6 +40,10 @@ function expanded() {
         TweenMax.to("#device1", 3, {bottom: "45%", ease:Strong.easeOut, delay:.5});
         TweenMax.to("#shadow", 3, {opacity:1, bottom: "40%", ease:Strong.easeOut, delay:.5});
         TweenMax.to("#expanded-banner #info #f1_txt1", 2, { opacity:1, delay:.5, onComplete:frame2});
+    }
+
+    if(afterDay == true){
+        document.getElementById("device2").style.background = "url('img/device_ft2.jpg') no-repeat";
     }
 }
 
@@ -74,9 +85,6 @@ function frame3() {
         TweenLite.set("#persp2", {perspective:2250});
         TweenMax.to("#persp2", 0.5, {height:"1240px", delay:6.1});
         TweenMax.to("#device2", 1, {opacity:1, rotationY:135, scaleX:0.95, scaleY:1, ease:Power4.easeOut, transformOrigin:"center bottom", delay:6.1});
-        TweenMax.to("#bordeDevice", 0.01, {opacity:0,  delay:6});
-        TweenMax.to("#bordeDevice", 1, {top: "11%", left:"52%", rotationY:135, scaleX:0.95, scaleY:1, ease:Power4.easeOut, transformOrigin:"center bottom", delay:6.1});
-        TweenMax.to("#bordeDevice", 1, {opacity:1, display:'block', delay:6.62});
     } else {
         TweenMax.to("#expanded-banner #info #f2_txt1", .5, { opacity:0, delay:1});
         TweenMax.to("#expanded-banner #info #f2_txt2", .5, { opacity:0, delay:1});
@@ -101,9 +109,6 @@ function frame3() {
         TweenLite.set("#persp2", {perspective:2250});
         TweenMax.to("#persp2", 0.5, {height:"1240px", delay:6.1});
         TweenMax.to("#device2", 1, {opacity:1, rotationY:135, scaleX:0.95, scaleY:1, ease:Power4.easeOut, transformOrigin:"center bottom", delay:6.1});
-        TweenMax.to("#bordeDevice", 0.01, {opacity:0,  delay:6});
-        TweenMax.to("#bordeDevice", 1, {top: "11%", left:"52%", rotationY:135, scaleX:0.95, scaleY:1, ease:Power4.easeOut, transformOrigin:"center bottom", delay:6.1});
-        TweenMax.to("#bordeDevice", 1, {opacity:1, display:'block', delay:6.62});
     }
 }
 
@@ -114,18 +119,22 @@ function frame4(){
         TweenMax.to("#ff_txt2", .5, { left: 45, opacity:1, delay:.1}); 
         TweenMax.to("#ff_txt3", .5, { left: 45, opacity:1, delay:.2});
         TweenMax.to("#ff_txt4", .5, { left: 45, opacity:1, delay:.3})
-        TweenMax.to("#ff-cta", .5, { display:'block', opacity:1, delay:.5 });  
+        TweenMax.to("#ff-cta", .5, { display:"block", opacity:1, delay:.5 });  
         TweenMax.to("#ff_txt5", .5, { opacity:1, delay:.7});
-        TweenMax.to("#footer-cta", .5, { display:'block', opacity:1, delay:.9});
+        TweenMax.to("#footer-cta", .5, {display:"block", opacity:1, delay:.9});
     } else {
         TweenMax.to("#FF", 0, { opacity:1});
         TweenMax.to("#ff_txt1", .5, { left: 45, opacity:1, delay:0});
         TweenMax.to("#ff_txt2", .5, { left: 45, opacity:1, delay:.1}); 
         TweenMax.to("#ff_txt3", .5, { left: 45, opacity:1, delay:.2});
         TweenMax.to("#ff_txt4", .5, { left: 45, opacity:1, delay:.3})
-        TweenMax.to("#ff-cta", .5, { display:'block', opacity:1, delay:.5});  
+        TweenMax.to("#ff-cta", .5, {display:"block", opacity:1, delay:.5});  
         TweenMax.to("#ff_txt5", .5, { opacity:1, delay:.7});
-        TweenMax.to("#footer-cta", .5, { display:'block', opacity:1, delay:.9});
+        TweenMax.to("#footer-cta", .5, {display:"block", opacity:1, delay:.9});
+    }
+
+    if(afterDay == true){
+       TweenMax.to("#ff_txt6", .5, { opacity:1, delay:.1});
     }
 }
 
