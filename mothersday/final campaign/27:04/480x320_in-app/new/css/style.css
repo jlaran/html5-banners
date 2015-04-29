@@ -4,7 +4,6 @@ p, h1, h2, h3, h4, a {
 }
 
 body {
-    background: #ffffff;
     font-family: "Verizon Apex Book", Helvetica, Arial, sans-serif;
 }
 
@@ -15,14 +14,14 @@ sup {
 }
 
 #banner {
-    width: 728px;
-    height: 90px;
+    width: 300px;
+    height: 250px;
     /*background: #dedede;*/
 }
 
 #collapse-banner {
-    width: 726px;
-    height: 88px;
+    width: 298px;
+    height: 248px;
     background: #ffffff;
     overflow: hidden;
     cursor: pointer;
@@ -32,8 +31,8 @@ sup {
 #collapse-banner h1 {
     position: absolute;
     font-size: 23px;
-    top: 23px;
-    left: 307px;
+    top: 109px;
+    left: 56px;
     color: #333333;
     opacity: 0;
 }
@@ -42,17 +41,17 @@ sup {
     font-family: Helvetica, Arial, sans-serif;
     position: absolute;
     font-size: 15px;
-    top: 54px;
-    left: 307px;
+    top: 140px;
+    left: 56px;
     color: #333333;
     opacity: 0;
 }
 
 #collapse-banner #logo_collapse {
     margin-left: 11px;
-    margin-top: -2px;
-    width: 65px;
-    height: 64px;
+    margin-top: 0;
+    width: 67px;
+    height: 67px;
     background: url(../img/logo-verizon.svg) no-repeat;
 }
 
@@ -60,8 +59,8 @@ sup {
     position: absolute;
     top: 0;
     left: 0;
-    width: 766px;
-    height: 1022px;
+    width: 478px;
+    height: 318px;
     background: #ffffff;
     display: none;
     opacity: 0;
@@ -94,11 +93,11 @@ sup {
 
 .landscape #shadow {
     position: absolute;
-    bottom: 97%;
+    bottom: 90%;
     left: 0;
     right: 0;
     margin: 0 auto;
-    width: 100%;
+    width: 70%;
     height: 86px;
     background: url(../img/shadow.jpg) no-repeat;
     background-size: contain;
@@ -107,18 +106,19 @@ sup {
 }
 
 .landscape #device1 {
-    width: 426px;
-    height: 866px;
     position: absolute;
     bottom: 100%;
     left: 0;
     right: 0;
     margin: 0 auto;
-       -moz-border-radius: 70px;
-    -webkit-border-radius: 70px;
-            border-radius: 70px;
     background: url(../img/device_bck.jpg) no-repeat;
     z-index: 1;
+        -moz-border-radius: 34px;
+    -webkit-border-radius: 34px;
+    border-radius: 34px;
+    height: 465px;
+    width: 231px;
+    background-size: contain;
 }
 
 .landscape #persp2 {
@@ -133,18 +133,31 @@ sup {
 
 .landscape #device2 {
     position: absolute;
-    bottom: 25%;
+    bottom: 32%;
     left: 0;
     right: 0;
     margin: 0 auto;
-    width: 426px;
-    height: 866px;
-    -moz-border-radius: 70px;
-    -webkit-border-radius: 70px;
-    border-radius: 70px;
+    -moz-border-radius: 34px;
+    -webkit-border-radius: 34px;
+    border-radius: 34px;
+    height: 465px;
+    width: 231px;
     background: url(../img/device_ft.jpg) no-repeat;
+    background-size: contain;
     opacity: 0;
     z-index: 1;
+}
+
+.finished .portrait #device2 {
+    left: 56% !important;
+}
+
+.finished .portrait #bordeDevice {
+    left: 66% !important;
+}
+
+.finished .landscape #bordeDevice {
+    left: 53% !important;
 }
 
 .landscape #bordeDevice {
@@ -153,15 +166,16 @@ sup {
     left: 51%;
     right: 0;
     margin: 0 auto;
-    width: 426px;
-    height: 866px;
     background: url(../img/device_sd.jpg) no-repeat;
     /*opacity: 0;*/
-    -moz-border-radius: 70px;
-    -webkit-border-radius: 70px;
-    border-radius: 70px;
     z-index: -100000000000;
     display: none;
+        -moz-border-radius: 34px;
+    -webkit-border-radius: 34px;
+    border-radius: 34px;
+    height: 465px;
+    width: 231px;
+    background-size: contain;
 }
 
 .landscape #info {
@@ -169,12 +183,12 @@ sup {
 }
 
 .landscape #logo {
-    margin-left: 45px;
+    margin-left: 25px;
     margin-top: 0;
-    width: 16.667%;
-    height: 16.667%;
-    min-width: 110px;
-    max-width: 130px;
+    width: 22%;
+    height: 22%;
+    min-width: 70px;
+    max-width: 70px;
     margin-top: 0;
     background: url(../img/logo-verizon.svg) no-repeat;
     opacity: 0;
@@ -186,27 +200,26 @@ sup {
 }
 
 .landscape #f1_txt1 {
-    width: 385px;
     bottom: 20%;
     left: 0;
     right: 0;
     margin: 0 auto;
-    font-size: 48px;
+    font-size: 28px;
     opacity: 0;
     text-align: center;
 }
 
 
 .landscape #f2_txt1 {
-    width: 400px;
-    bottom: 4%;
+    width: 232px;
+    bottom: 6%;
     left: 0;
     right: 0;
     margin: 0 auto;
-    font-size: 48px;
+    font-size: 28px;
     opacity: 0;
     text-align: center;
-    line-height: 54px;
+    line-height: 32px;
 }
 
 .landscape #f3_txt {
@@ -215,26 +228,26 @@ sup {
 }
 
 .landscape #f3_txt1 {
-    top: 10px;
+    top: 0px;
     left: -340px;
-    font-size: 48px;
+    font-size: 28px;
     opacity: 0;
     width: 290px;
 }
 
 
 .landscape #f3_txt2 {
-    top: 63px;
+    top: 34px;
     left: -340px;
-    font-size: 48px;
+    font-size: 28px;
     opacity: 0;
     width: 292px;
 }
 
 .landscape #f3_txt3 {
-    top: 118px;
+    top: 67px;
     left: -340px;
-    font-size: 48px;
+    font-size: 28px;
     letter-spacing: -1px;
     opacity: 0;
     width: 352px;
@@ -255,15 +268,15 @@ sup {
 
 .landscape #ff_txt {
     position: absolute;
-    bottom: 100%;
+    bottom: 86%;
 }
 
 .landscape #ff_txt1 {
-    top: 207px;
-    width: 400px;
+    top: 0px;
+    width: 200px;
     left: -200px;
     font-family: "Verizon Apex Medium Italic", sans-serif;
-    font-size: 40px;
+    font-size: 20px;
     opacity: 0;
 }
 
@@ -277,9 +290,9 @@ sup {
 }
 
 .landscape #ff_txt3 {
-    top: 312px;
+    top: 52px;
     left: -254px;
-    font-size: 37px;
+    font-size: 19px;
     font-family: "Verizon Apex Book", sans-serif;
     letter-spacing: 0;
     line-height: 14px;
@@ -288,30 +301,40 @@ sup {
 }
 
 .landscape #ff_txt1 sup {
-    top: -21.5px;
-    font-size: 15px;
+    font-size: 10px;
     left: 1px;
+    top: -9.5px;
 }
 
 .landscape #ff_txt4 {
-    top: 340px;
+    font-family: "Verizon Apex Book",sans-serif;
+    font-size: 14px;
     left: -200px;
-    font-size: 30px;
-    font-family: "Verizon Apex Book", sans-serif;
-    line-height: 36px;
-    width: 354px;
-    opacity: 0;
+    line-height: 17px;
+    top: 72px;
+    width: 226px;
 }
 
 .landscape #ff_txt4 sup {
-    top: -14.5px;
-    font-size: 15px;
+    font-size: 9px;
     left: 0;
+    top: -4.5px;
 }
 
 .landscape #ff_txt5 {
-    top: 530px;
-    left: 45px;
+    font-family: "Verizon Apex Medium", sans-serif;
+    top: 142px;
+    left: 25px;
+    width: 216px;
+    font-size: 10px;
+    line-height: 15px;
+    opacity: 0;
+}
+
+.landscape #ff_txt6 {
+    font-family: "Verizon Apex Book", sans-serif;
+    top: 10px;
+    left: 62%;
     width: 306px;
     font-size: 14px;
     line-height: 22px;
@@ -325,7 +348,7 @@ sup {
     color: #ffffff;
     text-decoration: none;
     font-size: 20px;
-    padding: 14px;
+    padding: 8px;
     text-align: center;
     opacity: 0;
     white-space: nowrap;
@@ -336,10 +359,10 @@ sup {
 }
 
 .landscape #FF #ff-cta {
-    top: 468px;
-    left: 45px;
-    font-size: 20px;
+    font-size: 12px;
+    left: 25px;
     opacity: 0;
+    top: 113px;
     display: none;
 }
 
@@ -356,9 +379,9 @@ sup {
 }
 
 .landscape #FF #footer-cta {
-    top: 664px;
-    left: 45px;
-    font-size: 20px;
+    font-size: 12px;
+    left: 25px;
+    top: 209px;
     display: none;
 }
 
@@ -371,9 +394,9 @@ sup {
 
 .landscape #get-direction-button {
     position: absolute;
-    bottom: 45px;
-    right: 45px;
-    font-size: 20px;
+    bottom: 25px;
+    right: 25px;
+    font-size: 12px;
     height: auto;
     z-index: 1;
     opacity: 1;
@@ -423,7 +446,7 @@ sup {
     position: absolute;
     z-index: 1;
     padding: 5px 5px 5px 27px;
-    width: 360px;
+    width: 67%;
     height: 23px;
     top: 0;
     left: 0;
@@ -468,7 +491,7 @@ sup {
 .landscape #controls {
     background: #ffffff;
     box-shadow: 0 2px 6px rgba(0,0,0,0.3),0 4px 15px -5px rgba(0,0,0,0.0);
-    width: 475px;
+    width: 70%;
     height: 35px;
     position: absolute;
     top: 20px;
@@ -498,28 +521,28 @@ sup {
 @media screen and (max-height: 763px) {
     .landscape #ff_txt {
         position: absolute;
-        bottom: 67%;
+        bottom: 84%;
     }
 
     .landscape #ff_txt1 {
         top: 0px;
-        width: 350px;
+        width: 200px;
         left: -200px;
         font-family: "Verizon Apex Medium Italic", sans-serif;
-        font-size: 35px;
+        font-size: 20px;
         opacity: 0;
     }
 
     .landscape #ff_txt1 sup {
-        top: -17.5px;
-        font-size: 13px;
+        font-size: 10px;
         left: 1px;
+        top: -9.5px;
     }
 
     .landscape #ff_txt3 {
-        top: 90px;
+        top: 52px;
         left: -254px;
-        font-size: 33px;
+        font-size: 19px;
         font-family: "Verizon Apex Book", sans-serif;
         letter-spacing: 0;
         line-height: 14px;
@@ -528,42 +551,52 @@ sup {
     }
 
     .landscape #ff_txt4 {
-        top: 119px;
+        font-family: "Verizon Apex Book",sans-serif;
+        font-size: 14px;
         left: -200px;
-        font-size: 23px;
-        font-family: "Verizon Apex Book", sans-serif;
-        line-height: 27px;
-        width: 366px;
+        line-height: 17px;
+        top: 72px;
+        width: 226px;
     }
 
     .landscape #ff_txt5 {
         font-family: "Verizon Apex Medium", sans-serif;
-        top: 246px;
-        left: 45px;
-        width: 366px;
+        top: 142px;
+        left: 25px;
+        width: 216px;
+        font-size: 10px;
+        line-height: 16px;
+        opacity: 0;
+    }
+
+    .landscape #ff_txt6 {
+        font-family: "Verizon Apex Book", sans-serif;
+        top: 10px;
+        left: 62%;
+        width: 306px;
         font-size: 14px;
-        line-height: 20px;
+        line-height: 22px;
         opacity: 0;
     }
 
     .landscape #ff_txt4 sup {
-        top: -10.5px;
-        font-size: 10px;
+        font-size: 9px;
         left: 0;
+        top: -4.5px;
     }
 
     .landscape #FF #ff-cta {
-        top: 190px;
-        left: 45px;
-        font-size: 20px;
+        font-size: 12px;
+        left: 25px;
         opacity: 0;
+        top: 113px;
         display: none;
     }
 
     .landscape #FF #footer-cta {
-        top: 350px;
-        left: 45px;
-        font-size: 20px;
+        font-size: 12px;
+        left: 25px;
+        top: 209px;
         display: none;
     }
 }
@@ -572,8 +605,8 @@ sup {
     position: absolute;
     top: 0;
     left: 0;
-    width: 766px;
-    height: 1022px;
+    width: 478px;
+    height: 318px;
     background: #ffffff;
     display: none;
     opacity: 0;
@@ -606,7 +639,7 @@ sup {
 
 .portrait #shadow {
     position: absolute;
-    bottom: 97%;
+    bottom: 90%;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -620,18 +653,19 @@ sup {
 }
 
 .portrait #device1 {
-    width: 426px;
-    height: 866px;
     position: absolute;
     bottom: 100%;
     left: 0;
     right: 0;
     margin: 0 auto;
-       -moz-border-radius: 70px;
-    -webkit-border-radius: 70px;
-            border-radius: 70px;
     background: url(../img/device_bck.jpg) no-repeat;
     z-index: 6;
+        -moz-border-radius: 34px;
+    -webkit-border-radius: 34px;
+    border-radius: 34px;
+    height: 465px;
+    width: 231px;
+    background-size: contain;
 }
 
 .portrait #persp2 {
@@ -649,14 +683,15 @@ sup {
     left: 0;
     right: 0;
     margin: 0 auto;
-    width: 437px;
-    height: 866px;
-       -moz-border-radius: 70px;
-    -webkit-border-radius: 70px;
-            border-radius: 70px;
     background: url(../img/device_ft.jpg) no-repeat;
     opacity: 0;
     z-index: 2;
+    -moz-border-radius: 34px;
+    -webkit-border-radius: 34px;
+    border-radius: 34px;
+    height: 465px;
+    width: 231px;
+    background-size: contain;
 }
 
 .portrait #bordeDevice {
@@ -665,14 +700,15 @@ sup {
     left: 51%;
     right: 0;
     margin: 0 auto;
-    width: 426px;
-    height: 866px;
     background: url(../img/device_sd.jpg) no-repeat;
     opacity: 0;
-    -moz-border-radius: 70px;
-    -webkit-border-radius: 70px;
-    border-radius: 70px;
+    -moz-border-radius: 34px;
+    -webkit-border-radius: 34px;
+    border-radius: 34px;
     z-index: -1;
+    height: 465px;
+    width: 231px;
+    background-size: contain;
 }
 
 .portrait #info {
@@ -680,7 +716,7 @@ sup {
 }
 
 .portrait #logo {
-    margin-left: 45px;
+    margin-left: 25px;
     margin-top: 0;
     width: 16.667%;
     height: 16.667%;
@@ -696,48 +732,47 @@ sup {
 }
 
 .portrait #f1_txt1 {
-    width: 385px;
     bottom: 20%;
     left: 0;
     right: 0;
     margin: 0 auto;
-    font-size: 48px;
+    font-size: 28px;
     opacity: 0;
     text-align: center;
 }
 
 
 .portrait #f2_txt1 {
-    width: 400px;
+    width: 232px;
     bottom: 6%;
     left: 0;
     right: 0;
     margin: 0 auto;
-    font-size: 48px;
+    font-size: 28px;
     opacity: 0;
     text-align: center;
-    line-height: 54px;
+    line-height: 32px;
 }
 
 .portrait #f3_txt1 {
-    top: 405px;
+    top: 175px;
     left: -100px;
-    font-size: 35px;
+    font-size: 20px;
     opacity: 0;
 }
 
 
 .portrait #f3_txt2 {
-    top: 452px;
+    top: 202px;
     left: -100px;
-    font-size: 35px;
+    font-size: 20px;
     opacity: 0;
 }
 
 .portrait #f3_txt3 {
-    top: 500px;
+    top: 228px;
     left: -100px;
-    font-size: 35px;
+    font-size: 20px;
     letter-spacing: -1px;
     opacity: 0;
 }
@@ -759,9 +794,9 @@ sup {
     top: 250px;
     left: -200px;
     font-family: "Verizon Apex Medium Italic", sans-serif;
-    font-size: 39px;
+    font-size: 20px;
     opacity: 0;
-    width: 380px;
+    width: 190px;
 }
 
 .portrait #ff_txt2 {
@@ -773,41 +808,52 @@ sup {
 }
 
 .portrait #ff_txt3 {
-    top: 355px;
-    left: -200px;
-    font-size: 37px;
+    top: 51px;
+    left: -254px;
+    font-size: 19px;
     font-family: "Verizon Apex Book", sans-serif;
     letter-spacing: 0;
     line-height: 14px;
+    width: 365px;
     opacity: 0;
 }
 
 .portrait #ff_txt1 sup {
-    top: -16px;
-    font-size: 18px;
+    font-size: 9px;
     left: 1px;
+    top: -9.5px;
 }
 
 .portrait #ff_txt4 {
-    top: 385px;
+    top: 74px;
     left: -200;
-    font-size: 29px;
-    width: 340px;
+    font-size: 16px;
+    width: 190px;
     font-family: "Verizon Apex Book", sans-serif;
-    line-height: 32px;
+    line-height: 20px;
     opacity: 0;
 }
 
 .portrait #ff_txt4 sup {
-    top: -13px;
-    font-size: 12px;
+    font-size: 9px;
     left: 0;
+    top: -6.5px;
 }
 
 .portrait #ff_txt5 {
-    top: 580px;
-    left: 45px;
-    width: 310px;
+    font-size: 10px;
+    left: 25px;
+    line-height: 15px;
+    opacity: 0;
+    top: 190px;
+    width: 170px;
+}
+
+.portrait #ff_txt6 {
+    font-family: "Verizon Apex Book", sans-serif;
+    top: 10px;
+    left: 62%;
+    width: 306px;
     font-size: 14px;
     line-height: 22px;
     opacity: 0;
@@ -820,7 +866,7 @@ sup {
     color: #ffffff;
     text-decoration: none;
     font-size: 20px;
-    padding: 14px;
+    padding: 10px;
     text-align: center;
     opacity: 0;
     white-space: nowrap;
@@ -831,10 +877,9 @@ sup {
 }
 
 .portrait #FF #ff-cta {
-    top: 500px;
-    left: 45px;
-    font-size: 20px;
-    opacity: 0;
+    font-size: 14px;
+    left: 25px;
+    top: 146px;
     display: none;
 }
 
@@ -851,8 +896,9 @@ sup {
 }
 
 .portrait #FF #footer-cta {
-    top: 694px;
-    left: 45px;
+    font-size: 14px;
+    left: 25px;
+    top: 284px;
     display: none;
 }
 
@@ -865,10 +911,9 @@ sup {
 
 .portrait #get-direction-button {
     position: absolute;
-    bottom: 45px;
-    right: 45px;
-    font-size: 20px;
-    padding: 12px 20px;
+    bottom: 25px;
+    right: 25px;
+    font-size: 12px;
     height: auto;
     z-index: 1;
     opacity: 1;
@@ -966,7 +1011,7 @@ sup {
     position: absolute;
     z-index: 1;
     padding: 5px 5px 5px 27px;
-    width: 345px;
+    width: 66%;
     height: 23px;
     top: 0;
     left: 0;
@@ -1011,7 +1056,7 @@ sup {
 .portrait #controls {
     background: #ffffff;
     box-shadow: 0 2px 6px rgba(0,0,0,0.3),0 4px 15px -5px rgba(0,0,0,0.0);
-    width: 475px;
+    width: 80%;
     height: 35px;
     position: absolute;
     top: 20px;
@@ -1038,28 +1083,28 @@ sup {
 @media screen and (max-width: 740px) {
     .portrait #ff_txt {
         position: absolute;
-        top: 23%;
+        top: 13%;
     }
 
     .portrait #ff_txt1 {
         top: 0px;
-        width: 300px;
+        width: 190px;
         left: -200px;
         font-family: "Verizon Apex Medium Italic", sans-serif;
-        font-size: 32px;
+        font-size: 20px;
         opacity: 0;
     }
 
     .portrait #ff_txt1 sup {
-        top: -15.5px;
-        font-size: 12px;
+        font-size: 9px;
         left: 1px;
+        top: -9.5px;
     }
 
     .portrait #ff_txt3 {
-        top: 85px;
+        top: 51px;
         left: -254px;
-        font-size: 30px;
+        font-size: 19px;
         font-family: "Verizon Apex Book", sans-serif;
         letter-spacing: 0;
         line-height: 14px;
@@ -1068,41 +1113,51 @@ sup {
     }
 
     .portrait #ff_txt4 {
-        top: 118px;
-        left: -200px;
-        font-size: 22px;
+        top: 74px;
+        left: -200;
+        font-size: 16px;
+        width: 190px;
         font-family: "Verizon Apex Book", sans-serif;
-        line-height: 28px;
-        width: 266px;
-    }
-
-    .portrait #ff_txt4 sup {
-        top: -10.5px;
-        font-size: 10px;
-        left: 0;
-    }
-
-    .portrait #FF #ff-cta {
-        top: 220px;
-        left: 45px;
-        font-size: 20px;
-        opacity: 0;
-        display: none;
-    }
-
-    .portrait #ff_txt5 {
-        top: 280px;
-        left: 45px;
-        width: 310px;
-        font-size: 14px;
         line-height: 20px;
         opacity: 0;
     }
 
+    .portrait #ff_txt4 sup {
+        font-size: 9px;
+        left: 0;
+        top: -6.5px;
+    }
+
+    .portrait #FF #ff-cta {
+        font-size: 14px;
+        left: 25px;
+        top: 146px;
+        display: none;
+    }
+
+    .portrait #ff_txt5 {
+        font-size: 10px;
+        left: 25px;
+        line-height: 15px;
+        opacity: 0;
+        top: 190px;
+        width: 170px;
+    }
+
+    .portrait #ff_txt6 {
+        font-family: "Verizon Apex Book", sans-serif;
+        top: 10px;
+        left: 62%;
+        width: 306px;
+        font-size: 14px;
+        line-height: 22px;
+        opacity: 0;
+    }
+
     .portrait #FF #footer-cta {
-        top: 424px;
-        left: 45px;
-        font-size: 20px;
+        font-size: 14px;
+        left: 25px;
+        top: 284px;
         display: none;
     }
 }

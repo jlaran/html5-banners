@@ -15,14 +15,14 @@ sup {
 }
 
 #banner {
-    width: 728px;
-    height: 90px;
+    width: 160px;
+    height: 600px;
     /*background: #dedede;*/
 }
 
 #collapse-banner {
-    width: 726px;
-    height: 88px;
+    width: 158px;
+    height: 598px;
     background: #ffffff;
     overflow: hidden;
     cursor: pointer;
@@ -31,542 +31,32 @@ sup {
 
 #collapse-banner h1 {
     position: absolute;
-    font-size: 23px;
-    top: 23px;
-    left: 307px;
+    font-size: 22px;
+    top: 226px;
+    left: 22px;
     color: #333333;
     opacity: 0;
+    width: 110px;
 }
 
 #collapse-banner h2 {
     font-family: Helvetica, Arial, sans-serif;
     position: absolute;
     font-size: 15px;
-    top: 54px;
-    left: 307px;
+    top: 283px;
+    left: 22px;
     color: #333333;
     opacity: 0;
 }
 
 #collapse-banner #logo_collapse {
     margin-left: 11px;
-    margin-top: -2px;
-    width: 65px;
-    height: 64px;
+    margin-top: 0px;
+    width: 70px;
+    height: 70px;
     background: url(../img/logo-verizon.svg) no-repeat;
 }
 
-.landscape #expanded-banner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 766px;
-    height: 1022px;
-    background: #ffffff;
-    display: none;
-    opacity: 0;
-    overflow: hidden;
-    border: 1px #333333 solid;
-}
-
-.landscape #generalClose {
-    width: 20px;
-    height: 20px;
-    background: url(../img/close.png);
-    background-size: contain;
-    position: absolute;
-    z-index: 1000;
-    top: 5px;
-    right: 5px;
-    display: block;
-    cursor: pointer;
-}
-
-.landscape #persp {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 100%;
-    height: 100%;
-}
-
-.landscape #shadow {
-    position: absolute;
-    bottom: 97%;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 100%;
-    height: 86px;
-    background: url(../img/shadow.jpg) no-repeat;
-    background-size: contain;
-    background-position: center center;
-    opacity: 0;
-}
-
-.landscape #device1 {
-    width: 426px;
-    height: 866px;
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-       -moz-border-radius: 70px;
-    -webkit-border-radius: 70px;
-            border-radius: 70px;
-    background: url(../img/device_bck.jpg) no-repeat;
-    z-index: 1;
-}
-
-.landscape #persp2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 100%;
-    height: 100%;
-}
-
-.landscape #device2 {
-    position: absolute;
-    bottom: 25%;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 426px;
-    height: 866px;
-    -moz-border-radius: 70px;
-    -webkit-border-radius: 70px;
-    border-radius: 70px;
-    background: url(../img/device_ft.jpg) no-repeat;
-    opacity: 0;
-    z-index: 1;
-}
-
-.landscape #bordeDevice {
-    position: absolute;
-    top: 13%;
-    left: 51%;
-    right: 0;
-    margin: 0 auto;
-    width: 426px;
-    height: 866px;
-    background: url(../img/device_sd.jpg) no-repeat;
-    /*opacity: 0;*/
-    -moz-border-radius: 70px;
-    -webkit-border-radius: 70px;
-    border-radius: 70px;
-    z-index: -100000000000;
-    display: none;
-}
-
-.landscape #info {
-    display: block;
-}
-
-.landscape #logo {
-    margin-left: 45px;
-    margin-top: 0;
-    width: 16.667%;
-    height: 16.667%;
-    min-width: 110px;
-    max-width: 130px;
-    margin-top: 0;
-    background: url(../img/logo-verizon.svg) no-repeat;
-    opacity: 0;
-    z-index: 1000;
-}
-
-.landscape .titles {
-    position: absolute;
-}
-
-.landscape #f1_txt1 {
-    width: 385px;
-    bottom: 20%;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    font-size: 48px;
-    opacity: 0;
-    text-align: center;
-}
-
-
-.landscape #f2_txt1 {
-    width: 400px;
-    bottom: 4%;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    font-size: 48px;
-    opacity: 0;
-    text-align: center;
-    line-height: 54px;
-}
-
-.landscape #f3_txt {
-    position: absolute;
-    bottom: 60%;
-}
-
-.landscape #f3_txt1 {
-    top: 10px;
-    left: -340px;
-    font-size: 48px;
-    opacity: 0;
-    width: 290px;
-}
-
-
-.landscape #f3_txt2 {
-    top: 63px;
-    left: -340px;
-    font-size: 48px;
-    opacity: 0;
-    width: 292px;
-}
-
-.landscape #f3_txt3 {
-    top: 118px;
-    left: -340px;
-    font-size: 48px;
-    letter-spacing: -1px;
-    opacity: 0;
-    width: 352px;
-}
-
-.landscape #FF {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 320px;
-    height: 480px;
-    opacity: 0;
-}
-
-.landscape .titles {
-    position: absolute;
-}
-
-.landscape #ff_txt {
-    position: absolute;
-    bottom: 100%;
-}
-
-.landscape #ff_txt1 {
-    top: 207px;
-    width: 400px;
-    left: -200px;
-    font-family: "Verizon Apex Medium Italic", sans-serif;
-    font-size: 40px;
-    opacity: 0;
-}
-
-.landscape #ff_txt2 {
-    top: 247px;
-    width: 376px;
-    left: -254px;
-    font-family: "Verizon Apex Medium Italic", sans-serif;
-    font-size: 40px;
-    opacity: 0;
-}
-
-.landscape #ff_txt3 {
-    top: 312px;
-    left: -254px;
-    font-size: 37px;
-    font-family: "Verizon Apex Book", sans-serif;
-    letter-spacing: 0;
-    line-height: 14px;
-    width: 365px;
-    opacity: 0;
-}
-
-.landscape #ff_txt1 sup {
-    top: -21.5px;
-    font-size: 15px;
-    left: 1px;
-}
-
-.landscape #ff_txt4 {
-    top: 340px;
-    left: -200px;
-    font-size: 30px;
-    font-family: "Verizon Apex Book", sans-serif;
-    line-height: 36px;
-    width: 354px;
-    opacity: 0;
-}
-
-.landscape #ff_txt4 sup {
-    top: -14.5px;
-    font-size: 15px;
-    left: 0;
-}
-
-.landscape #ff_txt5 {
-    top: 530px;
-    left: 45px;
-    width: 306px;
-    font-size: 14px;
-    line-height: 22px;
-    opacity: 0;
-}
-
-.landscape .Redbutton {
-    font-family: Arial, Helvetica, sans-serif;
-    position: absolute;
-    background: #ed1c24;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 20px;
-    padding: 14px;
-    text-align: center;
-    opacity: 0;
-    white-space: nowrap;
-}
-
-.landscape .Redbutton:hover {
-    background: #c81d1e;
-}
-
-.landscape #FF #ff-cta {
-    top: 468px;
-    left: 45px;
-    font-size: 20px;
-    opacity: 0;
-    display: none;
-}
-
-.landscape #FF #ff-cta:hover {
-    cursor: pointer;
-}
-
-.landscape #FF #footer {
-    position: absolute;
-    top: 380px;
-    width: 100%;
-    height: 80px;
-    background: #ffffff;
-}
-
-.landscape #FF #footer-cta {
-    top: 664px;
-    left: 45px;
-    font-size: 20px;
-    display: none;
-}
-
-.landscape #FF #footer-cta:hover {
-    cursor: pointer;
-}
-
-
-/* Map Styles */
-
-.landscape #get-direction-button {
-    position: absolute;
-    bottom: 45px;
-    right: 45px;
-    font-size: 20px;
-    height: auto;
-    z-index: 1;
-    opacity: 1;
-}
-
-.landscape #get-direction-button:hover {
-    cursor: pointer;
-}
-
-.landscape #info {
-    /*display: none;*/
-}
-
-.landscape #map {
-    border: 1px solid #000000;
-    width: 100%;
-    height: 100%;
-    background: #ffffff;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    display: none;
-}
-
-.landscape #map-canvas {
-    height: 100%;
-}
-
-.landscape #slider-directions {
-    background: rgba(255, 255, 255, 0.7);
-    width: 285px;
-    height: 110px;
-    position: absolute;
-    bottom: 20px;
-    left: 18px;
-    z-index: 1000;
-}
-
-.landscape #slider p.bold {
-    font-weight: bold;
-}
-
-.landscape #autocomplete {
-    border: 0;
-    background: url(../img/search.png) 7px 9px no-repeat #ffffff;
-    position: absolute;
-    z-index: 1;
-    padding: 5px 5px 5px 27px;
-    width: 360px;
-    height: 23px;
-    top: 0;
-    left: 0;
-    border: 1px solid #ffffff;
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-}
-
-.landscape #autocomplete:focus {
-    border: 1px solid #4d90fe;
-    outline: none;
-}
-
-.landscape #getLocation {
-    background: url(../img/geolocation.png) center center no-repeat #ffffff;
-    width: 35px;
-    height: 35px;
-    position: absolute;
-    right: 36px;
-    top: 0;
-    z-index: 1;
-}
-
-.landscape #route {
-    background: url(../img/route.png) center center no-repeat #ffffff;
-    width: 35px;
-    height: 35px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 1;
-}
-
-.landscape #getLocation:hover {
-    cursor: pointer;
-}
-
-.landscape #route:hover {
-    cursor: pointer;
-}
-
-.landscape #controls {
-    background: #ffffff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3),0 4px 15px -5px rgba(0,0,0,0.0);
-    width: 475px;
-    height: 35px;
-    position: absolute;
-    top: 20px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    z-index: 1;
-}
-
-.landscape #separator {
-    background: #8f8f8f;
-    width: 1px;
-    height: 18px;
-    position: absolute;
-    right: 35px;
-    top: 9px;
-    z-index: 1;
-}
-
-.landscape .googft-info-window b {
-    font-weight: bold;
-}
-
-/*Media Queries Landscape*/
-
-/* Landscape */
-@media screen and (max-height: 763px) {
-    .landscape #ff_txt {
-        position: absolute;
-        bottom: 67%;
-    }
-
-    .landscape #ff_txt1 {
-        top: 0px;
-        width: 350px;
-        left: -200px;
-        font-family: "Verizon Apex Medium Italic", sans-serif;
-        font-size: 35px;
-        opacity: 0;
-    }
-
-    .landscape #ff_txt1 sup {
-        top: -17.5px;
-        font-size: 13px;
-        left: 1px;
-    }
-
-    .landscape #ff_txt3 {
-        top: 90px;
-        left: -254px;
-        font-size: 33px;
-        font-family: "Verizon Apex Book", sans-serif;
-        letter-spacing: 0;
-        line-height: 14px;
-        width: 365px;
-        opacity: 0;
-    }
-
-    .landscape #ff_txt4 {
-        top: 119px;
-        left: -200px;
-        font-size: 23px;
-        font-family: "Verizon Apex Book", sans-serif;
-        line-height: 27px;
-        width: 366px;
-    }
-
-    .landscape #ff_txt5 {
-        font-family: "Verizon Apex Medium", sans-serif;
-        top: 246px;
-        left: 45px;
-        width: 366px;
-        font-size: 14px;
-        line-height: 20px;
-        opacity: 0;
-    }
-
-    .landscape #ff_txt4 sup {
-        top: -10.5px;
-        font-size: 10px;
-        left: 0;
-    }
-
-    .landscape #FF #ff-cta {
-        top: 190px;
-        left: 45px;
-        font-size: 20px;
-        opacity: 0;
-        display: none;
-    }
-
-    .landscape #FF #footer-cta {
-        top: 350px;
-        left: 45px;
-        font-size: 20px;
-        display: none;
-    }
-}
 
 .portrait #expanded-banner {
     position: absolute;
@@ -809,6 +299,16 @@ sup {
     left: 45px;
     width: 310px;
     font-size: 14px;
+    line-height: 22px;
+    opacity: 0;
+}
+
+.portrait #ff_txt6 {
+    font-family: "Verizon Apex Book", sans-serif;
+    top: 50px;
+    left: 68%;
+    width: 306px;
+    font-size: 20px;
     line-height: 22px;
     opacity: 0;
 }
@@ -1096,6 +596,16 @@ sup {
         width: 310px;
         font-size: 14px;
         line-height: 20px;
+        opacity: 0;
+    }
+
+    .portrait #ff_txt6 {
+        font-family: "Verizon Apex Book", sans-serif;
+        top: 50px;
+        left: 68%;
+        width: 306px;
+        font-size: 20px;
+        line-height: 22px;
         opacity: 0;
     }
 

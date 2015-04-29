@@ -1,38 +1,50 @@
-doubleClickEvents.initializer("in-app");
+doubleClickEvents.initializer();
 
 var orientationNumber;
 
+var currentdate = new Date(),
+    afterDay = false; 
+
+    if ((currentdate.getMonth()+1) == 5 && currentdate.getDate() >= 3){
+        afterDay = true;
+    }
+
 var elementsToRegister = [
-    {eventType: "click", element: "#collapse-banner", functionToCall: "expanded"},
+    // {eventType: "click", element: "#collapse-banner", functionToCall: "expanded"},
     {eventType: "click", element: "#getLocation", functionToCall: "updatePosition"},
     {eventType: "click", element: "#FF #footer-cta", functionToCall: "loadMap"},
     {eventType: "click", element: "#ff-cta", functionToCall: "shopGift"},
     {eventType: "click", element: "#get-direction-button", functionToCall: "getDirectionsExit"},
     {eventType: "keypress", element: "#autocomplete", functionToCall: "searchMap"},
-    {eventType: "click", element: "#route", functionToCall: "searchMap"},
-    {eventType: "click", element: "#generalClose", functionToCall: "GeneralClose"}
+    {eventType: "click", element: "#route", functionToCall: "searchMap"}
+    //{eventType: "click", element: "#generalClose", functionToCall: "GeneralClose"}
 ];
 
 function firstFrame(){
-    motionLibrary.animations("fadeIn", "#collapse-banner h1", 0);
-    motionLibrary.animations("fadeIn", "#collapse-banner h2", 0.5);
+    //motionLibrary.animations("fadeIn", "#collapse-banner h1", 0);
+    //motionLibrary.animations("fadeIn", "#collapse-banner h2", 0.5);
+    expanded();
 }
 
 function expanded() {
     if(orientationNumber == 0){
-        Enabler.requestExpand();
+        //Enabler.requestExpand();
         motionLibrary.animations("fadeIn", "#expanded-banner", 0);
         motionLibrary.animations("fadeIn", "#expanded-banner #info", 0);
         TweenMax.to("#device1", 3, {bottom: "45%", ease:Strong.easeOut, delay:.5});
         TweenMax.to("#shadow", 3, {opacity:1, bottom: "40%", ease:Strong.easeOut, delay:.5});
         TweenMax.to("#expanded-banner #info #f1_txt1", 2, { opacity:1, delay:.5, onComplete:frame2});
     } else {
-        Enabler.requestExpand();
+        //Enabler.requestExpand();
         motionLibrary.animations("fadeIn", "#expanded-banner", 0);
         motionLibrary.animations("fadeIn", "#expanded-banner #info", 0);
         TweenMax.to("#device1", 3, {bottom: "45%", ease:Strong.easeOut, delay:.5});
         TweenMax.to("#shadow", 3, {opacity:1, bottom: "40%", ease:Strong.easeOut, delay:.5});
         TweenMax.to("#expanded-banner #info #f1_txt1", 2, { opacity:1, delay:.5, onComplete:frame2});
+    }
+
+    if(afterDay == true){
+        document.getElementById("device2").style.background = "url('img/device_ft2.jpg') no-repeat";
     }
 }
 
@@ -74,9 +86,6 @@ function frame3() {
         TweenLite.set("#persp2", {perspective:2250});
         TweenMax.to("#persp2", 0.5, {height:"1240px", delay:6.1});
         TweenMax.to("#device2", 1, {opacity:1, rotationY:135, scaleX:0.95, scaleY:1, ease:Power4.easeOut, transformOrigin:"center bottom", delay:6.1});
-        TweenMax.to("#bordeDevice", 0.01, {opacity:0,  delay:6});
-        TweenMax.to("#bordeDevice", 1, {top: "11%", left:"52%", rotationY:135, scaleX:0.95, scaleY:1, ease:Power4.easeOut, transformOrigin:"center bottom", delay:6.1});
-        TweenMax.to("#bordeDevice", 1, {opacity:1, display:'block', delay:6.62});
     } else {
         TweenMax.to("#expanded-banner #info #f2_txt1", .5, { opacity:0, delay:1});
         TweenMax.to("#expanded-banner #info #f2_txt2", .5, { opacity:0, delay:1});
@@ -101,9 +110,6 @@ function frame3() {
         TweenLite.set("#persp2", {perspective:2250});
         TweenMax.to("#persp2", 0.5, {height:"1240px", delay:6.1});
         TweenMax.to("#device2", 1, {opacity:1, rotationY:135, scaleX:0.95, scaleY:1, ease:Power4.easeOut, transformOrigin:"center bottom", delay:6.1});
-        TweenMax.to("#bordeDevice", 0.01, {opacity:0,  delay:6});
-        TweenMax.to("#bordeDevice", 1, {top: "11%", left:"52%", rotationY:135, scaleX:0.95, scaleY:1, ease:Power4.easeOut, transformOrigin:"center bottom", delay:6.1});
-        TweenMax.to("#bordeDevice", 1, {opacity:1, display:'block', delay:6.62});
     }
 }
 
@@ -126,6 +132,10 @@ function frame4(){
         TweenMax.to("#ff-cta", .5, { display:'block', opacity:1, delay:.5});  
         TweenMax.to("#ff_txt5", .5, { opacity:1, delay:.7});
         TweenMax.to("#footer-cta", .5, { display:'block', opacity:1, delay:.9});
+    }
+
+    if(afterDay == true){
+       TweenMax.to("#ff_txt6", .5, { opacity:1, delay:.1});
     }
 }
 
@@ -151,7 +161,7 @@ function ResetValuesAndStart() {
 }
 
 function shopGift(){
-    Enabler.requestCollapse();
+    //Enabler.requestCollapse();
     Enabler.exit('ClickTag Shop Gift');
     TweenMax.set("#expanded-banner", {opacity:0, display:'none'});
     motionLibrary.resetWhenCloseOrExit();
@@ -178,7 +188,7 @@ var mapAdded = false,
 
 
 function getDirectionsExit() {
-    Enabler.requestCollapse();
+    //Enabler.requestCollapse();
     Enabler.exit('Get Directions Exit', 'http://www.verizonwireless.com/vzw/storelocator/store-list-result.jsp?allow=1&result=verizon&q=' + searchInput.value);
     TweenMax.set("#expanded-banner", {opacity:0, display:'none'});
     motionLibrary.resetWhenCloseOrExit();

@@ -9,8 +9,8 @@ var elementsToRegister = [
     {eventType: "click", element: "#ff-cta", functionToCall: "shopGift"},
     {eventType: "click", element: "#get-direction-button", functionToCall: "getDirectionsExit"},
     {eventType: "keypress", element: "#autocomplete", functionToCall: "searchMap"},
-    {eventType: "click", element: "#route", functionToCall: "searchMap"},
-    {eventType: "click", element: "#generalClose", functionToCall: "GeneralClose"}
+    {eventType: "click", element: "#route", functionToCall: "searchMap"}
+    //{eventType: "click", element: "#generalClose", functionToCall: "GeneralClose"}
 ];
 
 function firstFrame(){
@@ -19,33 +19,24 @@ function firstFrame(){
 }
 
 function expanded() {
-    if(orientationNumber == 0){
-        Enabler.requestExpand();
-        motionLibrary.animations("fadeIn", "#expanded-banner", 0);
-        motionLibrary.animations("fadeIn", "#expanded-banner #info", 0);
-        TweenMax.to("#device1", 3, {bottom: "45%", ease:Strong.easeOut, delay:.5});
-        TweenMax.to("#shadow", 3, {opacity:1, bottom: "40%", ease:Strong.easeOut, delay:.5});
-        TweenMax.to("#expanded-banner #info #f1_txt1", 2, { opacity:1, delay:.5, onComplete:frame2});
-    } else {
-        Enabler.requestExpand();
-        motionLibrary.animations("fadeIn", "#expanded-banner", 0);
-        motionLibrary.animations("fadeIn", "#expanded-banner #info", 0);
-        TweenMax.to("#device1", 3, {bottom: "45%", ease:Strong.easeOut, delay:.5});
-        TweenMax.to("#shadow", 3, {opacity:1, bottom: "40%", ease:Strong.easeOut, delay:.5});
-        TweenMax.to("#expanded-banner #info #f1_txt1", 2, { opacity:1, delay:.5, onComplete:frame2});
-    }
+    Enabler.requestExpand();
+    motionLibrary.animations("fadeIn", "#expanded-banner", 0);
+    motionLibrary.animations("fadeIn", "#expanded-banner #info", 0);
+    TweenMax.to("#device1", 3, {bottom: "45%", ease:Strong.easeOut, delay:.5});
+    TweenMax.to("#shadow", 3, {opacity:1, bottom: "37%", ease:Strong.easeOut, delay:.5});
+    TweenMax.to("#expanded-banner #info #f1_txt1", 2, { opacity:1, delay:.5, onComplete:frame2});
 }
 
 function frame2() {
     if(orientationNumber == 0){
         TweenMax.to("#expanded-banner #info #f1_txt1", .5, { opacity:0, delay:1});
-        TweenMax.to("#device1", 2, {bottom:"25%", ease:Strong.easeInOut, delay:2});
-        TweenMax.to("#shadow", 2, {bottom:"20.5%", ease:Strong.easeInOut, delay:2});
+        TweenMax.to("#device1", 2, {bottom:"32%", ease:Strong.easeInOut, delay:2});
+        TweenMax.to("#shadow", 2, {bottom:"19.5%", ease:Strong.easeInOut, delay:2});
         TweenMax.to("#expanded-banner #info #f2_txt1", 2, { opacity:1, delay:3.5, onComplete:frame3});
     } else {
         TweenMax.to("#expanded-banner #info #f1_txt1", .5, { opacity:0, delay:1});
         TweenMax.to("#device1", 2, {bottom:"25%", ease:Strong.easeInOut, delay:2});
-        TweenMax.to("#shadow", 2, {bottom:"20.5%", ease:Strong.easeInOut, delay:2});
+        TweenMax.to("#shadow", 2, {bottom:"16.5%", ease:Strong.easeInOut, delay:2});
         TweenMax.to("#expanded-banner #info #f2_txt1", 2, { opacity:1, delay:3.5, onComplete:frame3});
     }
 }
@@ -56,17 +47,17 @@ function frame3() {
         TweenMax.to("#expanded-banner #info #f2_txt2", .5, { opacity:0, delay:1});
         TweenLite.set("#persp", {perspective:4500});
         TweenMax.to("#device1", 1, {left:"50%", rotationY:180, ease:Power2.easeInOut, transformOrigin:"center bottom", delay:1.5});
-        TweenMax.to("#shadow", 1, {left:"25%", rotationY:180, ease:Power2.easeInOut, transformOrigin:"center bottom", delay:1.5});
+        TweenMax.to("#shadow", 1, {left:"40%", rotationY:180, ease:Power2.easeInOut, transformOrigin:"center bottom", delay:1.5});
         TweenMax.to("#device1", 0.01, {opacity:0, delay:2.1});
         TweenLite.set("#persp2", {perspective:4500});
         TweenMax.to("#device2", 1, {left:"50%", rotationY:180, ease:Power2.easeInOut, transformOrigin:"center bottom", delay:1.5});
         TweenMax.to("#device2", 0.1, {opacity:1, delay:2});
-        TweenMax.to("#device2", 1.5, {top:"10%", ease:Expo.easeInOut, delay:2});
+        TweenMax.to("#device2", 1.5, {top:"4%", ease:Expo.easeInOut, delay:2});
         TweenMax.to("#shadow", 1, {opacity:0, ease:Expo.easeInOut, scaleX:0.5, transformOrigin:"center center", delay:2});;
         TweenMax.to("#logo", 1, { opacity:1, delay:3});
-        TweenMax.to("#expanded-banner #info #f3_txt1", .5, { left: 45, opacity:1, delay:3.2});
-        TweenMax.to("#expanded-banner #info #f3_txt2", .7, { left: 45, opacity:1, delay:3.4});
-        TweenMax.to("#expanded-banner #info #f3_txt3", .7, { left: 45, opacity:1, delay:3.6});
+        TweenMax.to("#expanded-banner #info #f3_txt1", .5, { left: 25, opacity:1, delay:3.2});
+        TweenMax.to("#expanded-banner #info #f3_txt2", .7, { left: 25, opacity:1, delay:3.4});
+        TweenMax.to("#expanded-banner #info #f3_txt3", .7, { left: 25, opacity:1, delay:3.6});
         TweenMax.to("#expanded-banner #info #f3_txt1", .5, { left: -25, opacity:0, delay:5.5});
         TweenMax.to("#expanded-banner #info #f3_txt2", .4, { left: -25, opacity:0, delay:5.7, onComplete:frame4});
         TweenMax.to("#expanded-banner #info #f3_txt3", .3, { left: -25, opacity:0, delay:5.9});
@@ -75,58 +66,62 @@ function frame3() {
         TweenMax.to("#persp2", 0.5, {height:"1240px", delay:6.1});
         TweenMax.to("#device2", 1, {opacity:1, rotationY:135, scaleX:0.95, scaleY:1, ease:Power4.easeOut, transformOrigin:"center bottom", delay:6.1});
         TweenMax.to("#bordeDevice", 0.01, {opacity:0,  delay:6});
-        TweenMax.to("#bordeDevice", 1, {top: "11%", left:"52%", rotationY:135, scaleX:0.95, scaleY:1, ease:Power4.easeOut, transformOrigin:"center bottom", delay:6.1});
+        TweenMax.to("#bordeDevice", 1, {top: "5%", left:"52%", rotationY:135, scaleX:0.95, scaleY:1, ease:Power4.easeOut, transformOrigin:"center bottom", delay:6.1});
         TweenMax.to("#bordeDevice", 1, {opacity:1, display:'block', delay:6.62});
     } else {
         TweenMax.to("#expanded-banner #info #f2_txt1", .5, { opacity:0, delay:1});
         TweenMax.to("#expanded-banner #info #f2_txt2", .5, { opacity:0, delay:1});
         TweenLite.set("#persp", {perspective:4500});
-        TweenMax.to("#device1", 1, {left:"50%", rotationY:180, ease:Power2.easeInOut, transformOrigin:"center bottom", delay:1.5});
+        TweenMax.to("#device1", 1, {left:"52%", rotationY:180, ease:Power2.easeInOut, transformOrigin:"center bottom", delay:1.5});
         TweenMax.to("#shadow", .5, {left:"15.75%", scaleX:0.15, ease:Power2.easeIn, transformOrigin:"center bottom", delay:1.6});
         TweenMax.to("#shadow", .5, {left:"31.5%", scaleX:1, ease:Power2.easeOut, transformOrigin:"center bottom", delay:2});
         TweenMax.to("#device1", 0.01, {opacity:0, delay:2.1});
         TweenLite.set("#persp2", {perspective:4500});
         TweenMax.to("#device2", 1, {left:"50%", rotationY:180, ease:Power2.easeInOut, transformOrigin:"center bottom", delay:1.5});
         TweenMax.to("#device2", 0.1, {opacity:1, delay:2});
-        TweenMax.to("#device2", 1.5, {top:"10%", ease:Expo.easeInOut, delay:2});
+        TweenMax.to("#device2", 1.5, {top:"5%", ease:Expo.easeInOut, delay:2});
         TweenMax.to("#shadow", 1, {opacity:0, ease:Expo.easeInOut, scaleX:0.5, transformOrigin:"center center", delay:2});
         TweenMax.to("#logo", 1, { opacity:1, delay:3});
-        TweenMax.to("#expanded-banner #info #f3_txt1", .5, { left: 45, opacity:1, delay:3.2});
-        TweenMax.to("#expanded-banner #info #f3_txt2", .7, { left: 45, opacity:1, delay:3.4});
-        TweenMax.to("#expanded-banner #info #f3_txt3", .7, { left: 45, opacity:1, delay:3.6});
+        TweenMax.to("#expanded-banner #info #f3_txt1", .5, { left: 25, opacity:1, delay:3.2});
+        TweenMax.to("#expanded-banner #info #f3_txt2", .7, { left: 25, opacity:1, delay:3.4});
+        TweenMax.to("#expanded-banner #info #f3_txt3", .7, { left: 25, opacity:1, delay:3.6});
         TweenMax.to("#expanded-banner #info #f3_txt1", .5, { left: -25, opacity:0, delay:5.5});
         TweenMax.to("#expanded-banner #info #f3_txt2", .4, { left: -25, opacity:0, delay:5.7, onComplete:frame4});
         TweenMax.to("#expanded-banner #info #f3_txt3", .3, { left: -25, opacity:0, delay:5.9});
-        TweenMax.to("#device2", 0.00000000001, {left:"50%", rotationY:180, ease:Power2.easeInOut, transformOrigin:"center bottom", delay:6.1});
+        TweenMax.to("#device2", 0.00000000001, {left:"56%", rotationY:180, ease:Power2.easeInOut, transformOrigin:"center bottom", delay:6.1});
         TweenLite.set("#persp2", {perspective:2250});
         TweenMax.to("#persp2", 0.5, {height:"1240px", delay:6.1});
         TweenMax.to("#device2", 1, {opacity:1, rotationY:135, scaleX:0.95, scaleY:1, ease:Power4.easeOut, transformOrigin:"center bottom", delay:6.1});
         TweenMax.to("#bordeDevice", 0.01, {opacity:0,  delay:6});
-        TweenMax.to("#bordeDevice", 1, {top: "11%", left:"52%", rotationY:135, scaleX:0.95, scaleY:1, ease:Power4.easeOut, transformOrigin:"center bottom", delay:6.1});
-        TweenMax.to("#bordeDevice", 1, {opacity:1, display:'block', delay:6.62});
+        TweenMax.to("#bordeDevice", 1, {top: "6%", left:"62%", rotationY:135, scaleX:0.95, scaleY:1, ease:Power4.easeOut, transformOrigin:"center bottom", delay:6.1});
+        TweenMax.to("#bordeDevice", 1, {opacity:0, display:'block', delay:6.62});
     }
 }
 
 function frame4(){
     if(orientationNumber == 0){
         TweenMax.to("#FF", 0, { opacity:1});
-        TweenMax.to("#ff_txt1", .5, { left: 45, opacity:1, delay:0});
-        TweenMax.to("#ff_txt2", .5, { left: 45, opacity:1, delay:.1}); 
-        TweenMax.to("#ff_txt3", .5, { left: 45, opacity:1, delay:.2});
-        TweenMax.to("#ff_txt4", .5, { left: 45, opacity:1, delay:.3})
+        TweenMax.to("#ff_txt1", .5, { left: 25, opacity:1, delay:0});
+        TweenMax.to("#ff_txt2", .5, { left: 25, opacity:1, delay:.1}); 
+        TweenMax.to("#ff_txt3", .5, { left: 25, opacity:1, delay:.2});
+        TweenMax.to("#ff_txt4", .5, { left: 25, opacity:1, delay:.3})
         TweenMax.to("#ff-cta", .5, { display:'block', opacity:1, delay:.5 });  
         TweenMax.to("#ff_txt5", .5, { opacity:1, delay:.7});
         TweenMax.to("#footer-cta", .5, { display:'block', opacity:1, delay:.9});
+        document.getElementById('banner').className = "finished";
     } else {
         TweenMax.to("#FF", 0, { opacity:1});
-        TweenMax.to("#ff_txt1", .5, { left: 45, opacity:1, delay:0});
-        TweenMax.to("#ff_txt2", .5, { left: 45, opacity:1, delay:.1}); 
-        TweenMax.to("#ff_txt3", .5, { left: 45, opacity:1, delay:.2});
-        TweenMax.to("#ff_txt4", .5, { left: 45, opacity:1, delay:.3})
+        TweenMax.to("#ff_txt1", .5, { left: 25, opacity:1, delay:0});
+        TweenMax.to("#ff_txt2", .5, { left: 25, opacity:1, delay:.1}); 
+        TweenMax.to("#ff_txt3", .5, { left: 25, opacity:1, delay:.2});
+        TweenMax.to("#ff_txt4", .5, { left: 25, opacity:1, delay:.3})
         TweenMax.to("#ff-cta", .5, { display:'block', opacity:1, delay:.5});  
         TweenMax.to("#ff_txt5", .5, { opacity:1, delay:.7});
         TweenMax.to("#footer-cta", .5, { display:'block', opacity:1, delay:.9});
+        document.getElementById('banner').className = "finished";
     }
+
+    TweenMax.to("#ff_txt6", .5, { opacity:1, delay:.1});
 }
 
 function GeneralClose() {
