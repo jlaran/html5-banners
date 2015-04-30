@@ -139,6 +139,7 @@ function frame4(){
 }
 
 function GeneralClose() {
+    Enabler.requestCollapse();
     TweenMax.set("#expanded-banner", {opacity:0, display:'none'});
     TweenMax.set("#map", {opacity:0, display:'none'});
     motionLibrary.resetWhenCloseOrExit();
